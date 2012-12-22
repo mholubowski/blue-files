@@ -1,4 +1,20 @@
 BlueFiles::Application.routes.draw do
+  
+  get "accounts/create"
+
+  get "accounts/new"
+
+  get "welcome/index"
+
+  get "welcom/index"
+
+  resources :accounts
+
+  root :to => 'welcome#index'
+
+  match '/signup',  to: 'accounts#new'
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +64,6 @@ BlueFiles::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

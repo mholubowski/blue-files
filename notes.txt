@@ -29,8 +29,8 @@ General ==============================================
 		-email notifications
 
 
-Database Models ========================================
-========================================================
+=========================================================
+===================Database Models=======================
 
 Super_admin
 	############# MIKE ############
@@ -39,14 +39,17 @@ end
 
 Account   
 	:username
-	:password
+	:password_digest
 	:pin
+
 	:usage_level   ( levels A,B,C ? - # of files? )
 
 	:credit_card ? or payment info ?
 
 	:total_number_of_pages
 
+	:accepted_terms
+	
 	has_one  :main_contact
 	has_one  :secondary_contact
 	has_one  :account_admin
@@ -123,9 +126,22 @@ Account_preference
 
 end
 
+=========================================================
+========================Pages============================
 
+home page  ->  signup! + all info about blue files
 
-
+signin -> username / email / pin creates session
+  \
+  	files index to show all files (where account_id = current)
+  	|  \
+  	|  	file show (individual files)	
+  	|  	
+  	account_admin in nav bar
+  		\
+  		 admin signin
+  		  \
+  		   account show   	
 
 
 

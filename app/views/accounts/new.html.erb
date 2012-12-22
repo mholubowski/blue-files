@@ -1,0 +1,23 @@
+<h1>Accounts#new</h1>
+<p>Find me in app/views/accounts/new.html.erb</p>
+<hr>
+<h1>Acccount SignUp</h1>
+<hr>
+<div class="row"><div class="span4 offset4 center">
+	<%= form_for(@account) do |f| %>
+	
+	<%= f.label :username %>
+	<%= f.text_field :username %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation %>
+
+
+	<%= f.submit "Create new account", class: "btn btn-large btn-primary" %>
+
+<% end %>
+</div>
+</div>
