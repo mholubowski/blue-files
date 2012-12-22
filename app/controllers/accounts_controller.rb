@@ -20,4 +20,8 @@ class AccountsController < ApplicationController
 
   end
 
+  def index #for SUPERADMIN
+  	@accounts = Account.all
+  end
+
 end

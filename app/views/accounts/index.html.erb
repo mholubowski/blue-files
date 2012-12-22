@@ -1,0 +1,8 @@
+<h2>account#index</h2>
+<h1 style="color:red">FOR SUPERADMIN</h1>
+
+<ol>
+	<% @accounts.each do |account| %>
+		<li>username: <%= account.username %></li>
+	<% end %>
+</ol>
