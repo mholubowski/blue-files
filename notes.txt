@@ -1,4 +1,4 @@
-					~~~~BLUE FILES~~~~
+					~~~~BLUE documentS~~~~
 
 General ==============================================
 ======================================================
@@ -12,7 +12,7 @@ General ==============================================
 		-address 
 		-credit card info
 	- Account info 
-		-amount of files
+		-amount of documents
 		-payment plan
 		-day since member
 		-
@@ -42,7 +42,7 @@ Account
 	:password_digest
 	:pin
 
-	:usage_level   ( levels A,B,C ? - # of files? )
+	:usage_level   ( levels A,B,C ? - # of documents? )
 
 	:credit_card ? or payment info ?
 
@@ -55,7 +55,7 @@ Account
 	has_one  :account_admin
 	
 	has_many :emails_for_pin
-	has_many :files
+	has_many :documents
 
 	has_one  :account_preference # plural ?
 end
@@ -104,7 +104,7 @@ end
 
 
 
-File
+Document
 	belongs_to :account
 
 	:category 		   #department
@@ -129,13 +129,13 @@ end
 =========================================================
 ========================Pages============================
 
-home page  ->  signup! + all info about blue files
+home page  ->  signup! + all info about blue documents
 
 signin -> username / email / pin creates session
   \
-  	files index to show all files (where account_id = current)
+  	documents index to show all documents (where account_id = current)
   	|  \
-  	|  	file show (individual files)	
+  	|  	document show (individual documents)	
   	|  	
   	account_admin in nav bar
   		\

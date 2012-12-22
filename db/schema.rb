@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121222205116) do
+ActiveRecord::Schema.define(:version => 20121222231858) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(:version => 20121222205116) do
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
     t.string   "password_confirmation"
+  end
+
+  create_table "documents", :force => true do |t|
+    t.integer  "account_id"
+    t.integer  "number_of_pages"
+    t.string   "category"
+    t.string   "sub_category"
+    t.string   "sub_sub_category"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end
