@@ -1,5 +1,13 @@
 BlueFiles::Application.routes.draw do
   
+  get "documents/index"
+
+  get "documents/show"
+
+  get "documents/new"
+
+  get "documents/create"
+
   get "accounts/create"
 
   get "accounts/new"
