@@ -9,6 +9,7 @@ BlueFiles::Application.routes.draw do
   get "welcom/index"
 
   resources :accounts
+  resources :documents
 
   root :to => 'welcome#index'
 

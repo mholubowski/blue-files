@@ -17,4 +17,6 @@ class Account < ActiveRecord::Base
     validates :password_confirmation,
    			   presence: true,
    			   length: { in: 6..20 }
+
+
 end

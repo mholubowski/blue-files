@@ -17,11 +17,14 @@ class AccountsController < ApplicationController
 
   def show 
   	@account = Account.find(params[:id])
-
+  	#add if signed_in?
+    @documents = @account.documents
   end
 
   def index #for SUPERADMIN
   	@accounts = Account.all
   end
+
+  
 
 end
