@@ -1,6 +1,8 @@
 class Account < ActiveRecord::Base
    attr_accessible :username, :password, :password_confirmation
    has_secure_password
+   before_save :create_remember_token
+
 
    has_many :documents
 
@@ -18,5 +20,9 @@ class Account < ActiveRecord::Base
    			   presence: true,
    			   length: { in: 6..20 }
 
+ private
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+  end
 
 end

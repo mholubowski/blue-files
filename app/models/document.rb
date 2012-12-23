@@ -3,7 +3,6 @@ class Document < ActiveRecord::Base
   				  :type, :number_of_pages
 
   belongs_to  :account
-  before_save :create_remember_token
 
   validates :account_id, 	   presence: true
   validates :category,		   presence: true
@@ -12,8 +11,5 @@ class Document < ActiveRecord::Base
 
   validates :number_of_pages,  numericality: { only_integer: true }
 
-  private
-  	def create_remember_token
-  		self.remember_token = SecureRandom.urlsafe_base64
- 	end
+ 
 end
