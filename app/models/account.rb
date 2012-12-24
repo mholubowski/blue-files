@@ -12,13 +12,13 @@ class Account < ActiveRecord::Base
    			  length:  { maximum:25 }
 
 
-	validates :password,
-   			   presence: true,
-   			   length: { in: 6..20 }
+  	validates :password,
+   			  presence: true,
+   			  length: { in: 6..20 }
 
     validates :password_confirmation,
-   			   presence: true,
-   			   length: { in: 6..20 }
+   		    presence: true,
+   		 	  length: { in: 6..20 }
 
  private
     def create_remember_token

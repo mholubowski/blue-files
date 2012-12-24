@@ -1,4 +1,8 @@
 <h1>Documents#index</h1>
 <p>All Document</p>
 <h2 style="color:red;">TODO should display just documents of signed in account</h2>
-<%= @all_documents %>
+	<ol>
+<% @current_account_documents.each do |doc| %>
+		<li><%= doc.category %> / <%= doc.sub_category %> / <%= doc.sub_sub_category %></li>
+<% end %>
+	</ol>

@@ -4,7 +4,7 @@ class DocumentsController < ApplicationController
     # @account = Account.first
     #add if signed_in?
    # @documents = @account.documents
-   @all_documents = Document.all
+   @current_account_documents = current_account.documents
   end
 
   def show

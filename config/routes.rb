@@ -1,5 +1,11 @@
 BlueFiles::Application.routes.draw do
   
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
   get "documents/index"
 
   get "documents/show"
@@ -18,11 +24,12 @@ BlueFiles::Application.routes.draw do
 
   resources :accounts
   resources :documents
+  resources :sessions, only: [:new, :create, :destroy]
 
   root :to => 'welcome#index'
 
   match '/signup',  to: 'accounts#new'
-  
+  match '/signin',  to: 'sessions#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
