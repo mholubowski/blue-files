@@ -7,7 +7,8 @@ namespace :db do
 			password  = "123123"
 			Account.create!(username: username,
 						    password: password,
-						    password_confirmation: password)
+						    password_confirmation: password,
+						    accept_terms_and_conditions: 1)
 		end 
 
 		accounts = Account.all

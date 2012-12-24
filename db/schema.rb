@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121223020958) do
+ActiveRecord::Schema.define(:version => 20121224034534) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
     t.string   "password_digest"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.string   "password_confirmation"
     t.string   "remember_token"
+    t.integer  "accept_terms_and_conditions"
   end
 
   add_index "accounts", ["remember_token"], :name => "index_accounts_on_remember_token"

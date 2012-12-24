@@ -15,6 +15,9 @@
 	<%= f.label :password_confirmation %>
 	<%= f.password_field :password_confirmation %>
 
+	<%= f.label :accept_terms_and_conditions, class: "checkbox" %>
+	<%= f.check_box :accept_terms_and_conditions %>
+
 
 	<%= f.submit "Create new account", class: "btn btn-large btn-primary" %>
 

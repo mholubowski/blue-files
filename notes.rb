@@ -5,7 +5,8 @@
 
 #TODO error messages on forms
 #TODO redirect to url.request before siggin?
-#TODO 
+#TODO AUTHENTICATION
+#      \everywhere
 
 
 General ==============================================

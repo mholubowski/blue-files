@@ -13,8 +13,9 @@
 				<li><%= link_to "Account 1 files", Account.first %></li>
 				<li></li>
 				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Link</a></li>
+				<li><%= link_to "Sign in", signin_path %></li>
 				<li> <%= link_to "Sign up", signup_path %></li>
+				<li><%= link_to "Sign out", signout_path, method: "delete" %> </li>
 			</ul>
 		
 		</div>

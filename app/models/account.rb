@@ -1,5 +1,6 @@
 class Account < ActiveRecord::Base
-   attr_accessible :username, :password, :password_confirmation
+   attr_accessible :username, :password, :password_confirmation, 
+                   :accept_terms_and_conditions
    has_secure_password
    before_save :create_remember_token
 
@@ -19,6 +20,11 @@ class Account < ActiveRecord::Base
     validates :password_confirmation,
    		    presence: true,
    		 	  length: { in: 6..20 }
+
+    validates :accept_terms_and_conditions,
+          presence: true,
+          inclusion: { in: [1],message: "Must accept terms and conditions" }
+             
 
  private
     def create_remember_token
