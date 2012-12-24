@@ -2,6 +2,10 @@
 <p>All Document</p>
 <h2 style="color:red;">TODO should display just documents of signed in account</h2>
 <% if signed_in? %>
+<p style="color:green">category: <%= current_account.category %></p>
+<p style="color:green">sub_category: <%= current_account.sub_category %></p>
+<p style="color:green">sub_sub_category: <%= current_account.sub_sub_category %></p>
+
 	<ol>
 	<% @current_account_documents.each do |doc| %>
 		<li><%= doc.category %> / <%= doc.sub_category %> / <%= doc.sub_sub_category %></li>

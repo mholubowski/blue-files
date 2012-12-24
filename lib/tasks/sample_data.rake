@@ -5,7 +5,13 @@ namespace :db do
 		(1..5).each do |n|
 			username  = "testaccount#{n}"
 			password  = "123123"
+			category  = "Department"
+			sub_category = "Course"
+			sub_sub_category = "Professor"
 			Account.create!(username: username,
+							category: category,
+							sub_category: sub_category,
+						    sub_sub_category: sub_sub_category,
 						    password: password,
 						    password_confirmation: password,
 						    accept_terms_and_conditions: 1)

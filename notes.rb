@@ -7,7 +7,12 @@
 #TODO redirect to url.request before siggin?
 #TODO AUTHENTICATION
 #      \everywhere
+#TODO _header nav make dynamic
+#TODO style forms
+#TODO style _form_error_messages
 
+#TODO full Account model (no has_one)
+#TODO Signup wizard
 
 General ==============================================
 ======================================================
@@ -63,7 +68,7 @@ Account
 	has_one  :secondary_contact
 	has_one  :account_admin
 	
-	has_many :emails_for_pin
+	has_many :emails_for_pin  # not needed	
 	has_many :documents
 
 	has_one  :account_preference # plural ?

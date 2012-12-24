@@ -5,15 +5,26 @@
 <hr>
 <div class="row"><div class="span4 offset4 center">
 	<%= form_for(@account) do |f| %>
+	<%= render 'shared/form_error_messages', object: f.object %>
 	
 	<%= f.label :username %>
 	<%= f.text_field :username %>
+
+	<%= f.label :category %>
+	<%= f.text_field :category %>
+
+	<%= f.label :sub_category %>
+	<%= f.text_field :sub_category %>
+
+	<%= f.label :sub_sub_category %>
+	<%= f.text_field :sub_sub_category %>
 
 	<%= f.label :password %>
 	<%= f.password_field :password %>
 
 	<%= f.label :password_confirmation %>
 	<%= f.password_field :password_confirmation %>
+
 
 	<%= f.label :accept_terms_and_conditions, class: "checkbox" %>
 	<%= f.check_box :accept_terms_and_conditions %>

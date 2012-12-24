@@ -8,9 +8,10 @@ class AccountsController < ApplicationController
   	@account = Account.new(params[:account])
   	if @account.save
   		flash[:success] = "Successful account signup!"
-  		# redirect_to account_path (@account)
+      sign_in(@account)
+  		redirect_to documents_path
   	else
-  		flash[:error]   = "wtf.."
+  		flash[:error]   = "Please try again"
   		render 'new'
   	end
   end

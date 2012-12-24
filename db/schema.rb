@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121224034534) do
+ActiveRecord::Schema.define(:version => 20121224230818) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(:version => 20121224034534) do
     t.string   "password_confirmation"
     t.string   "remember_token"
     t.integer  "accept_terms_and_conditions"
+    t.string   "category"
+    t.string   "sub_category"
+    t.string   "sub_sub_category"
   end
 
   add_index "accounts", ["remember_token"], :name => "index_accounts_on_remember_token"

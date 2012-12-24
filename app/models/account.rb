@@ -1,6 +1,7 @@
 class Account < ActiveRecord::Base
    attr_accessible :username, :password, :password_confirmation, 
-                   :accept_terms_and_conditions
+                   :accept_terms_and_conditions, :category, 
+                   :sub_category, :sub_sub_category
    has_secure_password
    before_save :create_remember_token
 
