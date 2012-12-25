@@ -4,18 +4,13 @@
 			
 			<a class="brand" href="/">Blue Files</a>
 			
-			<form class="navbar-form pull-left navbar-search">
-  				<input type="text" class="offset3 search-query" placeholder="..Search">
-  				<!-- <button type="submit" class="btn">Submit</button> -->
-			</form>
+		
 			
 			<ul class="nav pull-right">
-				<li><%= link_to "Account 1 files", Account.first %></li>
-				<li></li>
-				<li class="active"><a href="#">Home</a></li>
-				<li><%= link_to "Sign in", signin_path %></li>
-				<li> <%= link_to "Sign up", signup_path %></li>
-				<li><%= link_to "Sign out", signout_path, method: "delete" %> </li>
+				<li><%= link_to "#{current_account.username}", root_path if signed_in?%> </li>
+				<li><%= link_to "Sign in", signin_path unless signed_in? %></li>
+				<li> <%= link_to "Sign up", signup_path unless signed_in? %></li>
+				<li><%= link_to "Sign out", signout_path, method: "delete" if signed_in? %> </li>
 			</ul>
 		
 		</div>

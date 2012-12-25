@@ -1,6 +1,6 @@
 class Document < ActiveRecord::Base
   attr_accessible :category, :sub_category, :sub_sub_category,
-  				  :type, :number_of_pages
+  				  :type, :number_of_pages, :title
 
   belongs_to  :account
 
