@@ -1,2 +1,29 @@
 <h1>Documents#new</h1>
 <p>Find me in app/views/documents/new.html.erb</p>
+<hr>
+<div class="row"><div class="span4 offset4 center">
+	<%= form_for(@document) do |f| %>
+	<%= render 'shared/form_error_messages', object: f.object %>
+	
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+
+
+	<!-- Labels set by account admins -->
+	<%= f.label current_account.category %>
+	<%= f.text_field :category %>
+
+	<%= f.label current_account.sub_category %>
+	<%= f.text_field :sub_category %>
+
+	<%= f.label current_account.sub_sub_category %>
+	<%= f.text_field :sub_sub_category %>
+
+	<!-- UNSAFE WAY OF DOING THIS -->
+
+	<%= f.submit "Save Changes", class: "btn btn-large btn-primary" %>
+
+<% end %>
+</div>
+</div>

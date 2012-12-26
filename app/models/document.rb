@@ -4,6 +4,7 @@ class Document < ActiveRecord::Base
 
   belongs_to  :account
 
+
   validates :account_id, 	   presence: true
   validates :category,		   presence: true
   validates :sub_category,     presence: true
@@ -11,5 +12,4 @@ class Document < ActiveRecord::Base
 
   validates :number_of_pages,  numericality: { only_integer: true }
 
- 
 end

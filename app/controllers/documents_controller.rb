@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
-  def index
 
+  def index
    @current_account_documents = current_account.documents
   end
 
@@ -9,8 +9,18 @@ class DocumentsController < ApplicationController
   end
 
   def new
+    @document = current_account.documents.build if signed_in?
   end
 
-  def create
+ def create
+    @document = current_account.documents.build(params[:document])
+    if @document.save
+      flash[:success] = "Successful document upload!"
+      redirect_to documents_path
+    else
+      flash[:error]   = "Please try again"
+      render 'new'
+    end
   end
+
 end
