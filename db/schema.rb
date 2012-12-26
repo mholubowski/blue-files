@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(:version => 20121226072452) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "title"
-    t.string   "type"
     t.string   "type_of_document"
     t.string   "document_file"
   end
