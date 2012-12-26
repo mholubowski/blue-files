@@ -5,7 +5,8 @@
 <p style="color:green">sub_category: <%= current_account.sub_category %></p>
 <p style="color:green">sub_sub_category: <%= current_account.sub_sub_category %></p>
 
-<table>
+<table id="documentsTable" class="display">
+	<thead>
 	<tr>
 		<th><%= current_account.category %></th>
 		<th><%= current_account.sub_category %></th>
@@ -13,7 +14,10 @@
 		<th>Type</th>
 		<th>Title</th>
 	</tr>
+	</thead>
+
 <% if signed_in? %>
+	<tbody>
 	<% @current_account_documents.each do |doc| %>
 	<tr>
 		<td><%= doc.category %></td>
@@ -23,5 +27,7 @@
 		<td><%= link_to doc.title, doc %></td>
 	</tr>
 	<% end %>
+	</tbody>
 <% end %>
+
 </table>

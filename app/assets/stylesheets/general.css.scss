@@ -1,0 +1,5 @@
+@import "bootstrap";
+@import "variables";
+.well{
+	background-color:lighten($lighter-blue, 10%);
+}

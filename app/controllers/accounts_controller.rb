@@ -9,11 +9,11 @@ class AccountsController < ApplicationController
   	if @account.save
   		flash[:success] = "Successful account signup!"
       sign_in(@account)
-  		redirect_to documents_path
-  	else
-  		flash[:error]   = "Please try again"
-  		render 'new'
-  	end
+      redirect_to documents_path
+    else
+      flash[:error]   = "Please try again"
+      render 'new'
+    end
   end
 
   def show 

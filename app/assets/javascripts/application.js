@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
 //= require_tree .
 $(document).ready(function(){
-	console.log('mike');
 	$('#flash-fade').delay(4000).hide('slow');
+	
 })
