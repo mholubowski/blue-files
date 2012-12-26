@@ -1,6 +1,7 @@
 class Document < ActiveRecord::Base
   attr_accessible :category, :sub_category, :sub_sub_category,
-  				  :type_of_document, :number_of_pages, :title
+  				  :type_of_document, :number_of_pages, :title,
+  				  :document_file
 
   belongs_to  :account
 
@@ -12,4 +13,6 @@ class Document < ActiveRecord::Base
 
   validates :number_of_pages,  numericality: { only_integer: true }
 
+  # file upload                  #uploader class
+  mount_uploader :document_file, DocumentUploader
 end
