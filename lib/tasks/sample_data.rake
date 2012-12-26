@@ -25,11 +25,13 @@ namespace :db do
 				sub_sub_category = ['Babcock', 'Burns', 'Ernest', 'L.S. Kim', 'Sonstellie'  ].sample
 				title            = ['Midterm Essay', 'Spring 2010 Final', 'Final B', 'Quiz 2'].sample
 				number_of_pages  = (1..13).to_a.sample
+				type_of_document = ['Test', 'Essay', 'Homework'].sample
 				account.documents.create!(category: category, 
 										  sub_category: sub_category,
 										  sub_sub_category: sub_sub_category,
 										  number_of_pages:  number_of_pages,
-										  title: title)
+										  title: title,
+										  type_of_document: type_of_document)
 			end
 		end
 

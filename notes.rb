@@ -16,6 +16,10 @@
 
 #TODO Dynamic provide: titles
 
+#TODO Better way of setting account_id for file upload
+
+#TODO Automate number_of_pages or remove alltogether
+		# \note: num_of_pages used for pricing
 General ==============================================
 ======================================================
 

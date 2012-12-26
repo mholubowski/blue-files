@@ -1,5 +1,6 @@
 <h1>Documents#show</h1>
 <p>Find me in app/views/documents/show.html.erb</p>
+<%= image_tag @document.document_file_url %>
 <table>
 	<tr>
 		<td><%= @document.category %></td>
@@ -8,6 +9,7 @@
 		<td><%= @document.title %></td>
 	</tr>
 </table>
+
 
 <div>
     <button id="prev" onclick="goPrevious()">Previous</button>
@@ -95,3 +97,6 @@
       renderPage(pageNum);
     });
   </script>  
+
+
+
