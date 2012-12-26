@@ -11,6 +11,6 @@
  *= require_self
  *= require_tree .
  *= require jquery.ui.core
- *= require jquery-ui/ui-darkness
+ *= require jquery-ui/dark-hive
  *= require dataTables/src/demo_table_jui
  */

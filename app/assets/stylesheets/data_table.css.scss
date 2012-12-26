@@ -1,0 +1,28 @@
+@import "variables";
+#documentsTable_wrapper{
+
+	div#documentsTable_length{
+		select{
+			width:70px;
+		}
+	}
+	// color corrected rows
+	tr.odd{
+		background-color: lighten($lighter-blue, 7%);
+		td.sorting_1{
+			background-color: darken($lighter-blue, 3%);
+		}
+	}
+	tr.even{
+		background-color: lighten($lighter-blue, 42%);
+		td.sorting_1{
+			background-color: lighten($lighter-blue, 32%);
+		}
+	}
+	// tab selector
+	#documentsTable_paginate{
+		a{
+			color:whitesmoke !important;
+		}
+	}
+}
