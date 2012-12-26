@@ -1,6 +1,6 @@
 <h1>Documents#show</h1>
 <p>Find me in app/views/documents/show.html.erb</p>
-<%= image_tag @document.document_file_url %>
+<%= @document.document_file_url %>
 <table>
 	<tr>
 		<td><%= @document.category %></td>
@@ -32,7 +32,7 @@
     // security restrictions, we have to use a file server with special headers
     // (CORS) - most servers don't support cross-origin browser requests.
     //
-    var url = 'http://cdn.mozilla.net/pdfjs/tracemonkey.pdf';
+    var url = "<%= @document.document_file_url %>";
 
     //
     // Disable workers to avoid yet another cross-origin issue (workers need the URL of
