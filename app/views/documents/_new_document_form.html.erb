@@ -1,6 +1,16 @@
-<%= form_for @document, validate:true, remote: true do |f| %>
-	<p>document.id <%= @document.object_id %></p>
-	
+<!-- super hack -->
+<% @document = current_account.documents.build if signed_in? %>
+<!-- super hack -->
+
+<div id="<%= @document.object_id %>">
+<hr>
+<%= form_for @document, validate: true, remote: true do |f| %>
+
+	<p><small>document.id <%= @document.object_id %></small></p>
+
+
+	<%= f.hidden_field :hidden, value: @document.object_id  %>
+
 	<%= render 'shared/form_error_messages', object: f.object %>
 	
 	<%= f.label :title %>
@@ -23,7 +33,9 @@
 	<%= f.text_field :sub_sub_category %>
 
 	<%= f.file_field :document_file %>
-	<br>
+	<br><br>
 	<%= f.submit "Save Changes", disable_with: "Saving..", class: "btn btn-large btn-primary"%>
 
 <% end %>
+<hr>
+</div>

@@ -3,12 +3,14 @@
 <hr>
 <h2 style="color:green;">Docs: <%= current_account.documents.count %></h2>
 
-<div class="row">
+<div class="row" id="newDocumentsRow">
 <div class="span5 offset4 center">
 
 <!-- document create form -->
 <% 2.times do  %>
 	<%= render 'documents/new_document_form' %>
 <% end %>
+<hr style="color:black;">
+<div id="addDocForm">hey hey</div>
 </div>
 </div>

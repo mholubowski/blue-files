@@ -9,7 +9,8 @@ class DocumentsController < ApplicationController
   end
 
   def new
-    @document = current_account.documents.build if signed_in?
+    # moved this into form for unique id's!!! :)
+    # @document = current_account.documents.build if signed_in?
   end
 
  def create

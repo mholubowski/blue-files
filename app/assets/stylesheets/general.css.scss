@@ -5,6 +5,12 @@
 }
 
 // FORMS
+.success_form{
+	input,select{
+		background-color:lightgreen;
+	}
+}
+
 .field_with_errors{
 
 	display: inline;
