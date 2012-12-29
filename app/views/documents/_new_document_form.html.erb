@@ -4,7 +4,7 @@
 
 <div id="<%= @document.object_id %>">
 <hr>
-<%= form_for @document, validate: true, remote: true do |f| %>
+<%= form_for @document, validate: true, remote: false do |f| %>
 
 	<p><small>document.id <%= @document.object_id %></small></p>
 
