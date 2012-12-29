@@ -13,6 +13,8 @@
 
 	<%= render 'shared/form_error_messages', object: f.object %>
 	
+	<%= f.file_field :document_file %>
+	
 	<%= f.label :title %>
 	<%= f.text_field :title %>
 
@@ -32,7 +34,6 @@
 	<%= f.label current_account.sub_sub_category %>
 	<%= f.text_field :sub_sub_category %>
 
-	<%= f.file_field :document_file %>
 	<br><br>
 	<div style="display:inline;">
 	<%= f.submit "Save Changes", disable_with: "Uploading Document..", class: "btn btn-large btn-primary"%>

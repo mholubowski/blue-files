@@ -6,8 +6,14 @@
 
 // FORMS
 form[data-remote]{
+	// file select
+	input#document_document_file{
+		height: 35px;
+		line-height: 20px;
+		width: 100%;
+	}
 	input[type=submit].saving{
-		
+
 	}
 	div.saving{
 		width: 50px;
@@ -20,9 +26,13 @@ form[data-remote]{
 		left: 192px;
 	}
 }
+
 .success_form{
 	input,select{
 		background-color:lightgreen;
+	}
+	input[type=submit]{
+		background-color: lightgreen !important;
 	}
 }
 
