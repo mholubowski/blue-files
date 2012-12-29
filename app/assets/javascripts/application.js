@@ -15,7 +15,6 @@
 //= require dataTables/jquery.dataTables
 //= require rails.validations
 //= require jquery.remotipart
-//= require jquery.ui.all
 //= require_tree .
 
 $(document).ready(function(){
