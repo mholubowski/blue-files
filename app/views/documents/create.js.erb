@@ -1,2 +1,4 @@
-$("#<%= params[:document][:hidden] %> .btn").replaceWith("<h2>Saving!</h2>");
-$("#<%= params[:document][:hidden] %>").addClass('success_form').delay(500).after('<h1 style="color:lightgreen">Added: <%= params[:document][:title] %></h1>').hide('slow');
+thisform = $("#<%= params[:document][:hidden] %>")
+thisform.addClass('success_form').delay(500).after('<h1 style="color:lightgreen">Added: <%= params[:document][:title] %></h1>').hide('slow');
+$("#<%= params[:document][:hidden] %> div.saving").hide();
+

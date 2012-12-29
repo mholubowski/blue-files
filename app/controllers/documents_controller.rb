@@ -14,7 +14,7 @@ class DocumentsController < ApplicationController
   end
 
  def create
-  sleep 5
+  sleep 0
     @document = current_account.documents.build(params[:document])
     if @document.save
       respond_to do |format|

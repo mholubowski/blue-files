@@ -34,8 +34,9 @@
 
 	<%= f.file_field :document_file %>
 	<br><br>
-	<%= f.submit "Save Changes", disable_with: "Saving..", class: "btn btn-large btn-primary"%>
-
+	<div style="display:inline;">
+	<%= f.submit "Save Changes", disable_with: "Uploading Document..", class: "btn btn-large btn-primary"%>
+</div>
 <% end %>
 <hr>
 </div>
