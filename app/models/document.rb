@@ -10,12 +10,15 @@ class Document < ActiveRecord::Base
   validates :category,		     presence: true
   validates :sub_category,     presence: true
   validates :sub_sub_category, presence: true 
-  validates :title,            presence: true
+  validates :title,            presence: true #, 
+                               # uniqueness: { scope: #TODO improve this
+                               # [:category, :sub_sub_category, :sub_category] 
+                               #             }
 
 
-  validates :document_file,    presence: false,
-                                # TODO formats and error message
-                               format: %r{\.(pdf|jpg|jpeg)$}i
+  # validates :document_file,    presence: false,
+  #              format: %r{\.(pdf|jpg|jpeg)$}i, #TODO format and error messages
+  #              uniqueness: { scope: :title }
 
   validates :number_of_pages,  numericality: { only_integer: true }
 
