@@ -1,7 +1,7 @@
 <h1>edit</h1>
 <hr>
 <div class="row"><div class="span4 offset4 center">
-	<%= form_for(@account) do |f| %>
+	<%= form_for @account, validate: true do |f| %>
 	<%= render 'shared/form_error_messages', object: f.object %>
 	
 	<%= f.label :username %>
@@ -25,7 +25,7 @@
 
 	<%= f.label :accept_terms_and_conditions, class: "checkbox" %>
 	<%= f.check_box :accept_terms_and_conditions %>
-
+	
 
 	<%= f.submit "Create new account", class: "btn btn-large btn-primary" %>
 

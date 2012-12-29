@@ -15,10 +15,12 @@ class DocumentsController < ApplicationController
  def create
     @document = current_account.documents.build(params[:document])
     if @document.save
-      flash[:success] = "Successful document upload!"
-      redirect_to documents_path
-    else
-      flash[:error]   = "Please try again"
+      flash.now[:success] = "Successful document upload!"
+      render 'new'
+
+      # redirect_to documents_path
+     else
+      flash.now[:error] = "Please try again"
       render 'new'
     end
   end

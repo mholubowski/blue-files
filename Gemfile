@@ -5,6 +5,7 @@ gem 'bootstrap-sass', '2.0.4'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'carrierwave'
 gem "rmagick", "~> 2.13.1"
+gem 'client_side_validations'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

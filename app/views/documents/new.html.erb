@@ -1,33 +1,13 @@
 <h1>Documents#new</h1>
 <p>Find me in app/views/documents/new.html.erb</p>
 <hr>
-<div class="row"><div class="span4 offset4 center">
-	<%= form_for(@document) do |f| %>
-	<%= render 'shared/form_error_messages', object: f.object %>
-	
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+<h2 style="color:green;">Docs: <%= current_account.documents.count %></h2>
 
-	<%= f.label :type_of_document %>
-	<%= f.select :type_of_document, ['Test','Essay','Homework'] %>
+<div class="row">
+<div class="span5 offset4 center">
 
-	<%= f.label :number_of_pages %>
-	<%= f.select :number_of_pages, (1..15).to_a %>
+<!-- document create form -->
+<%= render 'documents/new_document_form' %>
 
-	<!-- Labels set by account admins -->
-	<%= f.label current_account.category %>
-	<%= f.text_field :category %>
-
-	<%= f.label current_account.sub_category %>
-	<%= f.text_field :sub_category %>
-
-	<%= f.label current_account.sub_sub_category %>
-	<%= f.text_field :sub_sub_category %>
-
-	<%= f.file_field :document_file %>
-
-	<%= f.submit "Save Changes", class: "btn btn-large btn-primary" %>
-
-<% end %>
 </div>
 </div>

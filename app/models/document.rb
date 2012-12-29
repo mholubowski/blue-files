@@ -6,10 +6,16 @@ class Document < ActiveRecord::Base
   belongs_to  :account
 
 
-  validates :account_id, 	   presence: true
-  validates :category,		   presence: true
+  validates :account_id, 	     presence: true
+  validates :category,		     presence: true
   validates :sub_category,     presence: true
-  validates :sub_sub_category, presence: true
+  validates :sub_sub_category, presence: true 
+  validates :title,            presence: true
+
+
+  validates :document_file,    presence: false,
+                                # TODO formats and error message
+                               format: %r{\.(pdf|jpg|jpeg)$}i
 
   validates :number_of_pages,  numericality: { only_integer: true }
 

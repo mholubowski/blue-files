@@ -13,8 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
+//= require rails.validations
 //= require_tree .
+
 $(document).ready(function(){
 	$('#flash-fade').delay(4000).hide('slow');
 	
 })
+
+
+
+
+
+	// screenshot end
+

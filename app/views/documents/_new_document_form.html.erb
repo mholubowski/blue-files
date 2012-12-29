@@ -1,0 +1,30 @@
+<%= form_for @document, validate: true, remote: true  do |f| %>
+
+	<p>document.id <%= @document.object_id %></p>
+	
+	<%= render 'shared/form_error_messages', object: f.object %>
+	
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :type_of_document %>
+	<%= f.select :type_of_document, ['Test','Essay','Homework'] %>
+
+	<%= f.label :number_of_pages %>
+	<%= f.select :number_of_pages, (1..15).to_a %>
+
+	<!-- Labels set by account admins -->
+	<%= f.label current_account.category %>
+	<%= f.text_field :category %>
+
+	<%= f.label current_account.sub_category %>
+	<%= f.text_field :sub_category %>
+
+	<%= f.label current_account.sub_sub_category %>
+	<%= f.text_field :sub_sub_category %>
+
+	<%= f.file_field :document_file %>
+	<br>
+	<%= f.submit "Save Changes", class: "btn btn-large btn-primary"%>
+
+<% end %>

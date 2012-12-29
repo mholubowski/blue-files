@@ -3,8 +3,8 @@
 <hr>
 <h1>Acccount SignUp</h1>
 <hr>
-<div class="row"><div class="span4 offset4 center">
-	<%= form_for(@account) do |f| %>
+<div class="row"><div class="span8 offset4 center">
+	<%= form_for @account, validate: true do |f| %>
 	<%= render 'shared/form_error_messages', object: f.object %>
 	
 	<%= f.label :username %>

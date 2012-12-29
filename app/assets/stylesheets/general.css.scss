@@ -3,3 +3,22 @@
 .well{
 	background-color:lighten($lighter-blue, 10%);
 }
+
+// FORMS
+.field_with_errors{
+
+	display: inline;
+	input{
+		background-color: rgb(255, 186, 186);
+
+	}
+
+	label.message{
+		color:   red;
+		display: inline;
+		padding-left: 5px;
+		font-size:   12px;
+	}
+}
+
+

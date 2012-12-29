@@ -5,3 +5,5 @@ jQuery ->
 	$("#documentsTable").dataTable
 		sPaginationType: "full_numbers"
 		bJQueryUI: true
+
+		
