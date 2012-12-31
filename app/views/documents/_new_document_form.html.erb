@@ -1,7 +1,6 @@
-<% 1.times do %>
 <% @document = current_account.documents.build if signed_in? %>
-<% end %>
 <div id="<%= @document.object_id %>" class="hiddenDocForm">
+<div id="<%= @document.object_id %>">
 	<hr>
 	<%= form_for @document, validate: true, remote: true do |f| %>
 
@@ -34,8 +33,9 @@
 
 	<br><br>
 	<div style="display:inline;">
-		<%= f.submit "Upload Document", disable_with: "Uploading Document..", class: "btn btn-large btn-primary", confirm: "yea?" %>
+		<%= f.submit "Upload Document", disable_with: "Uploading Document..", class: "btn btn-large btn-primary" %>
 	</div>
 	<% end %>
 	<hr>
+</div>
 </div>

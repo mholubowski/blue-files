@@ -1,6 +1,7 @@
 
 $.fn.showOne = function(speed){
-	$('.hiddenDocForm').first().show(speed).removeClass('hiddenDocForm');
+	$('.hiddenDocForm').first().animate({left:'-=800'}, 457,'swing', function(){$(this).removeClass('hiddenDocForm')});
+	$('#addDocForm').animate({bottom:'-=534'}, 457,'swing');
 	if ($('.hiddenDocForm').first().length === 0){
 			$('#addDocForm').hide(5);
 		};
