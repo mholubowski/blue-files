@@ -1,0 +1,24 @@
+
+$.fn.showOne = function(speed){
+	$('.hiddenDocForm').first().show(speed).removeClass('hiddenDocForm');
+	if ($('.hiddenDocForm').first().length === 0){
+			$('#addDocForm').hide(5);
+		};
+}
+
+$(document).ready(function(){
+
+	$.fn.showOne(500);
+
+});
+
+$('#addDocForm').on('click', function(){
+	$.fn.showOne(750);
+})
+
+
+$('#reloadButton').click(function() {
+	if (confirm('Reload?')){
+		location.reload(true);
+	}
+});

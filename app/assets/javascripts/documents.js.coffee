@@ -8,7 +8,6 @@ jQuery ->
 
 	#fixes disable_with bug for form submission 
 	$('form[data-remote]').on 'ajax:remotipartSubmit', ->
-	  console.log "twice?"
 	  submit_btn = $('input[type=submit]', this)
 	  submit_btn.after('<div class="saving" style="display: block;"></div>')
 	  submit_btn.attr('disabled', 'disabled').attr('value', submit_btn.data('disable-with'))

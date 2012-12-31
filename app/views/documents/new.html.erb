@@ -4,13 +4,25 @@
 <h2 style="color:green;">Docs: <%= current_account.documents.count %></h2>
 
 <div class="row" id="newDocumentsRow">
-<div class="span5 offset4 center">
+	<div class="span5 offset4 center">
+		<div id="addFormContainer">
 
-<!-- document create form -->
-<% 2.times do  %>
-	<%= render 'documents/new_document_form' %>
+			<!-- document create form -->
+			<% 10.times do  %>
+				<%= render 'documents/new_document_form' %>
+			<% end %>
+				<%= render 'documents/last_form' %>
+
+			<hr style="color:black;">
+		</div>
+		<div id="addDocForm" class="btn btn-success">Add more <i class="icon-plus icon-white"></i></div>
+	</div>
+</div>
+
+
+
+<% content_for :javas do %>
+<script type="text/javascript">
+<%= render 'documents/new_page_javascript.js.erb' %>
+</script>
 <% end %>
-<hr style="color:black;">
-<div id="addDocForm">hey hey</div>
-</div>
-</div>

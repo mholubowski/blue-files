@@ -24,7 +24,5 @@ $(document).ready(function(){
 
 
 
-
-
 	// screenshot end
 
