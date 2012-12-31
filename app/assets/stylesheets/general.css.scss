@@ -7,10 +7,18 @@
 // FORMS
 .hiddenDocForm{
 	// display:none;
+	
+}
+.theHider{
 	position: relative;
-	left: 800px;
+	right: 900px;
 }
 
+.hiddenDocForm{
+	form{
+		opacity: 0;
+	}
+}
 form[data-remote]{
 	// file select
 	text-align: center;
@@ -65,4 +73,45 @@ form[data-remote]{
 	position: relative;	
 	bottom: 5495px;
 }
+.addThisForm{
+	position: relative;
+	left: 969px;
+	bottom: 420px;
+	margin-bottom: -400px;
+	// styling
+	width:200px;
+	height:350px;
+	text-align: center;
 
+	&:hover{
+		background-color: lighten(#2F657D, 12%);
+		cursor:hand; 
+		cursor:pointer; 
+	}
+	&:active{
+		background-color: lighten(#2F657D, 15%);
+	}
+		
+	p{
+		font-size: 45px;
+		text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+		padding-top:85px;
+		color: $lighter-blue;
+		&:hover{
+			color: lighten($lighter-blue, 5%);
+		}
+	}
+		
+		
+	i{
+		color: $lighter-blue;
+		position: relative;
+		top: 100px;
+		right: 15px;
+		font-size: 90px;
+		text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+		&:hover{
+			color: lighten($lighter-blue, 5%);
+		}
+	}
+}

@@ -1,6 +1,18 @@
 
-$.fn.showOne = function(speed){
-	$('.hiddenDocForm').first().animate({left:'-=800'}, 457,'swing', function(){$(this).removeClass('hiddenDocForm')});
+// $.fn.showOne = function(speed){
+// 	$('.hiddenDocForm').first().animate({left:'-=800'}, 457,'swing');
+// 	$('.hiddenDocForm').first().removeClass('hiddenDocForm');
+// 	$('#addDocForm').animate({bottom:'-=534'}, 457,'swing');
+// 	if ($('.hiddenDocForm').first().length === 0){
+// 			$('#addDocForm').hide(5);
+// 		};
+// }
+
+$.fn.showOne = function(thiss,speed){
+	
+
+	$(this).parent().parent().animate({left:'-=800'}, 457,'swing');
+	$(this).parent().parent().removeClass('hiddenDocForm');
 	$('#addDocForm').animate({bottom:'-=534'}, 457,'swing');
 	if ($('.hiddenDocForm').first().length === 0){
 			$('#addDocForm').hide(5);
@@ -9,12 +21,23 @@ $.fn.showOne = function(speed){
 
 $(document).ready(function(){
 
-	$.fn.showOne(500);
+	$('.addThisForm').first().click();
 
 });
 
-$('#addDocForm').on('click', function(){
-	$.fn.showOne(750);
+// $('#addDocForm').on('click', function(){
+// 	$.fn.showOne(750);
+// })
+
+$('.addThisForm').on('click', function(){
+	// $(this).parent().hide('slow');
+	$(this).parent().animate({right:'-=900'}, 457,'swing');
+	$(this).parent().removeClass('hiddenDocForm');
+	$(this).hide(100);
+	$('#addDocForm').animate({bottom:'-=534'}, 457,'swing');
+	if ($('.hiddenDocForm').first().length === 0){
+			$('#addDocForm').hide(5);
+		};
 })
 
 

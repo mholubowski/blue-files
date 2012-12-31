@@ -21,7 +21,7 @@ group :assets do
   gem 'jquery-datatables-rails'
   gem 'jquery-ui-rails', '~> 2.0.1'
   gem 'jquery-ui-themes'
-
+  gem 'font-awesome-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

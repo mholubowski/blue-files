@@ -1,5 +1,5 @@
 <% @document = current_account.documents.build if signed_in? %>
-<div id="<%= @document.object_id %>" class="hiddenDocForm">
+<div id="<%= @document.object_id %>" class="hiddenDocForm theHider">
 <div id="<%= @document.object_id %>">
 	<hr>
 	<%= form_for @document, validate: true, remote: true do |f| %>
@@ -32,10 +32,11 @@
 	<%= f.text_field :sub_sub_category %>
 
 	<br><br>
-	<div style="display:inline;">
+	<div style="display:;">
 		<%= f.submit "Upload Document", disable_with: "Uploading Document..", class: "btn btn-large btn-primary" %>
 	</div>
+</div>
+	<div class="addThisForm well"><p>Add File</p> <i class="icon-file"></i></div>
 	<% end %>
 	<hr>
-</div>
 </div>
