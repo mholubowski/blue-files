@@ -2,7 +2,7 @@
 <p>Find me in app/views/documents/new.html.erb</p>
 <hr>
 <h2 style="color:green;">Docs: <%= current_account.documents.count %></h2>
-
+<%= link_to "View Docs", documents_path %>
 <div class="row" id="newDocumentsRow">
 	<div class="span5 offset4 center">
 		<div id="addFormContainer">
@@ -17,7 +17,7 @@
 		</div>
 
 		<!-- <div id="addDocForm" class="btn btn-success">Add more <i class="icon-plus icon-white"></i></div>
-		
+
  -->	</div>
 </div>
 
