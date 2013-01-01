@@ -4,7 +4,8 @@ class Document < ActiveRecord::Base
   				  :document_file, :hidden
 
   belongs_to  :account
-
+  
+  after_initialize :init
 
   validates :account_id, 	     presence: true
   validates :category,		     presence: true
@@ -24,4 +25,9 @@ class Document < ActiveRecord::Base
 
   # file upload                  #uploader class
   mount_uploader :document_file, DocumentUploader
+
+  def init
+    self.confirmed = false if self.confirmed.nil?
+  end
+
 end

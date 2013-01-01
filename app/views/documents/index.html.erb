@@ -17,6 +17,7 @@
 	</thead>
 
 <% if signed_in? %>
+	<h2 style="color:red;">TODO: show only confirmed</h2>
 	<tbody>
 	<% @current_account_documents.each do |doc| %>
 	<tr>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130101015628) do
+ActiveRecord::Schema.define(:version => 20130101041031) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130101015628) do
     t.string   "type_of_document"
     t.string   "document_file"
     t.string   "hidden"
+    t.boolean  "confirmed"
   end
 
   create_table "requests", :force => true do |t|
