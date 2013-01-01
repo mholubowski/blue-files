@@ -1,6 +1,28 @@
 <h1>Requests#index</h1>
 <p>Find me in app/views/requests/index.html.erb</p>
-<% current_account.requests.each do |request| %>
-	<h2><%= request.content  %></h2>
-	<h3><%= request.created_at %></h3>
-<% end %>
+<div class="row">
+	<div class="span5">
+		<h4 style="color:red">Using current_account.requests.each do </h4>
+		<ol>
+			<% current_account.requests.each do |request| %>
+			<li>
+			<h2><%= request.content  %></h2>
+			<p>Requested <%= time_ago_in_words(request.created_at) %> ago.</p>
+			</li>
+			<% end %>
+		</ol>
+	</div>
+
+	<div class="span5">
+		<h4 style="color:red">Using @recent_requests.each do </h4>
+		<ol>
+			<% @recent_requests.each do |request| %>
+			<li>
+			<h2><%= request.content  %></h2>
+			<p>Requested <%= time_ago_in_words(request.created_at) %> ago.</p>
+			</li>
+			<% end %>
+		</ol>
+	</div>
+
+</div>

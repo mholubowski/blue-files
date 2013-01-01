@@ -34,6 +34,13 @@ namespace :db do
 										  type_of_document: type_of_document)
 			end
 		end
-
+		25.times do 
+			accounts.each do |account|
+				account.requests.create!(content:["Essay for military science","Econ 10a finals!",
+												  "MCSB 111 Homeworks","Chemistry labs",
+												  "AsAm 127 Midterm Outline", "Psych 1 Notes",
+												  "CS 45A project notes"].sample)
+			end
+		end
 	end
 end

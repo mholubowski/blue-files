@@ -21,4 +21,5 @@ module SessionsHelper
 	def current_account=(account)
 		@current_account = account
 	end
+
 end
