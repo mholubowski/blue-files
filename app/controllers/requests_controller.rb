@@ -15,8 +15,8 @@ class RequestsController < ApplicationController
 		if @request.save
 			respond_to do |format|
 				format.html do    
-					flash.now[:success] = "Successful request posted!"
-					redirect_to requests_path
+					flash[:success] = "Successful request posted!"
+					redirect_to root_path
 				end
         # format.js
 	    	end
