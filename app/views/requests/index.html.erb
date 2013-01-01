@@ -1,0 +1,6 @@
+<h1>Requests#index</h1>
+<p>Find me in app/views/requests/index.html.erb</p>
+<% current_account.requests.each do |request| %>
+	<h2><%= request.content  %></h2>
+	<h3><%= request.created_at %></h3>
+<% end %>

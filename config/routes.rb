@@ -1,5 +1,9 @@
 BlueFiles::Application.routes.draw do
   
+  get "requests/index"
+
+  get "requests/show"
+
   get "requests/new"
 
   get "requests/create"
