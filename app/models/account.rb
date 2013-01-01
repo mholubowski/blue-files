@@ -7,7 +7,8 @@ class Account < ActiveRecord::Base
 
 
    has_many :documents
-
+   has_many :requests
+   
     validates :username, 
    			  presence:   true,
    			  uniqueness: true,

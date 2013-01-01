@@ -1,0 +1,14 @@
+<%= form_for @request, validate: true, remote: false do |f| %>
+
+
+	<%= render 'shared/form_error_messages', object: f.object %>
+	
+	
+	<%= f.label "Request" %>
+	<%= f.text_field :content %>
+
+	<br><br>
+	<div style="display:;">
+		<%= f.submit "Post Request", disable_with: "Posting..", class: "btn btn-large btn-primary" %>
+	</div>
+<% end %>

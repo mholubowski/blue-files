@@ -1,5 +1,13 @@
 BlueFiles::Application.routes.draw do
   
+  get "requests/new"
+
+  get "requests/create"
+
+  get "requests/edit"
+
+  get "requests/destroy"
+
   get "sessions/new"
 
   get "sessions/create"
@@ -20,10 +28,10 @@ BlueFiles::Application.routes.draw do
 
   get "welcome/index"
 
-  get "welcom/index"
 
   resources :accounts
   resources :documents
+  resources :requests
   resources :sessions, only: [:new, :create, :destroy]
 
   root :to => 'welcome#index'
