@@ -1,0 +1,11 @@
+
+<ol>
+	<% @recent_documents.each do |doc| %>
+	<li>
+		<h3><%= doc.category + " " + doc.sub_category %> , <small><%= doc.title  %></small></h3>
+
+		<p>Added <%= time_ago_in_words(doc.created_at) %> ago.</p>
+	</li>
+	<% end %>
+</ol>
+<h4><%= link_to "View All", documents_path %></h4>

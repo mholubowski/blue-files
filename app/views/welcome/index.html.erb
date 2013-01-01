@@ -11,13 +11,18 @@
 
 <div class="row">
 	<div class="span6 well">
-		<h3><%= link_to "Upload Documents", documents_new_path %></h3>
+		<h3>Recently Added</h3>
+		<%= render 'documents/recent_documents_stream' %>
 	</div>
 	<div class="span5 well">
 		<h3>Recent Requests</h3>
+		<div id="recentStreamContainer">
+			
 		<%= render 'requests/recent_requests_stream' %>
 		
 		<%= render 'requests/new_request_form' %>
+			
+		</div>
 	</div>
 </div>
 
