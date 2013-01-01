@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
 
 	def index
-		 @recent_requests = current_account.requests.all(limit: 10)
+		 @recent_requests = current_account.requests.all(limit: 5)
 	end
 
 	def show

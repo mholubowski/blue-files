@@ -13,16 +13,6 @@
 		</ol>
 	</div>
 
-	<div class="span5">
-		<h4 style="color:red">Using @recent_requests.each do </h4>
-		<ol>
-			<% @recent_requests.each do |request| %>
-			<li>
-			<h2><%= request.content  %></h2>
-			<p>Requested <%= time_ago_in_words(request.created_at) %> ago.</p>
-			</li>
-			<% end %>
-		</ol>
-	</div>
+	
 
 </div>
