@@ -4,15 +4,23 @@ class SessionsController < ApplicationController
 
   def create
   	account = Account.find_by_username(params[:session][:username])
-  	puts account
-  	if account && account.authenticate(params[:session][:password])
+    admin_entry = params[:session][:account_admin_password]
+    admin_pass  = account.account_admin_password
+
+  	if account && account.authenticate(params[:session][:password]) && admin_entry.blank?
   		flash[:success] = "success"
-  		#TODO Signin account
   		sign_in(account)
   		redirect_to root_url
-  		#TODO redirect to account page
+
+    elsif account && account.authenticate(params[:session][:password]) && admin_entry == admin_pass
+      flash[:success] = "success as ADMIN"
+      sign_in(account)
+      sign_in_admin(account)
+      redirect_to root_url
+      
   	else
-  		flash[:error] = "error"
+  		flash[:error] = "error" if admin_entry.blank?
+      flash[:error] = "error (Check admin password)" unless admin_entry.blank?
   		redirect_to signin_path
   	end
   end

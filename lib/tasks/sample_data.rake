@@ -1,11 +1,13 @@
 namespace :db do
+	# require 'bcrypt'
 	desc "Fill database with sample account and documents data"
 	task populate: :environment do
 
 		(1..5).each do |n|
-			username  = "testaccount#{n}"
-			password  = "123123"
-			category  = "Department"
+			username   = "testaccount#{n}"
+			password   = "123123"
+			admin_pass = "123456" #BCrypt::Password.create
+			category   = "Department"
 			sub_category = "Course"
 			sub_sub_category = "Professor"
 			Account.create!(username: username,
@@ -14,6 +16,7 @@ namespace :db do
 						    sub_sub_category: sub_sub_category,
 						    password: password,
 						    password_confirmation: password,
+						    account_admin_password: admin_pass,
 						    accept_terms_and_conditions: 1)
 		end 
 

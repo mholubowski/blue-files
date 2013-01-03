@@ -2,11 +2,12 @@
 	<div class="navbar-inner">
 		<div class="container" style="width: auto; padding: 0 20px;">
 			
-			<a class="brand" href="/">Blue Files <small style="color:blue; font-size:12px;">beta</small></a>
+			<a class="brand" href="/">Blue Files <small style="color:#296C8A; font-size:12px;">beta</small></a>
 			
 			
 			
 			<ul class="nav pull-right">
+				<li><%= link_to raw("<i class='icon-wrench'></i> Admin"), "#", style: "color:greenyellow;" if admin? %></li>
 				<li><%= link_to "#{current_account.username}", root_path if signed_in?%> </li>
 				<li><%= link_to "Sign in", signin_path unless signed_in? %></li>
 				<li> <%= link_to "Sign up", signup_path unless signed_in? %></li>

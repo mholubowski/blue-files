@@ -9,6 +9,9 @@
 
 	<%= f.label :password %>
 	<%= f.password_field :password %>
+	<br><br>
+	<%= f.label :account_admin_password %>
+	<%= f.password_field :account_admin_password, placeholder:"only if admin" %>
 	<br>
 	<%= f.submit "Sign in", class: "btn" %>
 
