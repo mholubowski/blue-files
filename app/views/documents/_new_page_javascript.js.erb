@@ -1,48 +1,21 @@
 
-// $.fn.showOne = function(speed){
-// 	$('.hiddenDocForm').first().animate({left:'-=800'}, 457,'swing');
-// 	$('.hiddenDocForm').first().removeClass('hiddenDocForm');
-// 	$('#addDocForm').animate({bottom:'-=534'}, 457,'swing');
-// 	if ($('.hiddenDocForm').first().length === 0){
-// 			$('#addDocForm').hide(5);
-// 		};
-// }
 
-$.fn.showOne = function(thiss,speed){
-	
+// $(document).ready(function(){
 
-	$(this).parent().parent().animate({left:'-=800'}, 457,'swing');
-	$(this).parent().parent().removeClass('hiddenDocForm');
-	$('#addDocForm').animate({bottom:'-=534'}, 457,'swing');
-	if ($('.hiddenDocForm').first().length === 0){
-			$('#addDocForm').hide(5);
-		};
-}
+// 	$('.addThisForm').first().click();
 
-$(document).ready(function(){
+// });
 
-	$('.addThisForm').first().click();
-
-});
-
-// $('#addDocForm').on('click', function(){
-// 	$.fn.showOne(750);
+// $('.addThisForm').on('click', function(){
+// 	var addForm = $(this).parent();
+// 	addForm.animate({right:'-=900'}, 457,'swing');
+// 	addForm.removeClass('hiddenDocForm');
+// 	$(this).hide(100);
 // })
 
-$('.addThisForm').on('click', function(){
-	// $(this).parent().hide('slow');
-	$(this).parent().animate({right:'-=900'}, 457,'swing');
-	$(this).parent().removeClass('hiddenDocForm');
-	$(this).hide(100);
-	$('#addDocForm').animate({bottom:'-=534'}, 457,'swing');
-	if ($('.hiddenDocForm').first().length === 0){
-			$('#addDocForm').hide(5);
-		};
-})
 
-
-$('#reloadButton').click(function() {
-	if (confirm('Reload?')){
-		location.reload(true);
-	}
-});
+// $('#reloadButton').click(function() {
+// 	if (confirm('Reload?')){
+// 		location.reload(true);
+// 	}
+// });

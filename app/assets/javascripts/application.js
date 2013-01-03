@@ -19,10 +19,4 @@
 
 $(document).ready(function(){
 	$('#flash-fade').delay(4000).hide('slow');
-	
 })
-
-
-
-	// screenshot end
-
