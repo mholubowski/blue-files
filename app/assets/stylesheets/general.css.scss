@@ -115,3 +115,76 @@ form[data-remote]{
 		}
 	}
 }
+
+// Streams
+
+.recent-documents-stream, .recent-requests-stream{
+	a{
+		&:hover{
+			text-decoration: none;
+			
+		}
+		& li{
+			color: lighten($lighter-blue, 2%);
+			&:hover{
+				color: lighten($lighter-blue, 6%);
+			}
+		}
+	}
+	li{
+
+		&:hover{
+			background-color:lighten($lighter-blue, 12%);
+		}
+		&:active{
+			background-color:lighten($lighter-blue, 11%);
+		}
+		p.main{
+			color: whitesmoke;
+			font-size: 1.1em;
+			small{
+				color: whitesmoke;
+			}
+		}
+		p.timestamp{
+			color: #999999;
+			font-size: 0.8em;
+			margin-top: -10px;
+		}
+	}
+}
+
+.logo{
+	&:hover{
+		position:relative;
+		bottom:2px;
+	}
+	&:active{
+		background-color:whitesmoke;
+
+	}
+	margin: 20px;
+	max-width:200px;
+	&.big{
+		max-width: 250px;
+	}
+	&.small{
+		max-width: 125px;
+	}
+	&.verysmall{
+		max-width: 75px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

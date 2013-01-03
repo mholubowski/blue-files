@@ -12,7 +12,6 @@
 	<% flash.each do |key, value| %>
 			<div id="flash-fade" class="alert alert-<%= key %>"><%= value %></div>
 	<% end %>
-<h1>current: <%= current_account.username if signed_in? %></h1>	
 <%= yield %>
 </div>
 <%= render 'layouts/footer' %>

@@ -23,6 +23,7 @@ module SessionsHelper
 	def sign_out
 		self.current_account = nil
 		cookies.delete(:remember_token)
+		cookies.delete(:remember_token_admin)
 	end
 
 	def current_account

@@ -1,11 +1,12 @@
+<div class="recent-requests-stream">
+	<ol>
+		<% @recent_requests.each do |request| %>
 
-<h4 style="color:red">Using @recent_requests.each do </h4>
-<ol>
-	<% @recent_requests.each do |request| %>
-	<li>
-		<h3><%= request.content  %></h3>
-		<p>Requested <%= time_ago_in_words(request.created_at) %> ago.</p>
-	</li>
-	<% end %>
-</ol>
-<h4><%= link_to "View All", requests_path %></h4>
+		<li>
+			<p class="main"><%= request.content  %></p>
+			<p class="timestamp">Requested <%= time_ago_in_words(request.created_at) %> ago.</p>
+		</li>
+		<% end %>
+	</ol>
+	<h4><%= link_to "View All", requests_path %></h4>
+</div>

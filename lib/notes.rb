@@ -27,6 +27,13 @@
 
 #TODO documents/id/edit edit form
 
+#TODO Flagged files as wrong
+
+#TODO OPTIONAL auto-reseting pin code to login (V2?)
+
+#TODO OPTIONAL Notes with file upload
+#TODO Comments on files
+	 #| at bottom of file
 General ==============================================
 ======================================================
 
@@ -196,11 +203,10 @@ Admin link in header nav should have a dropdown:
  		Edit files 
  			change category/sub_category and title but not actual file
  			delete file
- 		Confirm files
- 			mark as confirmed or Edit and then confirm
 
  		Mark files as needing cencorship ( V2 ?)
-
+ 	-Notifications
+ 		files flagged as wrong
 
 
 

@@ -1,42 +1,56 @@
 <% if signed_in? %>
 <h1>Welcome to Blue Files</h1>
 <div class="row">
-	<div class="span6 well">
+	<div class="span5 well">
 		<h3><%= link_to "Upload Documents", documents_new_path %></h3>
 	</div>
-	<div class="span5 well">
+	<div class="span5 offset1 well">
 		<h3><%= link_to "View Files", documents_path %></h3>
 	</div>
 </div>
 
 <div class="row">
-	<div class="span6 well">
-		<h3>Recently Added</h3>
-		<%= render 'documents/recent_documents_stream' %>
-	</div>
 	<div class="span5 well">
-		<h3>Recent Requests</h3>
+			<h3>Recent Requests</h3>
 		<div id="recentStreamContainer">
-			
-		<%= render 'requests/recent_requests_stream' %>
-		
-		<%= render 'requests/new_request_form' %>
+			<%= render 'requests/recent_requests_stream' %>
+			<%= render 'requests/new_request_form' %>
 			
 		</div>
+		</div>
+		
+		<div class="span5 offset1 well">
+			<h3>Recently Added</h3>
+			<%= render 'documents/recent_documents_stream' %>
+			
 	</div>
 </div>
 
 <% else %>
 <div class="row">
-<div class="span5 offset4">
-	<h1>Welcome to Blue Files!</h1>
-	<ul>
-		<li>Secure Storage</li>
-		<li>File Management</li>
-		<li>Censorship & Privacy</li>
-	</ul>
-	<div><%= link_to "Sign Up", signup_path, class: "btn btn-primary btn-block" %></div>
-</div>
+	<div class="span5 offset4">
+		<h1>Welcome to Blue Files!</h1>
+		<ul>
+			<li>Secure Storage</li>
+			<li>File Management</li>
+			<li>Censorship & Privacy</li>
+		</ul>
+		<div><%= link_to "Sign Up", signup_path, class: "btn btn-primary btn-block" %></div>
+	</div>
 </div>
 
+<%= image_tag "logo.png", class: "logo big" %>
+<%= image_tag "logo.png", class: "logo" %>
+<%= image_tag "logo.png", class: "logo small" %>
+<%= image_tag "logo.png", class: "logo verysmall" %>
+<br>
+<%= image_tag "logo2.png", class: "logo big" %>
+<%= image_tag "logo2.png", class: "logo" %>
+<%= image_tag "logo2.png", class: "logo small" %>
+<%= image_tag "logo2.png", class: "logo verysmall" %>
+<br>
+<%= image_tag "logo3.png", class: "logo big" %>
+<%= image_tag "logo3.png", class: "logo" %>
+<%= image_tag "logo3.png", class: "logo small" %>
+<%= image_tag "logo3.png", class: "logo verysmall" %>
 <% end %>
