@@ -1,34 +1,5 @@
 BlueFiles::Application.routes.draw do
   
-  get "requests/index"
-
-  get "requests/show"
-
-  get "requests/new"
-
-  get "requests/create"
-
-  get "requests/edit"
-
-  get "requests/destroy"
-
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/destroy"
-
-  get "documents/index"
-
-  get "documents/show"
-
-  get "documents/new"
-
-  get "documents/create"
-
-  get "accounts/create"
-
-  get "accounts/new"
 
   get "welcome/index"
 

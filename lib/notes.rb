@@ -23,6 +23,10 @@
 
 #TODO Clean up Javascript...especiall from docs_new
 
+#TODO on recently_added stream add "Not yet Confirmed" badges
+
+#TODO documents/id/edit edit form
+
 General ==============================================
 ======================================================
 
@@ -167,6 +171,35 @@ signin -> username / email / pin creates session
   		   account show   	
 
 
+=========================================================
+========================Admin============================
+
+Admin link in header nav should have a dropdown:
+  |
+  |\Account Settings
+  |
+  |
+  |\Manage Files
+  |
+  |
+  |\
+  |
+  |
+
+ Things Needed:
+ 	-Manage general account info:
+ 	 	Username (? or only by calling ?)
+ 	 	Address
+ 	 	emails_for_pin
+
+ 	-Manage Files
+ 		Edit files 
+ 			change category/sub_category and title but not actual file
+ 			delete file
+ 		Confirm files
+ 			mark as confirmed or Edit and then confirm
+
+ 		Mark files as needing cencorship ( V2 ?)
 
 
 

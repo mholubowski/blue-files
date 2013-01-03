@@ -1,0 +1,35 @@
+<%= form_for @document, validate: true, remote: false do |f| %>
+
+
+
+	<%= f.hidden_field :hidden, value: @document.object_id  %>
+
+	<%= render 'shared/form_error_messages', object: f.object %>
+	
+	<p><small>document.id <%= @document.object_id %></small></p>
+	
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :type_of_document %>
+	<%= f.select :type_of_document, ['Test','Essay','Homework', 'Other'] %>
+
+	<%= f.label :number_of_pages %>
+	<%= f.select :number_of_pages, (1..15).to_a %>
+
+	<%= f.label current_account.category %>
+	<%= f.text_field :category %>
+
+	<%= f.label current_account.sub_category %>
+	<%= f.text_field :sub_category %>
+
+	<%= f.label current_account.sub_sub_category %>
+	<%= f.text_field :sub_sub_category %>
+
+	<br><br>
+
+<%= f.submit "Update File", disable_with: "Updating..", class: "btn btn-large btn-primary" %>
+<% end %>
+
+<h1 style="color:red;">TODO: DELETE FILE button</h1>
+<h1 style="color:red;">TODO: PREVIEW/thumbnail or view file button</h1>

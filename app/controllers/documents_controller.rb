@@ -30,4 +30,19 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def edit
+    @document = Document.find(params[:id])
+  end
+
+  def update
+    @document = Document.find(params[:id])
+    if @document.update_attributes(params[:document])
+      flash.now[:success] = "Successfully Updated"
+      render 'edit'
+    else
+      flash.now[:error] = "Please try again"
+      render 'edit'
+    end
+  end
+
 end
