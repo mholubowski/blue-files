@@ -29,12 +29,14 @@ namespace :db do
 				title            = ['Midterm Essay', 'Spring 2010 Final', 'Final B', 'Quiz 2'].sample
 				number_of_pages  = (1..13).to_a.sample
 				type_of_document = ['Test', 'Essay', 'Homework'].sample
+				original_comment = "Some clever and helpful notes about this here document, good luck!"
 				account.documents.create!(category: category, 
 										  sub_category: sub_category,
 										  sub_sub_category: sub_sub_category,
 										  number_of_pages:  number_of_pages,
 										  title: title,
-										  type_of_document: type_of_document)
+										  type_of_document: type_of_document,
+										  original_comment: original_comment)
 			end
 		end
 		25.times do 

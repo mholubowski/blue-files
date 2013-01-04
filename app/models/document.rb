@@ -1,7 +1,7 @@
 class Document < ActiveRecord::Base
   attr_accessible :category, :sub_category, :sub_sub_category,
   				  :type_of_document, :number_of_pages, :title,
-  				  :document_file, :hidden
+  				  :document_file, :hidden, :original_comment
 
   belongs_to  :account
   
