@@ -1,15 +1,39 @@
 <div>
-   
- </div>
 
- <div class="row">
- 	<div class="span8 offset2 well"> 
- 		<p>Original Comment: test<%= @document.original_comment %></p>
- 		<p class="timestamp">Added <%= time_ago_in_words(@document.created_at) %> ago.</p>
- 		<hr>
+</div>
 
- 		<% @comments.each do |comment| %>
- 		<p><%= comment.content %></p>
- 		<% end %>
- 	</div>
- </div>
+<div class="row">
+	<div class="span8 offset2 well"> 
+		
+		<h1 class="comments-header">Comments</h1>
+
+		<p><%= @document.original_comment %></p>
+		<p class="timestamp">Original Comment </p>
+		<hr>
+
+		<div class="comments-wrapper">
+
+			<% @comments.each do |comment| %>
+				<ul>
+					<li>
+						<p><%= comment.content %></p> 
+						<p class="timestamp"><%= time_ago_in_words(comment.created_at) %> ago</p class="timestamp">
+					</li>
+				</ul>
+			<% end %>
+
+			<%= form_for @comment, validate: true, remote: false do |f| %>
+				<%= render 'shared/form_error_messages', object: f.object %>
+
+				<%= f.label "Comment" %>
+				<%= f.text_field :content, placeholder: ' "Helpful comment" ' %>
+
+				<%= f.hidden_field :document_id %>
+
+				<%= f.submit "Post", disable_with: "Posting..", class: "btn btn-small btn-primary" %>
+			<% end %>
+
+		</div>
+
+	</div>
+</div>

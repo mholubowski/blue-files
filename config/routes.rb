@@ -44,6 +44,7 @@ BlueFiles::Application.routes.draw do
 
   resources :accounts
   resources :documents
+  resources :document_comments
   resources :requests
   resources :sessions, only: [:new, :create, :destroy]
 

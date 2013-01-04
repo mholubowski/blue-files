@@ -181,7 +181,37 @@ form[data-remote]{
 	}
 }
 
+// Comments
+.comments-header{
+	text-align: center;
+	text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+	color: lighten($lighter-blue, 2%);
+	margin-top: -10px;
+	margin-bottom: 5px;
+}
 
+div.comments-wrapper{
+	ul{
+		li{
+			color: lighten($lighter-blue, 2%); //bullet points
+			padding: 3px 15px 3px 5px;
+			background-color:lighten($lighter-blue, 9%);
+			-webkit-box-shadow: 2px 3px 0px -1px lighten($lighter-blue, 7%);
+			&:hover{
+				background-color:lighten($lighter-blue, 8%);
+			}
+			
+			p{
+				&.timestamp{
+					color: #999999;
+					font-size: 0.8em;
+					margin-top: -10px;
+					// float:right;
+				}
+			}
+		}
+	}
+}
 
 
 

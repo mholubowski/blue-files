@@ -7,6 +7,8 @@ class DocumentsController < ApplicationController
   def show
    	@document = Document.find(params[:id])
     @comments  = Document.find(params[:id]).document_comments.all
+    # for new comment
+    @comment =   Document.find(params[:id]).document_comments.build if signed_in?
   end
 
   def new
