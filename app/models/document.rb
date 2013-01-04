@@ -21,7 +21,7 @@ class Document < ActiveRecord::Base
   #              format: %r{\.(pdf|jpg|jpeg)$}i, #TODO format and error messages
   #              uniqueness: { scope: :title }
 
-  validates :number_of_pages,  numericality: { only_integer: true }
+  # validates :number_of_pages,  numericality: { only_integer: true }
 
   # file upload                  #uploader class
   mount_uploader :document_file, DocumentUploader
