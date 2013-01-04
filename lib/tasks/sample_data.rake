@@ -39,6 +39,7 @@ namespace :db do
 										  original_comment: original_comment)
 			end
 		end
+
 		25.times do 
 			accounts.each do |account|
 				account.requests.create!(content:["Essay for military science","Econ 10a finals!",
@@ -47,5 +48,15 @@ namespace :db do
 												  "CS 45A project notes"].sample)
 			end
 		end
+
+		documents = Document.all
+		3.times do
+			documents.each do |doc|
+				doc.document_comments.create!(content: ["Sample comment for the comments section, this files is great",
+														"Careful! problems number 3 and 4 on the last page are wrong",
+														"This class was just aweful, don't take it nubs"].sample)
+			end
+		end
+
 	end
 end

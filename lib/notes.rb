@@ -34,6 +34,14 @@
 #TODO OPTIONAL Notes with file upload
 #TODO Comments on files
 	 #| at bottom of file
+
+#TODO Add 'most viewed documents stream'
+	#  \ in douments contoller add method to 
+		 # add +1 to 'views' (migrate) and stick in show action
+		 # ! show as tabbed views in index
+
+#TODO Add 'most commented'
+
 General ==============================================
 ======================================================
 

@@ -4,6 +4,7 @@ class Document < ActiveRecord::Base
   				  :document_file, :hidden, :original_comment
 
   belongs_to  :account
+  has_many    :document_comments, dependent: :destroy
   
   after_initialize :init
 

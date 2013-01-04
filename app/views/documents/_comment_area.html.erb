@@ -1,3 +1,15 @@
 <div>
-    <h2>Comment area test<%= @document.original_comment %></h2>
+   
+ </div>
+
+ <div class="row">
+ 	<div class="span8 offset2 well"> 
+ 		<p>Original Comment: test<%= @document.original_comment %></p>
+ 		<p class="timestamp">Added <%= time_ago_in_words(@document.created_at) %> ago.</p>
+ 		<hr>
+
+ 		<% @comments.each do |comment| %>
+ 		<p><%= comment.content %></p>
+ 		<% end %>
+ 	</div>
  </div>

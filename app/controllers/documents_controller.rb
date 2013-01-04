@@ -6,6 +6,7 @@ class DocumentsController < ApplicationController
 
   def show
    	@document = Document.find(params[:id])
+    @comments  = Document.find(params[:id]).document_comments.all
   end
 
   def new

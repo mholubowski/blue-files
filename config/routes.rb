@@ -1,5 +1,11 @@
 BlueFiles::Application.routes.draw do
 
+  get "document_comments/new"
+
+  get "document_comments/create"
+
+  get "document_comments/destroy"
+
   get "requests/index"
 
   get "requests/show"

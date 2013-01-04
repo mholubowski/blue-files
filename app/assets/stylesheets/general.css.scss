@@ -135,9 +135,10 @@ form[data-remote]{
 		}
 	}
 	li{
-
+		color: lighten($lighter-blue, 2%); //bullet points
 		&:hover{
 			background-color:lighten($lighter-blue, 12%);
+			color: lighten($lighter-blue, 6%);
 		}
 		&:active{
 			background-color:lighten($lighter-blue, 11%);
