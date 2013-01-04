@@ -19,8 +19,8 @@
 	<%= f.label :type_of_document %>
 	<%= f.select :type_of_document, ['Test','Essay','Homework', 'Other'] %>
 
-	<%= f.label :number_of_pages %>
-	<%= f.select :number_of_pages, (1..15).to_a %>
+	<!-- Hidden # of pages -->
+	<%= f.hidden_field :number_of_pages, value: 3 %>
 
 	<%= f.label current_account.category %>
 	<%= f.text_field :category %>

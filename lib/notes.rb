@@ -27,7 +27,7 @@
 
 #TODO documents/id/edit edit form
 
-#TODO Flagged files as wrong
+#TODO Flagged files as wrongm (Yes!!)
 
 #TODO OPTIONAL auto-reseting pin code to login (V2?)
 
@@ -42,6 +42,9 @@
 
 #TODO Add 'most commented'
 
+#TODO Add Year / Quarter
+#TODO Recently views at bottom (like amazon)
+	   # talk to J west
 General ==============================================
 ======================================================
 
