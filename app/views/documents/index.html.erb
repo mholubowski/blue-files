@@ -1,10 +1,7 @@
-<h1>Documents#index</h1>
-<p>All Document</p>
-<h2 style="color:red;">TODO should display just documents of signed in account</h2>
-<p style="color:green">category: <%= current_account.category %></p>
-<p style="color:green">sub_category: <%= current_account.sub_category %></p>
-<p style="color:green">sub_sub_category: <%= current_account.sub_sub_category %></p>
-
+<h1>All Documents</h1>
+<br>
+<br>
+<br>
 <table id="documentsTable" class="display">
 	<thead>
 	<tr>
@@ -17,7 +14,6 @@
 	</thead>
 
 <% if signed_in? %>
-	<h2 style="color:red;">TODO: show only confirmed</h2>
 	<tbody>
 	<% @current_account_documents.each do |doc| %>
 	<tr>

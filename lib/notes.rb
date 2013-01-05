@@ -27,7 +27,7 @@
 
 #TODO documents/id/edit edit form
 
-#TODO Flagged files as wrongm (Yes!!)
+#TODO Flagged files as wrong (Yes!!)
 
 #TODO OPTIONAL auto-reseting pin code to login (V2?)
 
@@ -45,6 +45,10 @@
 #TODO Add Year / Quarter
 #TODO Recently views at bottom (like amazon)
 	   # talk to J west
+
+#TODO Move search to left side of dataTable
+
+#TODO Maybe remove 'requests'  ?
 General ==============================================
 ======================================================
 
