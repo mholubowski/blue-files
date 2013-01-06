@@ -129,13 +129,18 @@ form[data-remote]{
 		}
 		& li{
 			color: lighten($lighter-blue, 2%);
+			// HERE
+			-webkit-box-shadow: 2px 3px 0px -1px lighten($lighter-blue, 7%);
 			&:hover{
 				color: lighten($lighter-blue, 6%);
 			}
 		}
 	}
 	li{
+		padding-left: 5px;
 		color: lighten($lighter-blue, 2%); //bullet points
+		// And HERE
+		-webkit-box-shadow: 2px 3px 0px -1px lighten($lighter-blue, 7%);
 		&:hover{
 			background-color:lighten($lighter-blue, 12%);
 			color: lighten($lighter-blue, 6%);

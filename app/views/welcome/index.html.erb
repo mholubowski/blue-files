@@ -17,13 +17,39 @@
 			<%= render 'requests/new_request_form' %>
 			
 		</div>
-		</div>
-		
-		<div class="span5 offset1 well">
-			<h3>Recently Added</h3>
-			<%= render 'documents/recent_documents_stream' %>
-			
 	</div>
+		
+
+
+		<div class="span5 offset1 well">
+
+			<ul class="nav nav-tabs" id="myTab">
+				<li class="active"><a href="#added">Recently Added</a></li>
+				<li><a href="#viewed">Most Viewed </a></li>
+				<li><a href="#commented">Most Commented</a></li>
+			</ul>
+
+			<div class="tab-content">
+				<div class="tab-pane active" id="added">
+					<%= render 'documents/recent_documents_stream' %>
+				</div>
+				<div class="tab-pane" id="viewed">
+				<%= render 'documents/most_viewed_documents_stream' %>
+			</div>
+				<div class="tab-pane" id="commented">
+					<%= render 'documents/most_commented_documents_stream' %>
+				</div>
+			</div>
+
+
+			
+			
+
+
+		</div>
+
+
+
 </div>
 
 <% else %>

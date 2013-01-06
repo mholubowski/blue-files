@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require dataTables/jquery.dataTables
 //= require rails.validations
 //= require jquery.remotipart
@@ -19,4 +20,6 @@
 
 $(document).ready(function(){
 	$('#flash-fade').delay(4000).hide('slow');
+
+	
 })
