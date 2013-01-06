@@ -33,12 +33,13 @@ BlueFiles::Application.routes.draw do
 
   get "documents/create"
 
+  get "documents/views"
+  get "documents/comments"
 
   get "accounts/create"
 
   get "accounts/new"
 
-  get "documents/views"
 
   get "welcome/index"
 
@@ -51,7 +52,8 @@ BlueFiles::Application.routes.draw do
 
   root :to => 'welcome#index'
 
-  match '/documents/views', to: 'documents#views'
+  match '/couments/comments', to: 'documents#comments'
+  match '/documents/views',  to: 'documents#views'
   match '/signup',  to: 'accounts#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete

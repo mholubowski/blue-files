@@ -10,6 +10,12 @@ class DocumentsController < ApplicationController
               ) if signed_in?
   end
 
+  def comments
+    # @docsByComments = Document.all.sort{ |a,b| a.document_comments.count <=> b.document_comments.count }
+    @docsByComments = Document.all(
+                      order: 'comments.count DESC')
+  end
+
 
   def show
    	@document = Document.find(params[:id])
