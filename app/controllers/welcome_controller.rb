@@ -6,5 +6,10 @@ class WelcomeController < ApplicationController
   	@recent_documents = current_account.documents.all(
   						order: 'created_at DESC', 
   						limit:  5) if signed_in?
+
+  	@docsByViews = Document.all(
+  						order: 'views DESC',
+  						limit:  5) if signed_in?
+
   end
 end

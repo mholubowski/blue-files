@@ -5,8 +5,9 @@ class DocumentsController < ApplicationController
   end
 
   def views #to show docs ordered by views
-    @docsByViews = Document.all.sort_by { |doc| -doc.views }
-
+    @docsByViews = Document.all(
+              order: 'views DESC'
+              ) if signed_in?
   end
 
 
