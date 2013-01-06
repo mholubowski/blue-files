@@ -1,0 +1,7 @@
+<h2>views</h2>
+<% n = 0 %>
+<% @docsByViews.each do |doc| %>
+	<% n += 1 %>
+	<p><%= link_to doc.title , doc %> <br> Views: <%= doc.views %></p>
+	<% break if n == 10 %>
+<% end %>

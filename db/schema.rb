@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130104024703) do
+ActiveRecord::Schema.define(:version => 20130106030257) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20130104024703) do
     t.string   "hidden"
     t.boolean  "confirmed"
     t.string   "original_comment"
+    t.integer  "views"
   end
 
   create_table "requests", :force => true do |t|
