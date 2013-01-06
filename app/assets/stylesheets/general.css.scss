@@ -121,7 +121,8 @@ form[data-remote]{
 
 // Streams
 
-.recent-documents-stream, .recent-requests-stream, .most-views-stream{
+.recent-documents-stream, .recent-requests-stream,
+.most-views-stream, .most-comments-stream{
 	a{
 		&:hover{
 			text-decoration: none;

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106030257) do
+ActiveRecord::Schema.define(:version => 20130106101844) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20130106030257) do
     t.boolean  "confirmed"
     t.string   "original_comment"
     t.integer  "views"
+    t.integer  "comment_count"
   end
 
   create_table "requests", :force => true do |t|

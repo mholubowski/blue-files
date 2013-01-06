@@ -11,5 +11,9 @@ class WelcomeController < ApplicationController
   						order: 'views DESC',
   						limit:  5) if signed_in?
 
+    @docsByComments = Document.all(
+              order: 'comment_count DESC',
+              limit: 5) if signed_in?
+
   end
 end

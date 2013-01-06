@@ -13,7 +13,7 @@ class DocumentsController < ApplicationController
   def comments
     # @docsByComments = Document.all.sort{ |a,b| a.document_comments.count <=> b.document_comments.count }
     @docsByComments = Document.all(
-                      order: 'comments.count DESC')
+                      order: 'comment_count DESC')
   end
 
 

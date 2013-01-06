@@ -1,1 +1,17 @@
-<h2>MOST COMMENTED stream</h2>
+<div class="most-comments-stream">
+
+	<ul>
+		<% @docsByComments.each do |doc| %>
+		<a href="/documents/<%= doc.id %>">
+			<li>
+				<p class="main"><%= doc.category + " " + doc.sub_category %> , <small><%= doc.title  %></small></p>
+
+				<p class="timestamp"> <span style="color: yellowgreen;"><%= doc.comment_count %></span> comments</p>
+			</li>
+		</a>
+		<% end %>
+	</ul>
+	<h4><%= link_to "View All", "/documents/comments" %></h4>
+	
+</div>
+

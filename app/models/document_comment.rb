@@ -9,7 +9,9 @@ class DocumentComment < ActiveRecord::Base
   private
   	def count_view
   		id = self.document_id
-  		Document.find(id).comment_count += 1
+  		num = Document.find(id).comment_count + 1
+  		Document.find(id).update_attributes(comment_count: num)
+  		puts "id: #{id}, comment_count: #{num}"
   	end
 
 end

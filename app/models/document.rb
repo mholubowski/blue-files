@@ -1,7 +1,8 @@
 class Document < ActiveRecord::Base
   attr_accessible :category, :sub_category, :sub_sub_category,
   				  :type_of_document, :number_of_pages, :title,
-  				  :document_file, :hidden, :original_comment, :views
+  				  :document_file, :hidden, :original_comment, :views,
+            :comment_count
 
   belongs_to  :account
   has_many    :document_comments, dependent: :destroy
@@ -30,6 +31,7 @@ class Document < ActiveRecord::Base
   def init
     self.confirmed = false if self.confirmed.nil?
     self.views     = 0     if self.views.nil?
+    self.comment_count = 0     if self.comment_count.nil?
   end
 
 end
