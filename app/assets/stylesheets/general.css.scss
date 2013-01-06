@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 @import "variables";
 .well{
 	background-color:lighten($lighter-blue, 10%);
@@ -185,6 +186,9 @@ form[data-remote]{
 	&.verysmall{
 		max-width: 75px;
 	}
+	&.icon{
+		max-width: 30px;
+	}
 }
 
 // Comments
@@ -221,7 +225,44 @@ div.comments-wrapper{
 
 
 
-
+#upload, #view{
+	&:hover{
+		text-decoration: none;
+	}
+	h1{
+		font-size: 28px;
+		text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+		text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+        
+        &:hover{
+        	color: lighten($lighter-blue, 35%);
+        }     
+        &:active{
+        	color: lighten($lighter-blue, 10%);
+        }
+	}
+	text-align: center;
+	i{
+		margin-left: 5px;
+		margin-top: 2px;
+		font-size: 50px;
+		text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+		text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+		// color: lighten($lighter-blue, 2%);
+		color: white;
+		// margin-left: 60px;
+		&:hover{
+			color: lighten($lighter-blue, 16%);
+		}
+		&:active{
+        	color: lighten($lighter-blue, 10%);
+        }
+	}
+}
 
 
 

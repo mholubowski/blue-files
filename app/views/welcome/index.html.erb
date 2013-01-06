@@ -1,52 +1,52 @@
 <% if signed_in? %>
-<h1>Welcome to Blue Files</h1>
+<h1><%= image_tag "logo2.png", class: "logo verysmall" %> Welcome to Blue Files </h1> 
 <div class="row">
-	<div class="span5 well">
-		<h3><%= link_to "Upload Documents", documents_new_path %></h3>
-	</div>
-	<div class="span5 offset1 well">
-		<h3><%= link_to "View Files", documents_path %></h3>
-	</div>
+	<a id="upload" href="/documents/new" class="span5 well">
+		<h1> Upload Documents <i class="icon-upload"></i> </h1>
+	</a>
+	<a id="view" href="/documents/new" class="span5 offset1 well">
+		<h1> View Documents <i class="icon-file"></i> </h1>
+	</a>
 </div>
 
 <div class="row">
 	<div class="span5 well">
-			<h3>Recent Requests</h3>
+		<h3>Recent Requests</h3>
 		<div id="recentStreamContainer">
 			<%= render 'requests/recent_requests_stream' %>
 			<%= render 'requests/new_request_form' %>
 			
 		</div>
 	</div>
-		
 
 
-		<div class="span5 offset1 well">
 
-			<ul class="nav nav-tabs" id="myTab">
-				<li class="active"><a href="#added">Recently Added</a></li>
-				<li><a href="#viewed">Most Viewed </a></li>
-				<li><a href="#commented">Most Commented</a></li>
-			</ul>
+	<div class="span5 offset1 well">
 
-			<div class="tab-content">
-				<div class="tab-pane active" id="added">
-					<%= render 'documents/recent_documents_stream' %>
-				</div>
-				<div class="tab-pane" id="viewed">
+		<ul class="nav nav-tabs" id="myTab">
+			<li class="active"><a href="#added">Recently Added</a></li>
+			<li><a href="#viewed">Most Viewed </a></li>
+			<li><a href="#commented">Most Commented</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div class="tab-pane active" id="added">
+				<%= render 'documents/recent_documents_stream' %>
+			</div>
+			<div class="tab-pane" id="viewed">
 				<%= render 'documents/most_viewed_documents_stream' %>
 			</div>
-				<div class="tab-pane" id="commented">
-					<%= render 'documents/most_commented_documents_stream' %>
-				</div>
+			<div class="tab-pane" id="commented">
+				<%= render 'documents/most_commented_documents_stream' %>
 			</div>
-
-
-			
-			
-
-
 		</div>
+
+
+
+
+
+
+	</div>
 
 
 
@@ -62,9 +62,9 @@
 			<li>Censorship & Privacy</li>
 		</ul>
 		<div class="well">
-		<%= link_to "Sign in", signin_path, class: "btn btn-success btn-large btn-block" %>
-		<br><br>
-		<%= link_to "Sign Up", signup_path, class: "btn btn-primary btn-block" %>
+			<%= link_to "Sign in", signin_path, class: "btn btn-success btn-large btn-block" %>
+			<br><br>
+			<%= link_to "Sign Up", signup_path, class: "btn btn-primary btn-block" %>
 		</div>
 	</div>
 </div>
@@ -73,19 +73,23 @@
 <%= image_tag "logo.png", class: "logo" %>
 <%= image_tag "logo.png", class: "logo small" %>
 <%= image_tag "logo.png", class: "logo verysmall" %>
+<%= image_tag "logo.png", class: "logo icon" %>
 <br>
 <%= image_tag "logo2.png", class: "logo big" %>
 <%= image_tag "logo2.png", class: "logo" %>
 <%= image_tag "logo2.png", class: "logo small" %>
 <%= image_tag "logo2.png", class: "logo verysmall" %>
+<%= image_tag "logo2.png", class: "logo icon" %>
 <br>
 <%= image_tag "logo3.png", class: "logo big" %>
 <%= image_tag "logo3.png", class: "logo" %>
 <%= image_tag "logo3.png", class: "logo small" %>
 <%= image_tag "logo3.png", class: "logo verysmall" %>
+<%= image_tag "logo3.png", class: "logo icon" %>
 <br>
 <%= image_tag "logo4.png", class: "logo big" %>
 <%= image_tag "logo4.png", class: "logo" %>
 <%= image_tag "logo4.png", class: "logo small" %>
 <%= image_tag "logo4.png", class: "logo verysmall" %>
+<%= image_tag "logo4.png", class: "logo icon" %>
 <% end %>
