@@ -1,7 +1,18 @@
 <h2>views</h2>
-<% n = 0 %>
-<% @docsByViews.each do |doc| %>
-	<% n += 1 %>
-	<p><%= link_to doc.title , doc %> <br> Views: <%= doc.views %></p>
-	<% break if n == 10 %>
-<% end %>
+
+<div class="most-views-stream">
+
+	<ul>
+		<% @docsByViews.each do |doc| %>
+		<a href="/documents/<%= doc.id %>">
+		<li>
+			<p class="main"><%= doc.category + " " + doc.sub_category %> , <small><%= doc.title  %></small></p>
+
+			<p class="timestamp"> <span style="color: yellowgreen;"><%= doc.views %></span> views</p>
+		</li>
+		</a>
+		<% end %>
+	</ul>
+	<h4><%= link_to "View All", "/documents/views" %></h4>
+	
+</div>
