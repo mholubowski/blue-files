@@ -17,9 +17,12 @@
 $(function(){
 	
 	$("#documentsTable").dataTable(
-		{ sPaginationType: "full_numbers", 
-		  bJQueryUI: true,
-		  "iDisplayLength": 20 }
+		{ 
+		  // sPaginationType: false,
+		 "bScrollInfinite": true,
+    	 "sScrollY": "500px",
+		  bJQueryUI: 		 true,
+		  "iDisplayLength":  50   }
 		);
 
 	$('form[data-remote]').on('ajax:beforeSend, ajax:remotipartSubmit', function() {
