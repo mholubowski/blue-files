@@ -3,7 +3,7 @@ namespace :db do
 	desc "Fill database with sample account and documents data"
 	task populate: :environment do
 
-		(1..5).each do |n|
+		(1..2).each do |n|
 			username   = "testaccount#{n}"
 			password   = "123123"
 			admin_pass = "123456" #BCrypt::Password.create
@@ -34,27 +34,34 @@ namespace :db do
 										  sub_category: sub_category,
 										  sub_sub_category: sub_sub_category,
 										  number_of_pages:  number_of_pages,
-										  title: title,
 										  type_of_document: type_of_document,
-										  original_comment: original_comment)
+										  original_comment: original_comment,
+										  title: title,
+										  views: (1..200).to_a.sample)
 			end
 		end
 
 		25.times do 
 			accounts.each do |account|
-				account.requests.create!(content:["Essay for military science","Econ 10a finals!",
-												  "MCSB 111 Homeworks","Chemistry labs",
-												  "AsAm 127 Midterm Outline", "Psych 1 Notes",
+				account.requests.create!(content:["Essay for military science",
+												  "Econ 10a finals!",
+												  "MCSB 111 Homeworks",
+												  "Chemistry labs",
+												  "AsAm 127 Midterm Outline", 
+												  "Psych 1 Notes",
 												  "CS 45A project notes"].sample)
 			end
 		end
 
 		documents = Document.all
-		3.times do
-			documents.each do |doc|
+		documents.each do |doc|
+			n = 0
+		rand(20).times do
 				doc.document_comments.create!(content: ["Sample comment for the comments section, this files is great",
 														"Careful! problems number 3 and 4 on the last page are wrong",
 														"This class was just aweful, don't take it nubs"].sample)
+				n += 1
+				puts n
 			end
 		end
 

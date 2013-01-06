@@ -5,14 +5,23 @@
 	<ul>
 		<% @docsByViews.each do |doc| %>
 		<a href="/documents/<%= doc.id %>">
-		<li>
-			<p class="main"><%= doc.category + " " + doc.sub_category %> , <small><%= doc.title  %></small></p>
+			<li>
+				<p class="main"><%= doc.category + " " + doc.sub_category %> , <small><%= doc.title  %></small></p>
 
-			<p class="timestamp"> <span style="color: yellowgreen;"><%= doc.views %></span> views</p>
-		</li>
+				<p class="timestamp"> <span style="color: yellowgreen;"><%= doc.views %></span> views</p>
+			</li>
 		</a>
 		<% end %>
 	</ul>
 	<h4><%= link_to "View All", "/documents/views" %></h4>
 	
+</div>
+
+<div style="width:200px, background-color: #000">
+	<% @docsByViews.each do |doc| %>
+		<% v = doc.views.to_s %>
+		<% v = v + "px" %>
+		<hr class="graph-line" style="border: none; border-bottom: 1px solid white; margin: 1px; backround-color: white; width: <%= v %>">
+	<% end %>
+
 </div>
