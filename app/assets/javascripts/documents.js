@@ -20,8 +20,9 @@ $(function(){
 		{ 
 		  // sPaginationType: false,
 		 "bScrollInfinite": true,
-    	 "sScrollY": "500px",
-		  bJQueryUI: 		 true,
+    	 "sScrollY":   "500px",
+		  "bJQueryUI":  true,
+		  "bStateSave": true,
 		  "iDisplayLength":  50   }
 		);
 
