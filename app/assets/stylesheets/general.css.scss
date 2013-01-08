@@ -258,6 +258,53 @@ div.comments-wrapper{
 	}
 }
 
+//Recently Viewed Stream
+#recently-viewed-container{
+	min-width: 1000px;
+}
+#recently-viewed-header{
+	text-align: center;
+	font-weight: 100;
+}
+
+div#recently-viewed{
+	text-align: center;
+	height: 100px;
+
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.45) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.35)), color-stop(100%,rgba(0,0,0,0.45))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.45) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.45) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.45) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.45) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', endColorstr='#73000000',GradientType=0 ); /* IE6-9 */
+
+
+	ul{
+		list-style-type: none;
+		padding-top: 20px;
+		a{
+			padding: 10px 0px 50px 0px;
+			margin: 10px 20px;
+			background-color: rgba(255, 255, 255, 0.09);
+			border: 1px solid rgba(255, 255, 255, 0.06);
+			opacity: 0.6;
+			&:hover{
+				opacity: 1.0;
+				text-decoration: none;
+				position: relative;
+				bottom: 1px;
+			
+			}
+			li{
+				display: inline;
+				p{
+					display: inline;
+				}
+			}
+		}
+	}
+}
 
 
 

@@ -1,10 +1,23 @@
-<ul>
-	<% unless cookies[:recently_viewed].nil? %>
-	<% n = 0 %>
-		<% cookies[:recently_viewed].split("%").reverse.each do |doc|  %>
-		<li><%= link_to Document.find(doc).title, Document.find(doc) %></li>
-		<% n += 1 %>
-		<% break if n == 5 %>
-	<% end %>
-	<% end %>
-</ul>
+
+<div id="recently-viewed-container">
+	<h4 id="recently-viewed-header">Recently Viewed</h4>
+	<div id="recently-viewed">
+		<ul>
+			<% unless cookies[:recently_viewed].nil? %>
+			<% n = 0 %>
+			<% cookies[:recently_viewed].split("%").reverse.each do |id|  %>
+			<% doc = Document.find(id) %>
+			<a href="/documents/<%= id %>">
+				<li>
+					<p class="main"><%= doc.category + " " + doc.sub_category %> </p> 
+					<p class="main">  <small><%= doc.title  %></small></p>
+					
+				</li>
+			</a>
+			<% n += 1 %>
+			<% break if n == 5 %>
+			<% end %>
+			<% end %>
+		</ul>
+	</div>
+</div>
