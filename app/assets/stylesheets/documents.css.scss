@@ -4,6 +4,50 @@
 
 // PDF Viewer
 @import "variables";
+
+// Documents control section
+div#hud{
+
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.30) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.25)), color-stop(100%,rgba(0,0,0,0.30))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', endColorstr='#73000000',GradientType=0 ); /* IE6-9 */
+
+height: 100px;
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 25px;
+
+	div.info{
+		p.first{
+
+		}
+		p.second{
+			span{
+				margin-right: 21px;
+			}
+		}
+		p.third{
+			span{
+				margin-right: 10px;
+			}
+		}
+		p.fourth{
+			span{
+				margin-right: 38px;
+			}
+		}
+		p span{
+			color: #999999;
+			font-size: 0.8em;
+		}
+	}
+
+}
+
 .page-count{
 	color: white;
 }
@@ -47,4 +91,6 @@
 		height: 120px;
 	}
 }
+
+
 

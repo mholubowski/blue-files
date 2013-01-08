@@ -1,59 +1,78 @@
 
-<span class="label label-important">
-  <i class="icon-edit"></i> <%= link_to "Admin Edit", edit_document_path(@document) if admin? %>
-</span>
 
-<table>
-  <h1 style="color:pink;">Views: <%= @document.views %></h1>
-	<tr>
-		<td><%= @document.category %></td>
-		<td><%= @document.sub_category %></td>
-		<td><%= @document.sub_sub_category %></td>
-		<td><%= @document.title %></td>
-	</tr>
-</table>
+<div id="hud">
+
+
+
+  <div class="row">
+
+    <div class="span3 info">
+      <p class="first"><span><%= current_account.category %>:</span> <%= @document.category %></p>
+      <p class="second"><span><%= current_account.sub_category %>:</span> <%= @document.sub_category %></p>
+      <p class="third"><span><%= current_account.sub_sub_category %>:</span> <%= @document.sub_sub_category %></p>
+      <p class="fourth"><span>title:</span> <%= @document.title %></p>
+    </div>
+
+    <div class="span3">
+      <p class="timestamp"> <span style="color: yellowgreen;"><i class="icon-signal"></i> <%= @document.views %></span> views</p>
+
+      <a class="smoothscroll" href="#comments-link"><p class="timestamp"> <span style="color: yellowgreen;"><i class="icon-comment-alt"></i> <%= @document.comment_count %></span> comments</p></a>
+    </div>
+
+    <div id="admin-controls"class="span3 pull-right well">
+      <span class="label label-important">
+        <i class="icon-edit"></i> <%= link_to "Admin Edit", edit_document_path(@document) if admin? %>
+        <p> greyed out admin section</p>
+      </span>
+    </div>
+
+  </div>
+
+</div>
+
+
 
 <div style="text-align:center;">
 
-    <span class="page-count">Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-  </div>
+  <span class="page-count">Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+</div>
 
-  <div class="row" style="display:table;position: relative; overflow: hidden;">
+<div class="row" style="display:table;position: relative; overflow: hidden;">
 
-  	<div id="prev_column" class="span1" onclick="goPrevious()">
-  		
-	<span class="raquos-container">  		
-		<span class="raquos">&laquo;</span>
-  		<br><br><br><br>
-  		<span class="raquos">&laquo;</span>
-  		<br><br><br><br>
-  		<span class="raquos">&laquo;</span>
-  	</span>
+ <div id="prev_column" class="span1" onclick="goPrevious()">
 
-  	</div>
-  
-  	<div class="span10">  <canvas id="the-canvas" style="border:1px solid black"></canvas></div>
-  	<div id="next_column"class="span1" onclick="goNext()">
-<span class="raquos-container">  		
-		<span class="raquos">&raquo;</span>
-  		<br><br><br><br>
-  		<span class="raquos">&raquo;</span>
-  		<br><br><br><br>
-  		<span class="raquos">&raquo;</span>
-  	</span>
-  	</div>
+   <span class="raquos-container">  		
+    <span class="raquos">&laquo;</span>
+    <br><br><br><br>
+    <span class="raquos">&laquo;</span>
+    <br><br><br><br>
+    <span class="raquos">&laquo;</span>
+  </span>
 
-  </div>
-  <div>
-  </div>
+</div>
 
-  <%= render 'documents/comment_area' %>
-  
-  
-  <!-- Use latest PDF.js build from Github -->
-  <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
-  
-  <script type="text/javascript">
+<div class="span10">  <canvas id="the-canvas" style="border:1px solid black"></canvas></div>
+<div id="next_column"class="span1" onclick="goNext()">
+  <span class="raquos-container">  		
+    <span class="raquos">&raquo;</span>
+    <br><br><br><br>
+    <span class="raquos">&raquo;</span>
+    <br><br><br><br>
+    <span class="raquos">&raquo;</span>
+  </span>
+</div>
+
+</div>
+<div>
+</div>
+
+<%= render 'documents/comment_area' %>
+
+
+<!-- Use latest PDF.js build from Github -->
+<script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
+
+<script type="text/javascript">
     // TODO: MOVE THIS SHIT!!!
     //
     // NOTE: 
@@ -70,10 +89,10 @@
     PDFJS.disableWorker = true;
 
     var pdfDoc = null,
-        pageNum = 1,
-        scale = 1.5,
-        canvas = document.getElementById('the-canvas'),
-        ctx = canvas.getContext('2d');
+    pageNum = 1,
+    scale = 1.5,
+    canvas = document.getElementById('the-canvas'),
+    ctx = canvas.getContext('2d');
 
     //
     // Get page info from document, resize canvas accordingly, and render page
@@ -129,72 +148,72 @@
     
 
     $(document).keydown(function(e){
-    if (e.keyCode == 37) { 
+      if (e.keyCode == 37) { 
        goPrevious();
        $("#prev_column").addClass("active").delay(100).queue(function(next){
-   	 		$(this).removeClass("active");
-    		next();
-		});
-    }
-    else if (e.keyCode == 39){
-    	goNext();
-    	$("#next_column").addClass("active").delay(100).queue(function(next){
-   	 		$(this).removeClass("active");
-    		next();
-		});
+         $(this).removeClass("active");
+         next();
+       });
+     }
+     else if (e.keyCode == 39){
+       goNext();
+       $("#next_column").addClass("active").delay(100).queue(function(next){
+         $(this).removeClass("active");
+         next();
+       });
      }
      else {
      	return false;
      }
-	});
+   });
 
 	// screenshot
 
-		var keysPressed  = []
-	var combo = [93,16] 
-$(document).keydown(function(e){
-	switch(e.which){
-		case 91 || 93:
-			keysPressed.push(93);
-			break;
-		case 93:
-			keysPressed.push(93);
-			break;
-		case 16:
-			keysPressed.push(16);
-			break;
-		default:
-			keysPressed = [];
-			break;
-	}
-	console.log(keysPressed);
-	if ($(keysPressed).not(combo).length == 0 && $(combo).not(keysPressed).length == 0) {
-		console.log('hide!');
-		$('#the-canvas').addClass("censor");
-	}
+  var keysPressed  = []
+  var combo = [93,16] 
+  $(document).keydown(function(e){
+   switch(e.which){
+    case 91 || 93:
+    keysPressed.push(93);
+    break;
+    case 93:
+    keysPressed.push(93);
+    break;
+    case 16:
+    keysPressed.push(16);
+    break;
+    default:
+    keysPressed = [];
+    break;
+  }
+  console.log(keysPressed);
+  if ($(keysPressed).not(combo).length == 0 && $(combo).not(keysPressed).length == 0) {
+    console.log('hide!');
+    $('#the-canvas').addClass("censor");
+  }
 });
 
-$(document).keyup(function(e){
-	switch(e.which){
-	case 91:
-			keysPressed = [];
-			break;
-		case 93:
-			keysPressed = [];
-			break;
-		case 16:
-			keysPressed = [];
-			break;
-		default:
-			break;
-	}
-	console.log(keysPressed);
-});
+  $(document).keyup(function(e){
+   switch(e.which){
+     case 91:
+     keysPressed = [];
+     break;
+     case 93:
+     keysPressed = [];
+     break;
+     case 16:
+     keysPressed = [];
+     break;
+     default:
+     break;
+   }
+   console.log(keysPressed);
+ });
 
 
 
 	// screenshot end
 
-</script>
+  </script>
 
 
