@@ -16,14 +16,23 @@
     <div class="span3">
       <p class="timestamp"> <span style="color: yellowgreen;"><i class="icon-signal"></i> <%= @document.views %></span> views</p>
 
-      <a class="smoothscroll" href="#comments-link"><p class="timestamp"> <span style="color: yellowgreen;"><i class="icon-comment-alt"></i> <%= @document.comment_count %></span> comments</p></a>
+      <a class="smoothscroll" href="#comments-link">
+        <p class="timestamp"> <span style="color: yellowgreen;">
+          <i class="icon-comment-alt"></i> <%= @document.comment_count %>
+        </span> comments</p>
+      </a>
     </div>
 
-    <div id="admin-controls"class="span3 pull-right well">
-      <span class="label label-important">
-        <i class="icon-edit"></i> <%= link_to "Admin Edit", edit_document_path(@document) if admin? %>
-        <p> greyed out admin section</p>
+    <div id="admin-controls"class="span3 pull-right">
+      <% if admin? %>
+      <span class="label label-important admin-edit">
+        <i class="icon-edit"></i> <%= link_to "Admin Edit Document", edit_document_path(@document) %>
       </span>
+      <% else %>
+      <span class="label admin-edit disabled">
+        <i class="icon-edit"></i> Admin Edit Document
+      </span>
+      <% end %>
     </div>
 
   </div>

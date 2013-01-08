@@ -45,7 +45,27 @@ margin-bottom: 25px;
 			font-size: 0.8em;
 		}
 	}
-
+	.span3.pull-right{
+		text-align: right;
+		span.admin-edit{
+			padding: 3px;
+			padding-right: 7px;
+			-webkit-border-radius: 2px;
+			-moz-border-radius: 2px;
+			border-radius: 2px;
+			&.disabled{
+				opacity: 0.5;
+				color: #CCC;
+			}
+			a{
+				color: white;
+				&:hover{
+					color:lighten($lighter-blue,25%);
+					text-decoration: none;
+				}
+			}
+		}
+	}
 }
 
 .page-count{
