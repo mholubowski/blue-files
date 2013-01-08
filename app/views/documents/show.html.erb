@@ -1,4 +1,7 @@
 
+<span class="label label-important">
+  <i class="icon-edit"></i> <%= link_to "Admin Edit", edit_document_path(@document) if admin? %>
+</span>
 
 <table>
   <h1 style="color:pink;">Views: <%= @document.views %></h1>

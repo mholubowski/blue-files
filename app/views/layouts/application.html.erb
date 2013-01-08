@@ -9,6 +9,8 @@
 <body>
 <%= render 'layouts/header' %>
 <div class="container" style="min-height:400px;">
+	
+<%= render 'documents/recently_viewed_stream' %>	
 	<% flash.each do |key, value| %>
 			<div id="flash-fade" class="alert alert-<%= key %>"><%= value %></div>
 	<% end %>

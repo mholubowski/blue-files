@@ -1,0 +1,10 @@
+<ul>
+	<% unless cookies[:recently_viewed].nil? %>
+	<% n = 0 %>
+		<% cookies[:recently_viewed].split("%").reverse.each do |doc|  %>
+		<li><%= link_to Document.find(doc).title, Document.find(doc) %></li>
+		<% n += 1 %>
+		<% break if n == 5 %>
+	<% end %>
+	<% end %>
+</ul>

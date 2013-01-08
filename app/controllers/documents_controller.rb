@@ -26,6 +26,8 @@ class DocumentsController < ApplicationController
     @comments  = Document.find(params[:id]).document_comments.all
     # for new comment
     @comment =   Document.find(params[:id]).document_comments.build if signed_in?
+    # appends to recently_viewed cookie array
+    recently_viewed params[:id]
   end
 
   def new
