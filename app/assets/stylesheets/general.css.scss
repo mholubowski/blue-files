@@ -308,6 +308,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', e
 			}
 			&:active{
 				background-color:lighten($lighter-blue, 10%);
+				opacity: 0.6;
 			}
 			li{
 				display: inline;
