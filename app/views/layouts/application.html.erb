@@ -17,7 +17,9 @@
 </div>
 <!-- <%= render 'layouts/footer' %> -->
 <hr style="border-bottom:none;">
-<%= render 'documents/recently_viewed_stream' %>
+
+<%= render 'documents/recently_viewed_stream' if signed_in? && !cookies[:recently_viewed].nil? %>
+
 ￼<%= debug(params) if Rails.env.development? %>
 </body>
 </html>

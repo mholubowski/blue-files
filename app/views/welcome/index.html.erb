@@ -1,5 +1,8 @@
 <% if signed_in? %>
 <h1><%= image_tag "logo2.png", class: "logo verysmall" %> Welcome to Blue Files </h1> 
+
+<div id="index">
+	
 <div class="row">
 	<a id="upload" href="/documents/new" class="span5 well">
 		<h1> Upload Documents <i class="icon-upload"></i> </h1>
@@ -9,7 +12,7 @@
 	</a>
 </div>
 
-<div class="row">
+<div id="homepage-row" class="row">
 	<div class="span5 well">
 		<h3>Recent Requests</h3>
 		<div id="recentStreamContainer">
@@ -49,6 +52,8 @@
 	</div>
 
 
+
+</div>
 
 </div>
 

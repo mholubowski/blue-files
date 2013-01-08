@@ -8,6 +8,15 @@
 .btn-block{
 	width: 90%
 }
+
+#index{
+	.offset1{
+		margin-left: 60px;
+	}
+	.span5{
+		margin-left: 40px;
+	}
+}
 // FORMS
 .hiddenDocForm{
 	// display:none;
@@ -284,7 +293,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', e
 		list-style-type: none;
 		padding-top: 20px;
 		a{
-			padding: 10px 0px 50px 0px;
+			// TODO Cross-browser border-radius?
+			border-radius: 2px 10px;
+			padding: 10px 5px 50px 5px;
 			margin: 10px 20px;
 			background-color: rgba(255, 255, 255, 0.09);
 			border: 1px solid rgba(255, 255, 255, 0.06);
