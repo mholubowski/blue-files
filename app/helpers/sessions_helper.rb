@@ -28,7 +28,7 @@ module SessionsHelper
 	end
 
 	def current_account
-		@current_accout ||= Account.find_by_remember_token(cookies[:remember_token])
+		@current_account ||= Account.find_by_remember_token(cookies[:remember_token])
 	end
 
 	def current_account=(account)
