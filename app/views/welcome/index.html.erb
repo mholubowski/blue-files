@@ -13,13 +13,23 @@
 </div>
 
 <div id="homepage-row" class="row">
+
 	<div class="span5 well">
-		<h3>Recent Requests</h3>
+		<!-- <h3>Recent Requests</h3>
+
 		<div id="recentStreamContainer">
 			<%= render 'requests/recent_requests_stream' %>
 			<%= render 'requests/new_request_form' %>
-			
-		</div>
+		</div> -->
+		<ul class="nav nav-tabs" id="myTab">
+			<li class="active"><a href="#added">Recently Added</a></li>
+
+		</ul>
+
+			<div class="tab-pane active" id="added">
+				<%= render 'documents/recent_documents_stream' %>
+			</div>
+		
 	</div>
 
 
@@ -27,16 +37,12 @@
 	<div class="span5 offset1 well">
 
 		<ul class="nav nav-tabs" id="myTab">
-			<li class="active"><a href="#added">Recently Added</a></li>
-			<li><a href="#viewed">Most Viewed </a></li>
+			<li class="active"><a href="#viewed">Most Viewed </a></li>
 			<li><a href="#commented">Most Commented</a></li>
 		</ul>
 
 		<div class="tab-content">
-			<div class="tab-pane active" id="added">
-				<%= render 'documents/recent_documents_stream' %>
-			</div>
-			<div class="tab-pane" id="viewed">
+			<div class="tab-pane active" id="viewed">
 				<%= render 'documents/most_viewed_documents_stream' %>
 			</div>
 			<div class="tab-pane" id="commented">
