@@ -8,14 +8,14 @@ before_filter :correct_document, only: [:show, :edit, :update, :destroy]
   end
 
   def views #to show docs ordered by views
-    @docsByViews = Document.all(
+    @docsByViews = current_account.documents.all(
               order: 'views DESC'
               ) if signed_in?
   end
 
   def comments
     # @docsByComments = Document.all.sort{ |a,b| a.document_comments.count <=> b.document_comments.count }
-    @docsByComments = Document.all(
+    @docsByComments = current_account.documents.all(
                       order: 'comment_count DESC')
   end
 
@@ -26,9 +26,9 @@ before_filter :correct_document, only: [:show, :edit, :update, :destroy]
     view = @document.views + 1
     @document.update_attributes(views: view)
 
-    @comments  = Document.find(params[:id]).document_comments.all
+    @comments = Document.find(params[:id]).document_comments.all
     # for new comment
-    @comment =   Document.find(params[:id]).document_comments.build if signed_in?
+    @comment  = Document.find(params[:id]).document_comments.build if signed_in?
     # appends to recently_viewed cookie array
     recently_viewed params[:id]
   end
@@ -39,7 +39,6 @@ before_filter :correct_document, only: [:show, :edit, :update, :destroy]
   end
 
  def create
-  sleep 3
     @document = current_account.documents.build(params[:document])
     if @document.save
       respond_to do |format|

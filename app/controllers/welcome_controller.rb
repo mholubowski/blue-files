@@ -7,11 +7,11 @@ class WelcomeController < ApplicationController
   						order: 'created_at DESC', 
   						limit:  5) if signed_in?
 
-  	@docsByViews = Document.all(
+  	@docsByViews = current_account.documents.all(
   						order: 'views DESC',
   						limit:  5) if signed_in?
 
-    @docsByComments = Document.all(
+    @docsByComments = current_account.documents.all(
               order: 'comment_count DESC',
               limit: 5) if signed_in?
 
