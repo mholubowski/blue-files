@@ -1,4 +1,8 @@
 class AccountsController < ApplicationController
+before_filter :signed_in_user, only: [:edit, :update, :index, :destroy]
+before_filter :admin_user, only: [:destroy, :edit, :update, :index] #TODO index is for SUPERADMIN!
+                                                                    #TODO Don't allow account destroy
+                                                                    # Make them have to call
 
   def new
   	@account = Account.new

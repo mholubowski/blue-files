@@ -3,7 +3,7 @@ module SessionsHelper
 	def sign_in(account)
 		cookies[:remember_token] = { value: account.remember_token,
 									 expires: 2.weeks.from_now }
-									 #TODO notify users of time-out
+									 #TODO notify users of time-outs
 	end
 
 	def sign_in_admin(account)
@@ -16,8 +16,29 @@ module SessionsHelper
 		cookies[:remember_token_admin] == current_account.remember_token if signed_in?
 	end
 
+	def admin_user
+                                             #.admin? checks db table
+      redirect_to root_path, notice: "You must be an account admin to access that page" unless admin?
+    end
+
 	def signed_in?
 		!current_account.nil?
+	end
+
+	def signed_in_user
+		unless signed_in?
+			store_location
+			redirect_to signin_path, notice: "Please sign in to continue"
+		end
+	end
+
+	def redirect_back_or(default)
+		redirect_to(session[:return_to] || default)
+		session.delete(:return_to)
+	end
+
+	def store_location
+		session[:return_to] = request.url
 	end
 
 	def sign_out
@@ -44,4 +65,5 @@ module SessionsHelper
 		end
 
 	end
+
 end

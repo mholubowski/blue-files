@@ -10,13 +10,13 @@ class SessionsController < ApplicationController
   	if account && account.authenticate(params[:session][:password]) && admin_entry.blank?
   		flash[:success] = "success"
   		sign_in(account)
-  		redirect_to root_url
+  		redirect_back_or root_url
 
     elsif account && account.authenticate(params[:session][:password]) && admin_entry == admin_pass
       flash[:success] = "success as ADMIN"
       sign_in(account)
       sign_in_admin(account)
-      redirect_to root_url
+      redirect_back_or root_url
       
   	else
   		flash[:error] = "error" if admin_entry.blank?

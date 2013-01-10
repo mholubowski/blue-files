@@ -1,4 +1,7 @@
 class DocumentsController < ApplicationController
+before_filter :signed_in_user
+before_filter :admin_user, only: [:destroy, :edit, :update]
+before_filter :correct_document, only: [:show, :edit, :update, :destroy]
 
   def index
    @current_account_documents = current_account.documents
@@ -66,5 +69,13 @@ class DocumentsController < ApplicationController
       render 'edit'
     end
   end
+
+  private
+
+    def correct_document
+      unless current_account.id == Document.find(params[:id]).account_id
+        redirect_to root_path, notice: "You do not have permission to access that document" 
+      end
+    end
 
 end
