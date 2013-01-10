@@ -19,7 +19,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-	$('#flash-fade').delay(4000).hide('slow');
+	$('#flash-fade').delay(5000).hide('slow');
 
 	$("a.smoothscroll").click(function() {
 		$("html, body").animate({

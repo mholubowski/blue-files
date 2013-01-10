@@ -10,7 +10,8 @@ class DocumentCommentsController < ApplicationController
 					flash[:success] = "Successful request posted!"
 					redirect_to Document.find(params[:document_comment][:document_id])
 				end
-        # format.js
+				#TODO AJAX-ifx
+     		   # format.js
 	    	end
 		else
 			flash.now[:error] = "Please try again"

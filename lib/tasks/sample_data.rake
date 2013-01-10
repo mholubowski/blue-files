@@ -61,7 +61,6 @@ namespace :db do
 														"Careful! problems number 3 and 4 on the last page are wrong",
 														"This class was just aweful, don't take it nubs"].sample)
 				n += 1
-				puts n
 			end
 		end
 

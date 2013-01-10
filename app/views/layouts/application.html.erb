@@ -11,7 +11,7 @@
 <div class="container" style="min-height:400px;">
 	
 	<% flash.each do |key, value| %>
-			<div id="flash-fade" class="alert alert-<%= key %>"><%= value %></div>
+			<div id="flash-fade" class="alert alert-<%= key %>"><i class="icon-exclamation-sign"></i> <%= value %></div>
 	<% end %>
 <%= yield %>
 </div>
