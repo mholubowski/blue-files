@@ -31,4 +31,5 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	$("span.admin-edit").tooltip();
 })

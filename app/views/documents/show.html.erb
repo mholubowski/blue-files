@@ -28,7 +28,7 @@
         <i class="icon-edit"></i> <%= link_to "Admin Edit Document", edit_document_path(@document) %>
       </span>
       <% else %>
-      <span class="label admin-edit disabled">
+      <span rel="tooltip" data-placement="bottom" data-original-title="You must be logged in as an admin to edit documents" class="label admin-edit disabled">
         <i class="icon-edit"></i> Admin Edit Document
       </span>
       <% end %>
