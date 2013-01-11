@@ -133,6 +133,9 @@ form[data-remote]{
 
 .recent-documents-stream, .recent-requests-stream,
 .most-views-stream, .most-comments-stream{
+	&.well{
+		background-color:rgba(0, 0, 0, 0.11);
+	}
 	a{
 		&:hover{
 			text-decoration: none;
