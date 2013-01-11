@@ -11,6 +11,10 @@ before_filter :correct_document, only: [:show, :edit, :update, :destroy]
     @docsByViews = current_account.documents.all(
               order: 'views DESC'
               ) if signed_in?
+
+      @recent_documents = current_account.documents.all(
+              order: 'created_at DESC'
+              ) if signed_in?
   end
 
   def comments

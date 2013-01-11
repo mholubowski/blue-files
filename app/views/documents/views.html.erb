@@ -1,21 +1,36 @@
 
+<div class="row">
+	<div class="span12">
+		
+		<ul class="nav nav-tabs" id="myTab">
+			<li class="active"><a href="#viewed">Most Viewed </a></li>
+			<li class=""><a href="#commented">Most Commented</a></li>
+			<li class=""><a href="#recent">Recently Added</a></li>
+		</ul>
 
-<div class="well most-views-stream">
-
-	<ul>
-		<% @docsByViews.each do |doc| %>
-		<a href="/documents/<%= doc.id %>">
-			<li>
-				<p class="main"><%= doc.category + " " + doc.sub_category %> , <small><%= doc.title  %></small></p>
-
-				<p class="timestamp"> <span style="color: yellowgreen;"><%= doc.views %></span> views</p>
-			</li>
-		</a>
-		<% end %>
-	</ul>
-	<h4><%= link_to "View All", "/documents/views" %></h4>
-	
+	</div>
 </div>
+
+<div class="tab-content">
+	<!-- <div class="well" style="background-color:rgba(0, 0, 0, 0.11);" > -->
+		<div class="tab-pane active" id="viewed">
+
+			<%= render 'documents/most_viewed_documents_stream' %>
+
+
+		</div>
+	
+
+	<div class="tab-pane" id="commented">
+		<h1>sort by comments</h1>
+	</div>
+
+	<div class="tab-pane" id="recent">
+			<%= render 'documents/recent_documents_stream' %>
+	</div>
+	<!-- </div> -->
+</div>
+
 
 <div style="width:200px, background-color: #000">
 	<% @docsByViews.each do |doc| %>
