@@ -75,7 +75,11 @@ margin-bottom: 25px;
 #pdf-loading{
 	font-size: 1.5em;
 	padding: 10px;
-	color: yellowgreen
+	color: yellowgreen;
+	i.icon-plus-sign{
+			position: relative;
+			top: 5px;
+		}
 }
 
 #the-canvas{
