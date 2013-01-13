@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106101844) do
+ActiveRecord::Schema.define(:version => 20130113030751) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130106101844) do
     t.string   "sub_category"
     t.string   "sub_sub_category"
     t.string   "account_admin_password"
+    t.string   "schedule_type"
   end
 
   add_index "accounts", ["remember_token"], :name => "index_accounts_on_remember_token"
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20130106101844) do
     t.string   "original_comment"
     t.integer  "views"
     t.integer  "comment_count"
+    t.string   "quarter"
   end
 
   create_table "requests", :force => true do |t|

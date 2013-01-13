@@ -2,7 +2,7 @@ class Document < ActiveRecord::Base
   attr_accessible :category, :sub_category, :sub_sub_category,
   				  :type_of_document, :number_of_pages, :title,
   				  :document_file, :hidden, :original_comment, :views,
-            :comment_count
+            :comment_count, :quarter
 
   belongs_to  :account
   has_many    :document_comments, dependent: :destroy

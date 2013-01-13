@@ -9,6 +9,7 @@
 		<th><%= current_account.sub_category %></th>
 		<th><%= current_account.sub_sub_category %></th>
 		<th>Type</th>
+		<th><%= current_account.schedule_type %></th>
 		<th>Title</th>
 	</tr>
 	</thead>
@@ -21,6 +22,7 @@
 		<td><%= doc.sub_category %></td>
 		<td><%= doc.sub_sub_category %></td>
 		<td><%= doc.type_of_document %></td>
+		<td><%= doc.quarter %></td>
 		<td><%= link_to doc.title, doc %></td>
 	</tr>
 	<% end %>
