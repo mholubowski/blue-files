@@ -59,7 +59,13 @@
 
 </div>
 
-<div class="span10">  <canvas id="the-canvas" style="border:1px solid black"></canvas></div>
+<div class="span10">
+
+  <div id="pdf-loading"><i class="icon-spinner icon-spin"></i> Loading</div>
+  <canvas id="the-canvas" style="border:1px solid black"></canvas>
+
+</div>
+
 <div id="next_column"class="span1" onclick="goNext()">
   <span class="raquos-container">  		
     <span class="raquos">&raquo;</span>
@@ -120,6 +126,7 @@
         console.log('page loading');
         page.render(renderContext);
         console.log('loaded!');
+        $('#pdf-loading').hide('slow');
       });
 
       // Update page counters
