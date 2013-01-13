@@ -117,7 +117,9 @@
           canvasContext: ctx,
           viewport: viewport
         };
+        console.log('page loading');
         page.render(renderContext);
+        console.log('loaded!');
       });
 
       // Update page counters

@@ -21,8 +21,9 @@
 
 	<%= f.label current_account.schedule_type == "Quarter" ? "Quarter" : "Semester" %>
 	<%= f.select :quarter, ['Fall 2012', 'Fall 2011', 'Fall 2010','Winter 2012', 'Winter 2011',
-									'Winter 2010','Spring 2012', 'Spring 2011', 'Spring 2010' ] if current_account.schedule_type == "Quarter" %>
-	<%= f.select :quarter, ['Fall 2012', 'Fall 2011', 'Fall 2010','Spring 2012', 'Spring 2011', 'Spring 2010' ] if current_account.schedule_type == "Semester" %>								
+							'Winter 2010','Spring 2012', 'Spring 2011', 'Spring 2010' ] if current_account.schedule_type == "Quarter" %>
+	<%= f.select :quarter, ['Fall 2012', 'Fall 2011', 'Fall 2010','Spring 2012', 'Spring 2011',
+						    'Spring 2010' ] if current_account.schedule_type == "Semester" %>								
 
 	<!-- Hidden # of pages -->
 	<%= f.hidden_field :number_of_pages, value: 3 %>
