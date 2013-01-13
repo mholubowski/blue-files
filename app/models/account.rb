@@ -6,8 +6,8 @@ class Account < ActiveRecord::Base
    before_save :create_remember_token
 
 
-   has_many :documents
-   has_many :requests, dependent: :destroy
+   has_many :documents, dependent: :destroy
+   has_many :requests,  dependent: :destroy
    
     validates :username, 
    			  presence:   true,
