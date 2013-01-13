@@ -17,8 +17,8 @@ module SessionsHelper
 	end
 
 	def admin_user
-                                             #.admin? checks db table
-      redirect_to root_path, notice: "You must be an account admin to access that page" unless admin?
+      flash[:error] = "You do not have permission to access that document"
+      redirect_to root_path
     end
 
 	def signed_in?

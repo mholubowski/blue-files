@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     admin_pass  = account.account_admin_password
 
   	if account && account.authenticate(params[:session][:password]) && admin_entry.blank?
-  		flash[:success] = "success"
+  		flash[:success] = "Successfully Signed In!"
   		sign_in(account)
   		redirect_back_or root_url
 

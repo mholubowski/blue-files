@@ -339,17 +339,39 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', e
 }
 
 #flash-fade{
-
-	i{
-		font-size: 1.5em;
-		margin-right: 10px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3),0 1px 0 rgba(255, 255, 255, 0.2) inset;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.2) inset;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3),0 1px 0 rgba(255, 255, 255, 0.2) inset;
+	// background-color: #DC3A3A;
+	color: white;
+	text-shadow:none;
+	border:none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	&.alert-notice{
+		background-color: $notice;
+		color: #3F3F3F;
 	}
+	&.alert-error{
+		background-color: $warning;
+	}
+	&.alert-success{
+		background-color: $success;
+}
+
+i{
+	font-size: 1.5em;
+	margin-right: 10px;
+	border-right: 1px solid rgba(255, 255, 255, 0.21);
+	padding-right: 12px;
+	padding: 3px 12px 3px 0px;
+}
 }
 
 #sort-by{
 	// text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
-	color: #000000
-	;
+	color: #000000;
 }
 
 

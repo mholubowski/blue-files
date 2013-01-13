@@ -79,7 +79,8 @@ before_filter :correct_document, only: [:show, :edit, :update, :destroy]
 
     def correct_document
       unless current_account.id == Document.find(params[:id]).account_id
-        redirect_to root_path, notice: "You do not have permission to access that document" 
+        flash[:error] = "You do not have permission to access that document"
+        redirect_to root_path
       end
     end
 
