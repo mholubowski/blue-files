@@ -22,7 +22,7 @@
 				</ul>
 			<% end %>
 
-			<%= form_for @comment, validate: true, remote: false do |f| %>
+			<%= form_for @comment, validate: false, remote: false do |f| %>
 				<%= render 'shared/form_error_messages', object: f.object %>
 
 				<%= f.label "Comment" %>

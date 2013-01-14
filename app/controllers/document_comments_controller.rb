@@ -7,15 +7,15 @@ class DocumentCommentsController < ApplicationController
 		if @comment.save
 			respond_to do |format|
 				format.html do    
-					flash[:success] = "Successful request posted!"
+					flash[:success] = "Posted comment!"
 					redirect_to Document.find(params[:document_comment][:document_id])
 				end
-				#TODO AJAX-ifx
+			   # TODO AJAX-ifx comment posting to save S3 down on page reload
      		   # format.js
 	    	end
 		else
-			flash.now[:error] = "Please try again"
-			render 'new'
+			flash[:error] = "Please try posting again"
+			redirect_to Document.find(params[:document_comment][:document_id])
 		end
 
   end
