@@ -374,4 +374,11 @@ i{
 	color: #000000;
 }
 
-
+#admin-link{
+	a{
+		color: rgba(173, 255, 47, 0.71);
+		&:hover{
+			color: rgba(173, 255, 47, 1);
+		}
+	}
+}

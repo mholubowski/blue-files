@@ -4,19 +4,21 @@
 	<div id="recently-viewed">
 		<ul>
 			<% unless cookies[:recently_viewed].nil? %>
-			<% n = 0 %>
-			<% cookies[:recently_viewed].split("%").reverse.each do |id|  %>
-			<% doc = Document.find(id) %>
-			<a href="/documents/<%= id %>">
-				<li>
-					<p class="main"><%= doc.category + " " + doc.sub_category %> </p> 
-					<p class="main">  <small><%= doc.title  %></small></p>
-					
-				</li>
-			</a>
-			<% n += 1 %>
-			<% break if n == 5 %>
-			<% end %>
+				<% n = 0 %>
+				<% cookies[:recently_viewed].split("%").reverse.each do |id|  %>
+					<% unless Document.find_by_id(id).nil? %>
+						<% doc = Document.find(id) %>
+						<a href="/documents/<%= id %>">
+							<li>
+								<p class="main"><%= doc.category + " " + doc.sub_category %> </p> 
+								<p class="main">  <small><%= doc.title  %></small></p>
+							
+							</li>
+						</a>
+						<% n += 1 %>
+						<% break if n == 5 %>
+					<% end %>
+				<% end %>
 			<% end %>
 		</ul>
 	</div>

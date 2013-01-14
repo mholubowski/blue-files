@@ -8,7 +8,7 @@
 			
 			<ul class="nav pull-right">
 
-				<li><%= link_to raw("<i class='icon-wrench'></i> Admin"), "#", style: "color:greenyellow;" if admin? %></li>
+				<li id="admin-link"><%= link_to raw("<i class='icon-wrench'></i> Admin"), "#" if admin? %></li>
 
 				<!-- TODO: display # of uncomfirmed (or other things too), fix style, link to somewhere logical -->
 				<li><%= link_to current_account.documents.count, "#", class: "badge badge-important" if admin? %></li>
