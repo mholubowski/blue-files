@@ -155,16 +155,20 @@ div.added-file{
 			color: #555;
 		}
 		i{
-			padding-right: 5px;
+			padding: 3px 5px 3px 0px;
+			margin-right:  5px;
 			border-right: 1px solid rgb(111, 165, 106);
 		}
 	}
 	&.top-header{
+		display: none;
 		text-align: center;
 		background-color: #333;
 		margin-right: 0px;
 		margin-left:  0px;
-
+		&:hover{
+			cursor:default;
+		}
 		p{
 			color: #999;
 		}

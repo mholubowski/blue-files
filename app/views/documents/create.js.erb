@@ -1,10 +1,9 @@
-thisform = $("#<%= params[:document][:hidden] %>")
+thisform = $("#<%= params[:document][:hidden] %>");
 												// TODO make link to the document popup
-
+$('.top-header').show('slow');
 thisform.addClass('success_form').delay(500).after(
-	'<div class="added-file"><p> <i class="icon-file-alt"></i> <%= params[:document][:title] %> <small><%= params[:document][:category] %></small></p></div>'
+	'<div class="added-file"><p> <i class="icon-file-alt"></i><%= params[:document][:title] %> <small><%= params[:document][:category] %></small></p></div>'
 	).hide('slow');
-
 
 
 $("#<%= params[:document][:hidden] %> input[type=submit]").addClass("btn-success");
