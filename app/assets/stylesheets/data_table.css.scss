@@ -1,5 +1,15 @@
 @import "variables";
 #documentsTable_wrapper{
+	.ui-widget-header{
+		max-height: 42px;
+	}
+	//search bar
+	#documentsTable_filter label{
+		text-shadow: 0 0 1px black;
+		font-size: 1.2em;
+		font-weight: 100;
+		font-family: sans-serif;
+	}
 	th[aria-sort="ascending"],th[aria-sort="descending"]{
 		border-top: 1px solid #DDD;
 	}
@@ -9,16 +19,30 @@
 		}
 	}
 	// color corrected rows
+	tr{
+		border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+	}
 	tr.odd{
 		background-color: lighten($lighter-blue, 7%);
 		td.sorting_1{
-			background-color: darken($lighter-blue, 3%);
+			background-color: darken($lighter-blue, 0%);
 		}
 	}
 	tr.even{
-		background-color: lighten($lighter-blue, 42%);
+		background-color: lighten($lighter-blue, 7%);
 		td.sorting_1{
-			background-color: lighten($lighter-blue, 32%);
+			background-color: darken($lighter-blue, 0%);
+		}
+	}
+	// making text more readable
+	td{
+		text-shadow: 0px 0px 1px black;
+		a{
+			text-shadow: none;
+			&:hover{
+				color:white;
+				text-decoration: none;
+			}
 		}
 	}
 	// tab selector

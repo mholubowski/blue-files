@@ -33,5 +33,5 @@ class Document < ActiveRecord::Base
     self.views     = 0     if self.views.nil?
     self.comment_count = 0     if self.comment_count.nil?
   end
-
+#kassan
 end
