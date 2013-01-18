@@ -1,3 +1,49 @@
 // Place all the styles related to the accounts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#sign-up-form{
+	background-color: #CCC;
+	// background-color:rgba(255,255,255,0.25);
+	padding: 10px 15px;
+
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.6),0 0 1px 1px rgba(80,84,92,0.1),0 1px 2px rgba(80,84,92,0.2);
+
+	::-webkit-input-placeholder {
+		color:    #888;
+		font-weight: 200;
+	}
+	:-moz-placeholder {
+		color:    #888;
+		font-weight: 200;
+	}
+	::-moz-placeholder {
+		color:    #888;
+		font-weight: 200;
+	}
+	:-ms-input-placeholder {
+		color:    #888;
+		font-weight: 200;
+	}
+	span.add-on{
+		color: #ccc;
+		margin-right: -5px;
+		box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
+		-moz-box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
+		-webkit-box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
+		i{
+			color:#888;
+		}
+	}
+	input{
+		border-radius: 0px;
+		-moz-border-radius: 0px;
+		-webkit-border-radius: 0px;
+
+		box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
+		-moz-box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
+		-webkit-box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
+
+	}
+}

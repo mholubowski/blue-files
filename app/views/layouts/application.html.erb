@@ -17,7 +17,7 @@
 <%= yield %>
 </div>
 <!-- <%= render 'layouts/footer' %> -->
-<hr style="border-bottom:none;">
+<hr class="skinny">
 
 <%= render 'documents/recently_viewed_stream' if signed_in? && !cookies[:recently_viewed].nil? %>
 

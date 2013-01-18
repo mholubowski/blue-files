@@ -1,33 +1,67 @@
 <h1>Acccount SignUp</h1>
-<hr>
-<div class="row"><div class="span12">
+<hr class="skinny">
+<div class="row"><div id="sign-up-form" class="span4">
+	<div id="sign-up-header">
+		<h2>Sign Up</h2>
+			<p>It's <strong>free</strong> and takes <strong>less than one minute.</strong> </p>
+	</div>
+	<hr>
 	<%= form_for @account, validate: true do |f| %>
 	<%#= render 'shared/form_error_messages', object: f.object %>
 	
-	<%= f.label :username %>
-	<%= f.text_field :username %>
+	<%#= f.label :username %>
+	<div class="input-prepend">
+		<span class="add-on"><i class='icon-group'></i></span>
+		<%= f.text_field :username, placeholder: "Account Name" %>
+	</div>
 
 	<%= f.label :schedule_type %>
 	<%= f.radio_button :schedule_type, "Quarter" %> Quarter
 	<%= f.radio_button :schedule_type, "Semester" %> Semester
-
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-
-	<%= f.label :password_confirmation %>
-	<%= f.password_field :password_confirmation %>
-	<hr>
-	<%= f.label "Admin full name" %>
-	<%= f.text_field :admin_name %>
-
-	<%= f.label "Admin email address" %>
-	<%= f.text_field :admin_email %>
-
-	<%= f.label "Admin phone number" %>
-	<%= f.text_field :admin_phone %>
-
-	<%= f.label "Admin Password" %>
-	<%= f.password_field :account_admin_password %>
+	<br>
+	<%#= f.label :password %>
+	<div class="input-prepend">
+		<span class="add-on"><i class='icon-lock'></i></span>
+		<%= f.password_field :password, placeholder: "Password" %>
+	</div>
+	
+	<br>
+	<%#= f.label :password_confirmation %>
+	<div class="input-prepend">
+		<span class="add-on"><i class='icon-refresh'></i></span>
+		<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+	</div>
+	
+	<hr class="skinny">
+	<h3>Admin</h3>
+	
+	<%#= f.label "Admin full name" %>
+	<div class="input-prepend">
+		<span class="add-on"><i class='icon-user'></i></span>
+		<%= f.text_field :admin_name, placeholder: "Full Name" %>
+	</div>
+	
+	<br>
+	<%#= f.label "Admin email address" %>
+	<div class="input-prepend">
+		<span class="add-on"><i class='icon-envelope'></i></span>
+		<%= f.text_field :admin_email, placeholder: "Email Address" %>
+	</div>
+	
+	<br>
+	<%#= f.label "Admin phone number" %>
+	<div class="input-prepend">
+		<span class="add-on"><i class='icon-phone'></i></span>
+		<%= f.text_field :admin_phone, placeholder: "Phone Number" %>
+	</div>
+	
+	<br>
+	<%#= f.label "Admin Password" %>
+	<div class="input-prepend">
+		<span class="add-on"><i class='icon-lock'></i></span>
+		<%= f.password_field :account_admin_password, placeholder: "Admin Password" %>
+	</div>
+	
 
 
 	<div>
@@ -36,7 +70,7 @@
 	</div>
 
 
-	<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+	<%= f.submit "Submit", class: "btn btn-large" %>
 
 <% end %>
 </div>
