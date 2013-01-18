@@ -27,6 +27,8 @@ class Account < ActiveRecord::Base
     validates :accept_terms_and_conditions,
           presence: true,
           inclusion: { in: [1],message: "Must accept terms and conditions" }
+
+    validates :schedule_type, presence: true
              
 
  private

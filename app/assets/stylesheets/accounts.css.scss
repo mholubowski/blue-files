@@ -2,14 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+$gray: #555;
 #sign-up-form{
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	background-color: #CCC;
 	// background-color:rgba(255,255,255,0.25);
 	padding: 10px 15px;
 
 	box-shadow: inset 0 1px 0 rgba(255,255,255,0.6),0 0 1px 1px rgba(80,84,92,0.1),0 1px 2px rgba(80,84,92,0.2);
-
+	h1,h2,h3,h4,h5,h6,p,label{
+		color: $gray;
+		text-shadow: 0px 1px 1px #AAA;
+	}
 	::-webkit-input-placeholder {
 		color:    #888;
 		font-weight: 200;
@@ -26,6 +32,11 @@
 		color:    #888;
 		font-weight: 200;
 	}
+	span.gray{
+		color: lighten($gray, 15%);
+		font-weight: 200;
+		margin-right: 10px;
+	}
 	span.add-on{
 		color: #ccc;
 		margin-right: -5px;
@@ -36,6 +47,9 @@
 			color:#888;
 		}
 	}
+	label.checkbox{
+
+	}
 	input{
 		border-radius: 0px;
 		-moz-border-radius: 0px;
@@ -44,6 +58,15 @@
 		box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
 		-moz-box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
 		-webkit-box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
+		&[type="submit"]{
+			width:245px;
+			color: $gray;
+		}
+		&[type="checkbox"]{
+			position: relative;
+			right: 189px;
+			bottom: 2px;
 
+		}
 	}
 }
