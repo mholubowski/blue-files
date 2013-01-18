@@ -146,7 +146,7 @@ div.added-file{
 		cursor:hand; 
   		cursor:pointer; 
 	}
-	p{
+	a{
 		font-size: 1.5em;
 		color: #555;
 		font-weight: 200;
@@ -158,6 +158,9 @@ div.added-file{
 			padding: 3px 5px 3px 0px;
 			margin-right:  5px;
 			border-right: 1px solid rgb(111, 165, 106);
+		}
+		&:hover{
+			text-decoration: none;
 		}
 	}
 	&.top-header{

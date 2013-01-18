@@ -12,14 +12,17 @@ namespace :db do
 			sub_sub_category = "Professor"
 			schedule_type = ["Quarter", "Semester"]
 			Account.create!(username: 		  username,
-							category:         category,
-							sub_category:     sub_category,
-						    sub_sub_category: sub_sub_category,
+							# category:         category,
+							# sub_category:     sub_category,
+						    # sub_sub_category: sub_sub_category,
 						    schedule_type:    schedule_type[n-1],
 						    password:         password,
 						    password_confirmation:  password,
 						    account_admin_password: admin_pass,
-						    accept_terms_and_conditions: 1)
+						    accept_terms_and_conditions: 1,
+						    admin_name: "Jack Herrer",
+						    admin_email: "admin@account#{n}.com",
+						    admin_phone: "(310)9229088")
 		end 
 
 		accounts = Account.all

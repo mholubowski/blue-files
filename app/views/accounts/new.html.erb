@@ -2,22 +2,23 @@
 <hr>
 <div class="row"><div class="span8 offset4 center">
 	<%= form_for @account, validate: true do |f| %>
-	<%= render 'shared/form_error_messages', object: f.object %>
+	<%#= render 'shared/form_error_messages', object: f.object %>
 	
 	<%= f.label :username %>
 	<%= f.text_field :username %>
 
-	<%= f.label :category %>
-	<%= f.text_field :category %>
+	<%= f.label "Admin full name" %>
+	<%= f.text_field :admin_name %>
 
-	<%= f.label :sub_category %>
-	<%= f.text_field :sub_category %>
+	<%= f.label "Admin email address" %>
+	<%= f.text_field :admin_email %>
 
-	<%= f.label :sub_sub_category %>
-	<%= f.text_field :sub_sub_category %>
+	<%= f.label "Admin phone number" %>
+	<%= f.text_field :admin_phone %>
 
 	<%= f.label :schedule_type %>
-	<%= f.select :schedule_type, ['Quarter', 'Semester'] %>
+	<%= f.radio_button :schedule_type, "Quarter" %>
+	<%= f.radio_button :schedule_type, "Semester" %>
 
 	<%= f.label :password %>
 	<%= f.password_field :password %>
@@ -26,8 +27,10 @@
 	<%= f.password_field :password_confirmation %>
 
 
-	<%= f.label :accept_terms_and_conditions, class: "checkbox" %>
-	<%= f.check_box :accept_terms_and_conditions %>
+	<div>
+		<%= f.label :accept_terms_and_conditions, class: "checkbox", style:"display:inline;" %>
+		<%= f.check_box :accept_terms_and_conditions %>
+	</div>
 
 
 	<%= f.submit "Save Changes", class: "btn btn-large btn-primary" %>

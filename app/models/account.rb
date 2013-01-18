@@ -1,10 +1,11 @@
 class Account < ActiveRecord::Base
    attr_accessible :username, :password, :password_confirmation, 
                    :accept_terms_and_conditions, :category, 
-                   :sub_category, :sub_sub_category, :account_admin_password, :schedule_type
+                   :sub_category, :sub_sub_category, :account_admin_password,
+                   :schedule_type, :admin_name, :admin_email, :admin_phone
    has_secure_password
    before_save :create_remember_token
-
+   after_initialize :init
 
    has_many :documents, dependent: :destroy
    has_many :requests,  dependent: :destroy
@@ -31,6 +32,11 @@ class Account < ActiveRecord::Base
  private
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
-  end
+    end
 
+    def init
+      self.category         = "Department" if self.category.nil?
+      self.sub_category     = "Course"     if self.sub_category.nil?
+      self.sub_sub_category = "Professor"  if self.sub_sub_category.nil?
+    end
 end

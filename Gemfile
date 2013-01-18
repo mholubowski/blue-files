@@ -8,6 +8,7 @@ gem "rmagick", "~> 2.13.1"
 gem 'client_side_validations'
 gem "remotipart", "~> 1.0"
 gem "fog", "~> 1.3.1"
+gem "stripe"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

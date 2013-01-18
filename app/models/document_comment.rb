@@ -11,7 +11,6 @@ class DocumentComment < ActiveRecord::Base
   		id = self.document_id
   		num = Document.find(id).comment_count + 1
   		Document.find(id).update_attributes(comment_count: num)
-  		puts "id: #{id}, comment_count: #{num}"
   	end
 
 end
