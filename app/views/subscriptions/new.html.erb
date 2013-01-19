@@ -2,7 +2,7 @@
 <div class="row"><div id="sign-up-form" class="span4 offset2">
 	<div id="sign-up-header">
 		<h2>Payment Info</h2>
-			<p>The first month is <strong>free</strong> and you can cancel any time</p>
+		<p>The first month is <strong>free</strong> and you can cancel any time</p>
 	</div>
 	<hr class="skinny">
 	<%#= render 'shared/form_error_messages', object: f.object %>
@@ -13,13 +13,13 @@
 		<%= current_account.username %>
 	</div>
 
-<br>
+	<br>
 	<%#= f.label :password %>
 	<div class="input-prepend">
 		<span class="add-on"><i class='icon-lock'></i></span>
 		<%= current_account.schedule_type %>
 	</div>
-<br>
+	<br>
 	
 	<h3>Admin</h3>
 	
@@ -29,53 +29,58 @@
 		<%= current_account.admin_name %>
 	</div>
 	
-<br>
+	<br>
 	<%#= f.label "Admin email address" %>
 	<div class="input-prepend">
 		<span class="add-on"><i class='icon-envelope'></i></span>
 		<%= current_account.admin_phone %>
 	</div>
 	
-<br>
+	<br>
 	<%#= f.label "Admin phone number" %>
 	<div class="input-prepend">
 		<span class="add-on"><i class='icon-phone'></i></span>
 		<%= current_account.admin_email %>
 	</div>
 	
-<br>
-<hr>
-<hr>
-		<!-- *** CC FORM START *** -->
+	<br>
+	<hr>
+	<hr>
+	<!-- *** CC FORM START *** -->
 
-<%= form_for @subscription do |f| %>
-  <% if @subscription.errors.any? %>
-    <div class="error_messages">
-      <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
-      <ul>
-      <% @subscription.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= f.hidden_field :plan %>
+	<%= form_for @subscription do |f| %>
+	<% if @subscription.errors.any? %>
+	<div class="error_messages">
+		<h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+		<ul>
+			<% @subscription.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+	<%= f.hidden_field :plan %>
 
-  <div class="field">
-      <%= label_tag :card_number, "Credit Card Number " %>
-      <%= text_field_tag :card_number, nil, name: nil %>
-  </div>
-  <div class="field">
-      <%= label_tag :card_code, "Security Code on Card (CVV)" %>
-      <%= text_field_tag :card_code, nil, name: nil %>
-  </div>
-  <div class="field">
-    <%= label_tag :card_month, "Card Expiration" %>
-    <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month"}%>
-    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}%>
-  </div>
-  <div class="actions"><%= f.submit "Subscribe" %></div>
-<% end %>
+	<div class="field">
+		<%= label_tag :card_number, "Credit Card Number " %>
+		<%= text_field_tag :card_number, nil, name: nil %>
+	</div>
+	<div class="field">
+		<%= label_tag :card_code, "Security Code on Card (CVV)" %>
+		<%= text_field_tag :card_code, nil, name: nil %>
+	</div>
+	<div class="field">
+		<%= label_tag :card_month, "Card Expiration" %>
+		<%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month"}%>
+		<%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}%>
+	</div>
+
+	<div id="stripe_error">
+		<noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+	</div>
+	
+	<div class="actions"><%= f.submit "Subscribe" %></div>
+	<% end %>
 
 
 
@@ -85,24 +90,24 @@
 	<p>  </p>
 	<hr class="skinny">
 	<i class="icon-double-angle-right"></i><P style="margin-bottom: 60px;">
-		One <strong>Account Name</strong> and <strong>Password</strong> per organization, for unlimited users
-	</P>
+	One <strong>Account Name</strong> and <strong>Password</strong> per organization, for unlimited users
+</P>
 <br>
-	<i class="icon-double-angle-right"></i><p>
-		All files will be organized by either <strong>Quarter</strong> or <strong>Semester</strong> automatically
-	</p>
-	<hr class="skinny" style="margin-bottom:50px;">
-	<i class="icon-double-angle-right"></i><P style="margin-bottom:;">
-		Each account must have an <strong>Account Administrator</strong> set up. Remember your additional password to: 
-		<ul>
-			<li>Edit Files</li>
-			<li>Delete Files</li>
-			<li>Manage Settings</li>
-		</ul>
-	</P>
+<i class="icon-double-angle-right"></i><p>
+All files will be organized by either <strong>Quarter</strong> or <strong>Semester</strong> automatically
+</p>
+<hr class="skinny" style="margin-bottom:50px;">
+<i class="icon-double-angle-right"></i><P style="margin-bottom:;">
+Each account must have an <strong>Account Administrator</strong> set up. Remember your additional password to: 
+<ul>
+	<li>Edit Files</li>
+	<li>Delete Files</li>
+	<li>Manage Settings</li>
+</ul>
+</P>
 <br>
 	<!-- <i class="icon-double-angle-right"></i><p>
 		All files will be organized by either <strong>Quarter</strong> or <strong>Semester</strong> automatically
 	</p>
- --></div>
+--></div>
 </div>
