@@ -54,7 +54,7 @@ class Account < ActiveRecord::Base
       with: /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/,
       message: "Please enter a valid Email" }
 
-      # validates :accept_terms_and_conditions, :acceptance => {:accept => true}           
+    # validates :accept_terms_and_conditions, :acceptance => {:accept => true}           
     # validates_acceptance_of :accept_terms_and_conditions, on: :create, 
     #                  allow_nil: false, message: "hey"
 
