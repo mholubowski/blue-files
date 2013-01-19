@@ -5,11 +5,12 @@ class Account < ActiveRecord::Base
  :schedule_type, :admin_name, :admin_email, :admin_phone
  has_secure_password
  before_save :strip_phone
-   # before_save :create_remember_token
+ before_save :create_remember_token
    after_initialize :init
 
    has_many :documents, dependent: :destroy
    has_many :requests,  dependent: :destroy
+   has_many  :subscriptions, dependent: :destroy
    
    validates :username, 
    presence:   true,

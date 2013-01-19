@@ -1,77 +1,84 @@
+
 <div class="row"><div id="sign-up-form" class="span4 offset2">
 	<div id="sign-up-header">
-		<h2>Sign Up</h2>
-			<p>It's <strong>free</strong> and takes <strong>less than one minute.</strong> </p>
+		<h2>Payment Info</h2>
+			<p>The first month is <strong>free</strong> and you can cancel any time</p>
 	</div>
 	<hr class="skinny">
-	<%= form_for @account, validate: true do |f| %>
 	<%#= render 'shared/form_error_messages', object: f.object %>
 	
 	<%#= f.label :username %>
 	<div class="input-prepend">
 		<span class="add-on"><i class='icon-folder-open-alt'></i></span>
-		<%= f.text_field :username, placeholder: "Account Name" %>
+		<%= current_account.username %>
 	</div>
 
 <br>
 	<%#= f.label :password %>
 	<div class="input-prepend">
 		<span class="add-on"><i class='icon-lock'></i></span>
-		<%= f.password_field :password, placeholder: "Password" %>
+		<%= current_account.schedule_type %>
 	</div>
 <br>
-	<%#= f.label :password_confirmation %>
-	<div class="input-prepend">
-		<span class="add-on"><i class='icon-refresh'></i></span>
-		<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-	</div>
-<br>
-	<%= f.label :schedule_type %>
-	<%= f.radio_button :schedule_type, "Quarter" %> <span class="gray">Quarter</span>
-	<%= f.radio_button :schedule_type, "Semester" %> <span class="gray">Semester</span>
-
-	<hr class="skinny">
+	
 	<h3>Admin</h3>
 	
 	<%#= f.label "Admin full name" %>
 	<div class="input-prepend">
 		<span class="add-on"><i class='icon-user'></i></span>
-		<%= f.text_field :admin_name, placeholder: "Full Name" %>
+		<%= current_account.admin_name %>
 	</div>
 	
 <br>
 	<%#= f.label "Admin email address" %>
 	<div class="input-prepend">
 		<span class="add-on"><i class='icon-envelope'></i></span>
-		<%= f.text_field :admin_email, placeholder: "Email Address" %>
+		<%= current_account.admin_phone %>
 	</div>
 	
 <br>
 	<%#= f.label "Admin phone number" %>
 	<div class="input-prepend">
 		<span class="add-on"><i class='icon-phone'></i></span>
-		<%= f.text_field :admin_phone, placeholder: "Phone Number" %>
+		<%= current_account.admin_email %>
 	</div>
 	
 <br>
-	<%#= f.label "Admin Password" %>
-	<div class="input-prepend">
-		<span class="add-on"><i class='icon-lock'></i></span>
-		<%= f.password_field :account_admin_password, placeholder: "Admin Password" %>
-	</div>
-	
-<br>
+<hr>
+<hr>
+		<!-- *** CC FORM START *** -->
 
-	<div>
-		<%= f.label :accept_terms_and_conditions, "I agree to the #{link_to 'Terms of Service', accounts_path}.".html_safe, class: "checkbox", style:"display:inline;" %>
-	
-		<%= f.check_box :accept_terms_and_conditions %>
-	</div>
+<%= form_for @subscription do |f| %>
+  <% if @subscription.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+      <ul>
+      <% @subscription.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :plan %>
 
-
-	<%= f.submit "Submit", class: "btn btn-large" %>
-
+  <div class="field">
+      <%= label_tag :card_number, "Credit Card Number " %>
+      <%= text_field_tag :card_number, nil, name: nil %>
+  </div>
+  <div class="field">
+      <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+      <%= text_field_tag :card_code, nil, name: nil %>
+  </div>
+  <div class="field">
+    <%= label_tag :card_month, "Card Expiration" %>
+    <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month"}%>
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}%>
+  </div>
+  <div class="actions"><%= f.submit "Subscribe" %></div>
 <% end %>
+
+
+
 </div>
 <div class="span3 sign-up-side">
 	<h2>Details</h2>

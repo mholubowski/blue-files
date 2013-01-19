@@ -1,5 +1,9 @@
 BlueFiles::Application.routes.draw do
 
+  get "subscriptions/new"
+
+  get "subscriptions/create"
+
   get "document_comments/new"
 
   get "document_comments/create"
@@ -48,6 +52,7 @@ BlueFiles::Application.routes.draw do
   resources :documents
   resources :document_comments
   resources :requests
+  resources :subscriptions
   resources :sessions, only: [:new, :create, :destroy]
 
   root :to => 'welcome#index'
