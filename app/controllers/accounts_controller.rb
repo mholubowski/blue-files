@@ -11,9 +11,9 @@ before_filter :admin_user, only: [:destroy, :edit, :update, :index] #TODO index 
   def create
   	@account = Account.new(params[:account])
   	if @account.save
-  		flash[:success] = "Successful account signup!"
+  		# flash[:success] = "Successful account signup!"
       sign_in(@account)
-      redirect_to root_path
+      redirect_to subscriptions_new_path
     else
       flash[:error] = "Please try again"
       render 'new'
