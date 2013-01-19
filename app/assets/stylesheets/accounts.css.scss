@@ -95,13 +95,23 @@ $gray: #555;
 	margin-left:0px !important;
 	margin-top: 1px;
 
+	hr{
+		border-top: 1px solid #DDD;
+	}
 	h2{
+		font-weight: 200;
 		text-align: center;
-		color: #999;
+		color:  $gray;
+		margin-bottom: 35px;
 	}
 	i{
-		color:#888;
+		color:  $gray;
 		font-size: 20px;
 	}
-
+	p{
+		color: $gray;
+	}
+	ul{
+		color: lighten($gray,5%);
+	}
 }
