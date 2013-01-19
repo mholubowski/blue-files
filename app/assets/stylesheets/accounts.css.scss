@@ -32,6 +32,11 @@ $gray: #555;
 		color:    #888;
 		font-weight: 200;
 	}
+	#sign-up-header{
+		p{
+			font-weight: 200;
+		}
+	}
 	span.gray{
 		color: lighten($gray, 15%);
 		font-weight: 200;
@@ -46,6 +51,12 @@ $gray: #555;
 		i{
 			color:#888;
 		}
+	}
+	.field_with_errors{
+		label.message{
+			margin-bottom: -18px;	
+		}
+
 	}
 	label.checkbox{
 
@@ -64,9 +75,33 @@ $gray: #555;
 		}
 		&[type="checkbox"]{
 			position: relative;
-			right: 189px;
-			bottom: 2px;
+			right: 194px;
+			bottom: 1px;
 
 		}
 	}
+}
+
+.sign-up-side{
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	background-color: #BBB;
+	// background-color:rgba(255,255,255,0.25);
+	padding: 10px 15px;
+
+	box-shadow: inset 1px 1px 0 #aaa,0 0 1px 1px rgba(80,84,92,0.1),0 1px 2px rgba(80,84,92,0.2);
+	height: 626px;
+	margin-left:0px !important;
+	margin-top: 1px;
+
+	h2{
+		text-align: center;
+		color: #999;
+	}
+	i{
+		color:#888;
+		font-size: 20px;
+	}
+
 }

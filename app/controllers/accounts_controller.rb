@@ -15,7 +15,7 @@ before_filter :admin_user, only: [:destroy, :edit, :update, :index] #TODO index 
       sign_in(@account)
       redirect_to root_path
     else
-      flash[:error]   = "Please try again"
+      flash[:error] = "Please try again"
       render 'new'
     end
   end
