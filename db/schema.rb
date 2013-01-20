@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130119202631) do
+ActiveRecord::Schema.define(:version => 20130120050055) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
@@ -69,9 +69,10 @@ ActiveRecord::Schema.define(:version => 20130119202631) do
   create_table "subscriptions", :force => true do |t|
     t.integer  "account_id"
     t.string   "stripe_card_token"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.integer  "plan"
+    t.string   "stripe_customer_token"
   end
 
 end

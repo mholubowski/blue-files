@@ -10,7 +10,7 @@ class Account < ActiveRecord::Base
 
    has_many :documents, dependent: :destroy
    has_many :requests,  dependent: :destroy
-   has_many  :subscriptions, dependent: :destroy
+   has_many :subscriptions, dependent: :destroy
    
    validates :username, 
    presence:   true,

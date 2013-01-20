@@ -27,7 +27,9 @@ subscription = {
   },
   handleStripeResponse: function(status, response) {
     if (status === 200) {
-      return alert(response.id);
+      // return alert(response.id);
+      $('#subscription_stripe_card_token').val(response.id);
+      $('#new_subscription')[0].submit();
     } else {
       $('#stripe_error').text(response.error.message);
       $('input[type=submit]').attr('disabled', false);
