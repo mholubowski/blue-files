@@ -8,7 +8,7 @@
 	<%#= render 'shared/form_error_messages', object: f.object %>
 	
 	<%#= f.label :username %>
-		<!-- *** CC FORM START *** -->
+	<!-- *** CC FORM START *** -->
 
 	<%= form_for @subscription do |f| %>
 	<% if @subscription.errors.any? %>
@@ -38,7 +38,7 @@
 	</div>
 
 
-<div class="field">
+	<div class="field">
 		<%= label_tag :card_code, "Security Code on Card (CVV)" %>
 		<div class="input-prepend">
 			<span class="add-on">
@@ -64,64 +64,57 @@
 	<br>
 	<hr>
 	<hr>
-<div class="well">
+	<div class="well">
 
 
 
-<h3>Account Info</h3>
-<hr>
-<div class="input-prepend">
-		<i class='icon-folder-open-alt'></i>
-		<%= current_account.username %>
+		<h3>Account Info</h3>
+		<hr>
+		<div class="input-prepend">
+			<i class='icon-folder-open-alt'></i>
+			<%= current_account.username %>
+		</div>
+
+
+
+
+
+		<%#= f.label "Admin full name" %>
+		<div class="input-prepend">
+			<i class='icon-user' style="margin-right:4px;"></i>
+			<%= current_account.admin_name %>
+		</div>
+
+		<%#= f.label "Admin email address" %>
+		<div class="input-prepend">
+			<i class='icon-envelope' style="margin-right:1px;"></i>
+			<%= current_account.admin_email %>
+		</div>
+
+		<%#= f.label "Admin phone number" %>
+		<div class="input-prepend">
+			<i class='icon-phone' style="margin-right:4px;"></i>
+			<%= current_account.admin_phone %>
+		</div>
+
 	</div>
+</div>
 
+<div id="CC-side" class="span3 sign-up-side">
 
-	
-	
-	
-	<%#= f.label "Admin full name" %>
-	<div class="input-prepend">
-		<i class='icon-user' style="margin-right:4px;"></i>
-		<%= current_account.admin_name %>
+	<div class="plan">
+		<h2>Free</h2>
+		<p>For 30 days</p>
 	</div>
-	
-	<%#= f.label "Admin email address" %>
-	<div class="input-prepend">
-		<i class='icon-envelope' style="margin-right:1px;"></i>
-		<%= current_account.admin_email %>
+	<div class="plan">
+		<h2>200 <small>Files</small></h2>
+		<p>$19.95 / month</p>
 	</div>
-	
-	<%#= f.label "Admin phone number" %>
-	<div class="input-prepend">
-		<i class='icon-phone' style="margin-right:4px;"></i>
-		<%= current_account.admin_phone %>
+	<div class="plan">
+		<h2>500 <small>Files</small></h2>
+		<p>$29.95 / month</p>
 	</div>
 
 </div>
-</div>
-<div class="span3 sign-up-side">
-	<h2>Details</h2>
-	<p>  </p>
-	<hr class="skinny">
-	<i class="icon-double-angle-right"></i><P style="margin-bottom: 60px;">
-	One <strong>Account Name</strong> and <strong>Password</strong> per organization, for unlimited users
-</P>
-<br>
-<i class="icon-double-angle-right"></i><p>
-All files will be organized by either <strong>Quarter</strong> or <strong>Semester</strong> automatically
-</p>
-<hr class="skinny" style="margin-bottom:50px;">
-<i class="icon-double-angle-right"></i><P style="margin-bottom:;">
-Each account must have an <strong>Account Administrator</strong> set up. Remember your additional password to: 
-<ul>
-	<li>Edit Files</li>
-	<li>Delete Files</li>
-	<li>Manage Settings</li>
-</ul>
-</P>
-<br>
-	<!-- <i class="icon-double-angle-right"></i><p>
-		All files will be organized by either <strong>Quarter</strong> or <strong>Semester</strong> automatically
-	</p>
---></div>
+
 </div>
