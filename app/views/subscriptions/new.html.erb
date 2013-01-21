@@ -29,12 +29,25 @@
 
 	<div class="field">
 		<%= label_tag :card_number, "Credit Card Number " %>
-		<%= text_field_tag :card_number, nil, name: nil %>
+		<div class="input-prepend">
+			<span class="add-on">
+				<i class='icon-credit-card'></i>
+			</span>
+			<%= text_field_tag :card_number, nil, name: nil %>
+		</div>
 	</div>
-	<div class="field">
+
+
+<div class="field">
 		<%= label_tag :card_code, "Security Code on Card (CVV)" %>
-		<%= text_field_tag :card_code, nil, name: nil %>
+		<div class="input-prepend">
+			<span class="add-on">
+				<i class='icon-lock'></i>
+			</span>
+			<%= text_field_tag :card_code, nil, name: nil %>
+		</div>
 	</div>
+
 	<div class="field">
 		<%= label_tag :card_month, "Card Expiration" %>
 		<%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month"}%>
@@ -44,50 +57,47 @@
 	<div id="stripe_error">
 		<noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
 	</div>
-	
-	<div class="actions"><%= f.submit "Subscribe" %></div>
+	<br>
+	<div class="actions"><%= f.submit "Complete" %></div>
 	<% end %>
 	
 	<br>
 	<hr>
 	<hr>
+<div class="well">
 
+
+
+<h3>Account Info</h3>
+<hr>
 <div class="input-prepend">
 		<i class='icon-folder-open-alt'></i>
 		<%= current_account.username %>
 	</div>
 
-	<br>
-	<%#= f.label :password %>
-	<div class="input-prepend">
-		<i class='icon-lock'></i>
-		<%= current_account.schedule_type %>
-	</div>
-	<br>
+
 	
-	<h3>Admin</h3>
+	
 	
 	<%#= f.label "Admin full name" %>
 	<div class="input-prepend">
-		<i class='icon-user'></i>
+		<i class='icon-user' style="margin-right:4px;"></i>
 		<%= current_account.admin_name %>
 	</div>
 	
-	<br>
 	<%#= f.label "Admin email address" %>
 	<div class="input-prepend">
-		<i class='icon-envelope'></i>
-		<%= current_account.admin_phone %>
-	</div>
-	
-	<br>
-	<%#= f.label "Admin phone number" %>
-	<div class="input-prepend">
-		<i class='icon-phone'></i>
+		<i class='icon-envelope' style="margin-right:1px;"></i>
 		<%= current_account.admin_email %>
 	</div>
+	
+	<%#= f.label "Admin phone number" %>
+	<div class="input-prepend">
+		<i class='icon-phone' style="margin-right:4px;"></i>
+		<%= current_account.admin_phone %>
+	</div>
 
-
+</div>
 </div>
 <div class="span3 sign-up-side">
 	<h2>Details</h2>
