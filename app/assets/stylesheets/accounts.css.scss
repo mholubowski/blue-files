@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $gray: #555;
-#sign-up-form{
+#sign-up-form, #CC-form{
 	border-radius: 2px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -82,6 +82,11 @@ $gray: #555;
 	}
 }
 
+#CC-form{
+	div.input-prepend{
+		color: $gray;
+	}
+}
 .sign-up-side{
 	border-radius: 2px;
 	-moz-border-radius: 2px;
