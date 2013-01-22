@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	account = Account.find_by_username(params[:session][:username])
+  	account = Account.find_by_username((params[:session][:username]).downcase)
     admin_entry = params[:session][:account_admin_password]
     admin_pass  = account.account_admin_password if account
 

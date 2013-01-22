@@ -6,6 +6,7 @@ class Account < ActiveRecord::Base
  has_secure_password
  before_save :strip_phone
  before_save :create_remember_token
+ before_save { |account| account.username = account.username.downcase }
    after_initialize :init
 
    has_many :documents, dependent: :destroy
