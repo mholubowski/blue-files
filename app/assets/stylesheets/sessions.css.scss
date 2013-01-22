@@ -5,6 +5,10 @@
 // ///// GETTING STYLES FROM accounts.css
 
 #sign-in-form{
+	box-shadow: 1px 4px 15px rgb(34, 34, 36);
+	-moz-box-shadow: 1px 4px 15px rgb(34, 34, 36);
+	-webkit-box-shadow: 1px 4px 15px rgb(34, 34, 36);
+
 	text-align: center;
 	input{
 		height: 40px;
