@@ -28,12 +28,15 @@
 	<!-- Hidden # of pages -->
 	<%= f.hidden_field :number_of_pages, value: 3 %>
 
+	<!-- Department -->
 	<%= f.label current_account.category %>
-	<%= f.text_field :category %>
+	<%= f.text_field :category, autocomplete: "off" %>
 
+	<!-- Course -->
 	<%= f.label current_account.sub_category %>
 	<%= f.text_field :sub_category %>
 
+	<!-- Professor -->
 	<%= f.label current_account.sub_sub_category %>
 	<%= f.text_field :sub_sub_category %>
 
@@ -50,3 +53,4 @@
 	<% end %>
 	<hr>
 </div>
+<%= javascript_tag "var list_of_majors = #{ @list_of_majors.to_json };" %>
