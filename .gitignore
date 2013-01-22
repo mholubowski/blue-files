@@ -17,4 +17,3 @@
 # Ignore local upload files
 
 #Stripe Credentials
-/config/initializers/stripe.rb
