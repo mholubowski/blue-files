@@ -16,7 +16,10 @@ class Account < ActiveRecord::Base
    validates :username, 
    presence:   true,
    uniqueness: true,
-   length:  { in: 4..25 }
+   length:  { in: 4..25 },
+   format:  {
+      with: /^[A-Za-z\d_]+$/,
+      message: "can only be alphanumeric with no spaces"}
 
 
    validates :password,
