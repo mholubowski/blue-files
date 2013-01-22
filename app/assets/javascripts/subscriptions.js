@@ -1,8 +1,13 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+
 var subscription;
 
 jQuery(function() {
+  $('.plan').click(function(){
+  $('.plan').removeClass("active");
+  $(this).addClass("active");
+})
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
   return subscription.setupForm();
 });
@@ -36,3 +41,4 @@ subscription = {
     }
   }
 };
+
