@@ -57,8 +57,14 @@
 	<div id="stripe_error">
 		<noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
 	</div>
+
+	<div class="well inline">
+		<p><i class="icon-file-alt"></i> Plan Selected:</p>
+		<p id="plan-selected">Free</p>
+	</div>
+
 	<br>
-	<div class="actions"><%= f.submit "Complete" %></div>
+	<div class="actions"><%= f.submit raw("Complete"), class:"btn" %></div>
 	<% end %>
 	
 	<br>
@@ -105,7 +111,7 @@
 		Pricing Plans
 	</div>
 
-	<div id="plan1" class="plan">
+	<div id="plan1" class="plan active">
 		<div class="stripe gray">
 			<h2>Free</h2>
 		</div>

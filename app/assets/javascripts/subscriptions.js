@@ -3,11 +3,30 @@
 
 var subscription;
 
+// Toggling plans
 jQuery(function() {
   $('.plan').click(function(){
-  $('.plan').removeClass("active");
-  $(this).addClass("active");
-})
+    $('.plan').removeClass("active");
+    $(this).addClass("active");
+ })
+    $('#plan1').click(function(){
+      $('#subscription_plan').val(1);
+      $('#plan-selected').html('Free');
+    })
+
+    $('#plan2').click(function(){
+      $('#subscription_plan').val(2);
+      $('#plan-selected').html('Pro');
+    })
+
+    $('#plan3').click(function(){
+      $('#subscription_plan').val(3);
+      $('#plan-selected').html('Extra');
+    })
+
+ 
+
+
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
   return subscription.setupForm();
 });
