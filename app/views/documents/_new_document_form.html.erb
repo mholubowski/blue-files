@@ -54,3 +54,7 @@
 	<hr>
 </div>
 <%= javascript_tag "var list_of_majors = #{ @list_of_majors.to_json }; var list_of_courses = #{@list_of_courses.to_json}; " %>
+<!-- NOTE: Moving this into documents.js breaks things -->
+<script type="text/javascript">	//Bootstrap Dropdown typeahead
+	$('#document_category').typeahead({ source: list_of_majors, items: 4 });
+	$('#document_sub_category').typeahead({ source: list_of_courses, items: 4 });</script>
