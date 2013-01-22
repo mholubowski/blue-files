@@ -65,42 +65,44 @@
 
 <% else %>
 <div class="row">
-	<div class="span5 offset4">
+	<div class="span6 offset3" style="text-align:center;">
 		<h1>Welcome to Blue Files!</h1>
-		<ul>
+		<!-- TODO: remove all inline styles -->
+		<%= image_tag "logo2.png", class: "logo big", style: "text-align:center;" %>
+<!-- 		<ul>
 			<li>Secure Storage</li>
 			<li>File Management</li>
 			<li>Censorship & Privacy</li>
-		</ul>
+		</ul> -->
 		<div class="well">
-			<%= link_to "Sign in", signin_path, class: "btn btn-success btn-large btn-block" %>
+			<%= link_to "Sign in", signin_path, class: "btn btn-large btn-block", style: "font-size: 1.3em;" %>
 			<br><br>
-			<%= link_to "Sign Up", signup_path, class: "btn btn-primary btn-block" %>
+			<%= link_to "Sign Up", signup_path, class: "btn btn-primary btn-block", style: "font-size: 1.3em;" %>
 		</div>
 	</div>
 </div>
 
-<%= image_tag "logo.png", class: "logo big" %>
-<%= image_tag "logo.png", class: "logo" %>
-<%= image_tag "logo.png", class: "logo small" %>
-<%= image_tag "logo.png", class: "logo verysmall" %>
-<%= image_tag "logo.png", class: "logo icon" %>
+<%#= image_tag "logo.png", class: "logo big" %>
+<%#= image_tag "logo.png", class: "logo" %>
+<%#= image_tag "logo.png", class: "logo small" %>
+<%#= image_tag "logo.png", class: "logo verysmall" %>
+<%#= image_tag "logo.png", class: "logo icon" %>
 <br>
-<%= image_tag "logo2.png", class: "logo big" %>
-<%= image_tag "logo2.png", class: "logo" %>
-<%= image_tag "logo2.png", class: "logo small" %>
-<%= image_tag "logo2.png", class: "logo verysmall" %>
-<%= image_tag "logo2.png", class: "logo icon" %>
+<%#= image_tag "logo2.png", class: "logo big" %>
+<%#= image_tag "logo2.png", class: "logo" %>
+<%#= image_tag "logo2.png", class: "logo small" %>
+<%#= image_tag "logo2.png", class: "logo verysmall" %>
+<%#= image_tag "logo2.png", class: "logo icon" %>
 <br>
-<%= image_tag "logo3.png", class: "logo big" %>
-<%= image_tag "logo3.png", class: "logo" %>
-<%= image_tag "logo3.png", class: "logo small" %>
-<%= image_tag "logo3.png", class: "logo verysmall" %>
-<%= image_tag "logo3.png", class: "logo icon" %>
+<%#= image_tag "logo3.png", class: "logo big" %>
+<%#= image_tag "logo3.png", class: "logo" %>
+<%#= image_tag "logo3.png", class: "logo small" %>
+<%#= image_tag "logo3.png", class: "logo verysmall" %>
+<%#= image_tag "logo3.png", class: "logo icon" %>
 <br>
-<%= image_tag "logo4.png", class: "logo big" %>
-<%= image_tag "logo4.png", class: "logo" %>
-<%= image_tag "logo4.png", class: "logo small" %>
-<%= image_tag "logo4.png", class: "logo verysmall" %>
-<%= image_tag "logo4.png", class: "logo icon" %>
+<%#= image_tag "logo4.png", class: "logo big" %>
+<%#= image_tag "logo4.png", class: "logo" %>
+<%#= image_tag "logo4.png", class: "logo small" %>
+<%#= image_tag "logo4.png", class: "logo verysmall" %>
+<%#= image_tag "logo4.png", class: "logo icon" %>
 <% end %>
