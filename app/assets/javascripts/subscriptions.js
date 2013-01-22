@@ -10,17 +10,17 @@ jQuery(function() {
     $(this).addClass("active");
  })
     $('#plan1').click(function(){
-      $('#subscription_plan').val(1);
+      $('#subscription_plan').val(0);
       $('#plan-selected').html('Free');
     })
 
     $('#plan2').click(function(){
-      $('#subscription_plan').val(2);
+      $('#subscription_plan').val(1);
       $('#plan-selected').html('Pro');
     })
 
     $('#plan3').click(function(){
-      $('#subscription_plan').val(3);
+      $('#subscription_plan').val(2);
       $('#plan-selected').html('Extra');
     })
 
