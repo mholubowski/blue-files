@@ -180,52 +180,36 @@
        });
      }
      else {
-     	return false;
+     	// return false;
      }
    });
 
 	// screenshot
 
-  var keysPressed  = []
-  var combo = [93,16] 
-  $(document).keydown(function(e){
-   switch(e.which){
-    case 91 || 93:
-    keysPressed.push(93);
-    break;
-    case 93:
-    keysPressed.push(93);
-    break;
-    case 16:
-    keysPressed.push(16);
-    break;
-    default:
-    keysPressed = [];
-    break;
-  }
-  console.log(keysPressed);
-  if ($(keysPressed).not(combo).length == 0 && $(combo).not(keysPressed).length == 0) {
-    console.log('hide!');
-    $('#the-canvas').addClass("censor");
-  }
-});
+//   var keysPressed  = []
+//   var combo = [93,16] 
+//   $(document).keydown(function(e){
+//    switch(e.which){
+//     case 91 || 93:
+//     keysPressed.push(93);
+//     break;
+//     case 93:
+//     keysPressed.push(93);
+//     break;
+//     case 16:
+//     keysPressed.push(16);
+//     break;
+//     default:
+//     keysPressed = [];
+//     break;
+//   }
+//   console.log(keysPressed);
+//   if ($(keysPressed).not(combo).length == 0 && $(combo).not(keysPressed).length == 0) {
+//     console.log('hide!');
+//     $('#the-canvas').addClass("censor");
+//   }
+// });
 
-  $(document).keyup(function(e){
-   switch(e.which){
-     case 91:
-     keysPressed = [];
-     break;
-     case 93:
-     keysPressed = [];
-     break;
-     case 16:
-     keysPressed = [];
-     break;
-     default:
-     break;
-   }
-   console.log(keysPressed);
- });
 
 
 
