@@ -33,8 +33,8 @@
 	<%= f.text_field :category, autocomplete: "off" %>
 
 	<!-- Course -->
-	<%= f.label current_account.sub_category %>
-	<%= f.text_field :sub_category %>
+	<%= f.label "Course Number" %>
+	<%= f.text_field :sub_category, autocomplete: "off" %>
 
 	<!-- Professor -->
 	<%= f.label current_account.sub_sub_category %>
@@ -53,4 +53,4 @@
 	<% end %>
 	<hr>
 </div>
-<%= javascript_tag "var list_of_majors = #{ @list_of_majors.to_json };" %>
+<%= javascript_tag "var list_of_majors = #{ @list_of_majors.to_json }; var list_of_courses = #{@list_of_courses.to_json}; " %>

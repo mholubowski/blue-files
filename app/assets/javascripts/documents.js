@@ -51,5 +51,6 @@ $(function(){
 
 	//Bootstrap Dropdown typeahead
 	$('#document_category').typeahead({ source: list_of_majors, items: 4 });
+	$('#document_sub_category').typeahead({ source: list_of_courses, items: 4 });
 })
 

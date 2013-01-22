@@ -41,6 +41,7 @@ before_filter :correct_document, only: [:show, :edit, :update, :destroy]
 
   def new
     @list_of_majors = ["Anthropology", "Art", "Art History", "Asian American Studies", "Biochemistry", "Biological Sciences", "Biopsychology", "Black Studies", "Cell & Developmental Biology", "Chemistry", "Chicano & Chicana Studies", "Classics", "Communication", "Comparative Literature", "Dance", "Earth Science", "Ecology and Evolution", "Economics", "Economics and Accounting", "Economics/Mathematics", "English", "Environmental Studies", "Feminist Studies", "Film & Media Studies", "Financial Math and Statistics", "French", "Geography", "German", "Global Studies", "History", "History of Public Policy", "Interdisciplinary Studies", "Italian Studies", "Japanese", "Latin American & Iberian Studies", "Linguistics", "Mathematics", "Mathematical Sciences", "Medieval Studies", "Microbiology", "Middle East Studies", "Music", "Pharmacology", "Philosophy", "Physical Geography", "Physics", "Physiology", "Political Science", "Portuguese", "Psychology", "Religious Studies", "Renaissance Studies", "Slavic Languages & Literature", "Sociology", "Spanish", "Statistical Sciences", "Theater"]
+    @list_of_courses = ["1","2A","3A","3B","34C","5","5E","8","10","10a","10b","34A","34B","34C","40","162C","100B","101","162","170","122D","101EE","6F","20G","19H","99"] 
     # moved this into form for unique id's!!! :)
     # @document = current_account.documents.build if signed_in?
   end
