@@ -9,12 +9,16 @@ gem 'client_side_validations'
 gem "remotipart", "~> 1.0"
 gem "fog", "~> 1.3.1"
 gem "stripe"
+# gem 'exception_notification'
+gem 'google-analytics-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
 	gem 'sqlite3'
   gem 'better_errors'
+  # TODO get letter_opener working in production
+  # gem 'letter_opener'
 end
 # Gems used only for assets and not required
 # in production environments by default.
