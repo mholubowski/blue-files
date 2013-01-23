@@ -7,10 +7,10 @@
 		
 		<h1 id="comments-link" class="comments-header">Comments</h1>
 
-		<p><%= @document.original_comment %></p>
+		<!-- <p><%#= @document.original_comment %></p>
 		<p class="timestamp">Original Comment </p>
 		<hr>
-
+ -->
 		<div class="comments-wrapper">
 
 			<% @comments.each do |comment| %>
@@ -26,7 +26,8 @@
 				<%= render 'shared/form_error_messages', object: f.object %>
 
 				<%= f.label "Comment" %>
-				<%= f.text_field :content %>
+				<%= f.text_area :content, style: "width: 356px;
+height: 60px;" %>
 
 				<%= f.hidden_field :document_id %>
 
