@@ -15,7 +15,7 @@
 
 				<li><%= link_to "#{current_account.username}", root_path if signed_in?%> </li>
 				<li><%= link_to "Sign in", signin_path unless signed_in? %></li>
-				<li> <%= link_to "Sign up", signup_path unless signed_in? %></li>
+				<!-- <li><%#= link_to "Sign up", signup_path unless signed_in? %></li> -->
 				<li><%= link_to "Sign out", signout_path, method: "delete" if signed_in? %> </li>
 			</ul>
 			
