@@ -280,6 +280,11 @@ form.new_document{
 	select{
 		margin-bottom: 0px;
 	}
+	input{
+		&[type="submit"]{
+			width:100% !important;
+		}
+	}
 }
 
 // STRIPE

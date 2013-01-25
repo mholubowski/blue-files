@@ -34,6 +34,10 @@ $(function(){
 		return submit_btn.addClass('btn-warning');
 	});
 
+	$(document).ready(function(){
+		// TODO Do this without the shitty js hack
+		$('.addThisForm').first().click();
+	});
 	
 	$('.addThisForm').on('click', function(){
 		var addForm = $(this).parent();

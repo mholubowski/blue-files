@@ -1,9 +1,21 @@
 <h1 style="text-align:center">Upload Documents</h1>
 <hr>
-<h2 style="color:green;">Docs: <%= current_account.documents.count %></h2>
-<%= link_to "View Docs", documents_path %>
+<div class="row" id="new-doc-hud">
+	<div class="span12">
+		
+		<div class="span3">
+			<h4 style="color:green;">Total Documents: <%= current_account.documents.count %></h4>
+			<%= link_to raw(" <i class='icon-file-alt'></i>	 View Documents"), documents_path %>
+		</div>
+		<div class="span6 pull-right">
+			<p>
+					Every document uploaded will be converted to work with our <strong>secure document viewer</strong>. Please convert files to <strong>PDF format</strong> before uploading
+			</p>
+		</div>
+	</div>
+</div>
 <div class="row" id="newDocumentsRow">
-	<div class="span5 offset4 center">
+	<div class="span4 offset4 center">
 		<div id="addFormContainer">
 			<div class="added-file top-header">
 				<p>Uploaded Documents</p>
@@ -11,13 +23,13 @@
 
 			<!-- document create form -->
 			<% 10.times do  %>
-				<%= render 'documents/new_document_form' %>
+			<%= render 'documents/new_document_form' %>
 			<% end %>
-				<%= render 'documents/last_form' %>
+			<%= render 'documents/last_form' %>
 
 			<hr style="color:black;">
 		</div>
 
-		</div>
+	</div>
 </div>
 

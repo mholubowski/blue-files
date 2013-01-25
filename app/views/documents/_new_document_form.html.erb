@@ -1,7 +1,6 @@
 <% @document = current_account.documents.build %>
 <div id="<%= @document.object_id %>" class="hiddenDocForm theHider">
 	<div id="<%= @document.object_id %>">
-		<hr>
 		<%= form_for @document, validate: true, remote: true do |f| %>
 
 
@@ -65,7 +64,7 @@
 	</div>
 	<div class="addThisForm well"><p>Add File</p> <i class="icon-file-alt"></i></div>
 	<% end %>
-	<hr>
+	<hr class="skinny">
 </div>
 <%= javascript_tag "var list_of_majors = #{ @list_of_majors.to_json }; var list_of_courses = #{@list_of_courses.to_json}; " %>
 <!-- NOTE: Moving this into documents.js breaks things -->
