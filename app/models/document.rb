@@ -10,18 +10,20 @@ class Document < ActiveRecord::Base
   after_initialize :init
 
   validates :account_id, 	     presence: true
-  validates :category,		     presence: true
-  validates :sub_category,     presence: true
-  validates :sub_sub_category, presence: true 
-  validates :title,            presence: true #, 
+  validates :title,            presence: {message: "Please provide a title"}
+  validates :category,         presence: {message: "Please choose a Department / Major"}
+  validates :sub_category,     presence: {message: "Please provide a course number"}
+  validates :sub_sub_category, presence: {message: "Please include a name"} 
+  #, 
                                # uniqueness: { scope: #TODO improve this
                                # [:category, :sub_sub_category, :sub_category] 
                                #             }
 
 
-  validates :document_file,    presence: false,
+  validates :document_file, presence: {message: "Please attatch a PDF"}
+  validates :document_file,
                format:{
-                 with: %r{\.(pdf|pdf)$}i, message: "Only PDF's"
+                 with: %r{\.(pdf|pdf)$}i, message: "Please convert the file to PDF"
                 }
                 #TODO format and error messages
 
