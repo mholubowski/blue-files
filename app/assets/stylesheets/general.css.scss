@@ -409,5 +409,28 @@ div#announcement{
 		font-size: 1.1em;
 		font-weight: 200;
 	}
+
+	input{
+		border-radius: 0px;
+		-moz-border-radius: 0px;
+		-webkit-border-radius: 0px;
+
+		box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
+		-moz-box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
+		-webkit-box-shadow: inset 1px 2px 2px rgba(114, 114, 114, 0.7);
+		&[type="submit"]{
+			width:300px;
+			color: $gray;
+			height: 40px;
+			text-align: center;
+			font-size: 1.3em;
+		}
+		&[type="checkbox"]{
+			position: relative;
+			right: 194px;
+			bottom: 1px;
+
+		}
+	}
 }
 

@@ -8,18 +8,18 @@
 // Documents control section
 div#hud{
 
-background: -moz-linear-gradient(top,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.30) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.25)), color-stop(100%,rgba(0,0,0,0.30))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', endColorstr='#73000000',GradientType=0 ); /* IE6-9 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.30) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.25)), color-stop(100%,rgba(0,0,0,0.30))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.30) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', endColorstr='#73000000',GradientType=0 ); /* IE6-9 */
 
-height: 100px;
-padding: 10px;
-border-radius: 5px;
-margin-bottom: 25px;
+	height: 100px;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 25px;
 
 	div.info{
 		p.first{
@@ -77,9 +77,9 @@ margin-bottom: 25px;
 	padding: 10px;
 	color: yellowgreen;
 	i.icon-plus-sign{
-			position: relative;
-			top: 5px;
-		}
+		position: relative;
+		top: 5px;
+	}
 }
 
 #the-canvas{
@@ -113,9 +113,9 @@ margin-bottom: 25px;
 		position:relative;
 		top: 360px;
 		span.raquos{
-		font-size: 82px;
-		color:lighten($lighter-blue,5%);
-	}
+			font-size: 82px;
+			color:lighten($lighter-blue,5%);
+		}
 	}
 	
 	br{
@@ -144,7 +144,7 @@ div.added-file{
 	&:hover{
 		background-color: rgb(108, 184, 108);
 		cursor:hand; 
-  		cursor:pointer; 
+		cursor:pointer; 
 	}
 	a{
 		font-size: 1.5em;
@@ -179,5 +179,3 @@ div.added-file{
 		}
 	}
 }
-
-

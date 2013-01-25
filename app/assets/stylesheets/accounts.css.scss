@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $gray: #555;
-#sign-up-form, #CC-form, #sign-in-form{
+#sign-up-form, #CC-form, #sign-in-form, #new_document{
 	border-radius: 2px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -253,6 +253,34 @@ $gray: #555;
 	}
 }
 
+//FILE UPLOAD
+form.new_document{
+	max-width: 305px;
+	margin-left: auto;
+	margin-right: auto;
+	#document_document_file{
+		box-shadow: none !important;
+		color: #444;
+		font-size: 1.1em;
+		font-weight: 200;
+	}
+
+	label{
+		margin-top: 10px;
+		margin-bottom: 0px;
+
+		&.message{
+			margin-top: 0px;
+			font-size: 10px;
+			position: relative;
+			bottom: 5px;
+			right: 12px;
+		}
+	}
+	select{
+		margin-bottom: 0px;
+	}
+}
 
 // STRIPE
 #stripe_error{

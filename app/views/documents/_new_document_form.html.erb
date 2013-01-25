@@ -1,54 +1,68 @@
 <% @document = current_account.documents.build %>
 <div id="<%= @document.object_id %>" class="hiddenDocForm theHider">
-<div id="<%= @document.object_id %>">
-	<hr>
-	<%= form_for @document, validate: true, remote: true do |f| %>
+	<div id="<%= @document.object_id %>">
+		<hr>
+		<%= form_for @document, validate: true, remote: true do |f| %>
 
 
 
-	<%= f.hidden_field :hidden, value: @document.object_id  %>
+		<%= f.hidden_field :hidden, value: @document.object_id  %>
 
-	<%= render 'shared/form_error_messages', object: f.object %>
-	
-	<%= f.file_field :document_file %>
-	<p><small>document.id <%= @document.object_id %></small></p>
-	
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+		<%= render 'shared/form_error_messages', object: f.object %>
 
-	<%= f.label :type_of_document %>
-	<%= f.select :type_of_document, ['Test','Essay','Homework', 'Other'] %>
+		<%= f.file_field :document_file %>
 
-	<%= f.label current_account.schedule_type == "Quarter" ? "Quarter" : "Semester" %>
-	<%= f.select :quarter, ['Fall 2012', 'Fall 2011', 'Fall 2013','Winter 2012', 'Winter 2011',
-							'Winter 2013','Spring 2012', 'Spring 2011', 'Spring 2013' ] if current_account.schedule_type == "Quarter" %>
-	<%= f.select :quarter, ['Fall 2012', 'Fall 2011', 'Fall 2010','Spring 2012', 'Spring 2011',
-						    'Spring 2010' ] if current_account.schedule_type == "Semester" %>								
+		<!-- <p><small>document.id <%= @document.object_id %></small></p> -->
 
-	<!-- Hidden # of pages -->
-	<%= f.hidden_field :number_of_pages, value: 3 %>
+		<%= f.label :title %>
+		<div class="input-prepend">
+			<span class="add-on"><i class='icon-file-alt'></i></span>
+			<%= f.text_field :title %>
+		</div>
 
-	<!-- Department -->
-	<%= f.label current_account.category %>
-	<%= f.text_field :category, class: "document_category", autocomplete: "off" %>
+		<!-- Hidden # of pages -->
+		<%= f.hidden_field :number_of_pages, value: 3 %>
 
-	<!-- Course -->
-	<%= f.label "Course Number" %>
-	<%= f.text_field :sub_category, class: "document_sub_category", autocomplete: "off" %>
+		<!-- Department -->
+		<%= f.label current_account.category %>
+		<div class="input-prepend">
+			<span class="add-on"><i class='icon-book'></i></span>
+			<%= f.text_field :category, class: "document_category", autocomplete: "off" %>
+		</div>
+		<!-- Course -->
+		<%= f.label "Course Number" %>
+		<div class="input-prepend">
+			<span class="add-on"><i class='icon-list-ol'></i></span>
+			<%= f.text_field :sub_category, class: "document_sub_category", autocomplete: "off" %>
+		</div>
+		<!-- Professor -->
+		<%= f.label current_account.sub_sub_category %>
+		<div class="input-prepend">
+			<span class="add-on"><i class='icon-user'></i></span>
+			<%= f.text_field :sub_sub_category %>
+		</div>
+		<br>
+		<%= f.label :type_of_document %>
 
-	<!-- Professor -->
-	<%= f.label current_account.sub_sub_category %>
-	<%= f.text_field :sub_sub_category %>
+			<%= f.select :type_of_document, ['Test','Essay','Homework', 'Other'] %>
 
-	<!-- removed for HEROKU -->
+
+		<%= f.label current_account.schedule_type == "Quarter" ? "Quarter" : "Semester" %>
+
+			<%= f.select :quarter, ['Fall 2012', 'Fall 2011', 'Fall 2013','Winter 2012', 'Winter 2011',
+				'Winter 2013','Spring 2012', 'Spring 2011', 'Spring 2013' ] if current_account.schedule_type == "Quarter" %>
+				<%= f.select :quarter, ['Fall 2012', 'Fall 2011', 'Fall 2010','Spring 2012', 'Spring 2011',
+					'Spring 2010' ] if current_account.schedule_type == "Semester" %>								
+
+				<!-- removed for HEROKU -->
 	 <!-- f.label "Comments" 
 	 f.text_field :original_comment  -->
 
-	<br><br>
-	<div style="display:;">
-		<%= f.submit "Upload Document", disable_with: "Uploading Document..", class: "btn btn-large btn-primary" %>
+	 <br><br>
+	 <div style="display:;">
+	 	<%= f.submit "Upload Document", disable_with: "Uploading Document..", class: "btn btn-large " %>
+	 </div>
 	</div>
-</div>
 	<div class="addThisForm well"><p>Add File</p> <i class="icon-file-alt"></i></div>
 	<% end %>
 	<hr>
@@ -56,5 +70,5 @@
 <%= javascript_tag "var list_of_majors = #{ @list_of_majors.to_json }; var list_of_courses = #{@list_of_courses.to_json}; " %>
 <!-- NOTE: Moving this into documents.js breaks things -->
 <script type="text/javascript">	//Bootstrap Dropdown typeahead
-	$('.document_category').typeahead({ source: list_of_majors, items: 4 });
-	$('.document_sub_category').typeahead({ source: list_of_courses, items: 4 });</script>
+$('.document_category').typeahead({ source: list_of_majors, items: 4 });
+$('.document_sub_category').typeahead({ source: list_of_courses, items: 4 });</script>
