@@ -60,6 +60,19 @@ body{
 }
 
 div.welcome-sprite{
-	width: 100%;
+	width: 425px;
 	height: 225px;
+	 -webkit-box-shadow: inset 0px 0px 8px 0px #222;
+
+	&:hover{
+	 -webkit-box-shadow: inset 0px 0px 8px 0px #DDD;
+	}
+}
+
+div.welcome-text{
+	padding: 10px 0 0 0;
+
+	a{
+		float:right;
+	}
 }
