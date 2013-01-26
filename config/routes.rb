@@ -51,6 +51,11 @@ BlueFiles::Application.routes.draw do
   get "welcome/pricing"
   get "welcome/technology"
 
+  match '/security', to: 'welcome#security'
+  match '/simplicity', to: 'welcome#simplicity'
+  match '/pricing', to: 'welcome#pricing'
+  match '/technology', to: 'welcome#technology'
+
   resources :accounts
   resources :documents
   resources :document_comments

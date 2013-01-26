@@ -19,19 +19,19 @@ class WelcomeController < ApplicationController
   end
 
   def security
-  
+    @DocumentCount = Document.count
   end
 
   def simplicity
-    
+    @DocumentCount = Document.count
   end
 
   def pricing
-  
+    @DocumentCount = Document.count
   end
 
   def technology
-    
+    @DocumentCount = Document.count
   end
 
 end
