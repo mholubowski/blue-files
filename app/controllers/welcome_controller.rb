@@ -15,5 +15,6 @@ class WelcomeController < ApplicationController
               order: 'comment_count DESC',
               limit: 5) if signed_in?
 
+    @DocumentCount = Document.count
   end
 end

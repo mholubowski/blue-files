@@ -191,10 +191,7 @@ form[data-remote]{
 }
 
 .logo{
-	&:hover{
-		position:relative;
-		bottom:2px;
-	}
+
 	&:active{
 		background-color:whitesmoke;
 		border: 2px solid black;

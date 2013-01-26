@@ -68,22 +68,23 @@
 				<!-- ********* NOT LOGGED IN ********** -->
 <% else %>
 <div class="row">
+
 	<div class="span6" style="text-align:center;">
 		<h1>Welcome to Blue Files!</h1>
 		<!-- TODO: remove all inline styles -->
 		<%= image_tag "logo2.png", class: "logo big", style: "text-align:center;" %>
-<!-- 		<ul>
-			<li>Secure Storage</li>
-			<li>File Management</li>
-			<li>Censorship & Privacy</li>
-		</ul> --></div>
-		<div class="span6">
-			<div class="well dark">
+	</div>
+
+	<div class="span6">
+		<div class="well dark">
 				<%= link_to "Sign in", signin_path, class: "btn btn-large btn-block", style: "font-size: 1.3em;" %>
 				<br><br>
 				<%= link_to "Sign Up (coming soon)", root_path, class: "btn btn-primary btn-block disabled", style: "font-size: 1.3em;" %>
-			</div>
 		</div>
+		<div id="file-ticker" class="well dark">
+			<h1><%= @DocumentCount + 300 %> <small>files secured</small></h1>
+		</div>
+	</div>
 	
 </div>
 
