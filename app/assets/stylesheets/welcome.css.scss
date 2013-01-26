@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "core/*.png";
+@include all-core-sprites;
+
 body{
 	color:white;
 	// resets
@@ -47,4 +50,9 @@ body{
 
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	}
+}
+
+div.welcome-sprite{
+	width: 100%;
+	height: 225px;
 }
