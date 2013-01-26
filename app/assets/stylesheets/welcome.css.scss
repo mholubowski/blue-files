@@ -21,6 +21,13 @@ body{
 
 
 // Index page
+#welcome-header{
+	text-align: center;
+	position: relative;
+	bottom: 20px;
+	border-radius: 0px 0px 3px 3px;
+}
+
 #file-ticker{
 	text-align:center;
 
@@ -44,11 +51,11 @@ body{
 	background-color: #333;
 
 	h1{
-	color: #FFF;
-	margin-left: auto;
-	margin-right: auto;
+		color: #FFF;
+		margin-left: auto;
+		margin-right: auto;
 
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+		font-family: 'Yanone Kaffeesatz', sans-serif;
 	}
 }
 
