@@ -17,4 +17,21 @@ class WelcomeController < ApplicationController
 
     @DocumentCount = Document.count
   end
+
+  def security
+  
+  end
+
+  def simplicity
+    
+  end
+
+  def pricing
+  
+  end
+
+  def technology
+    
+  end
+
 end

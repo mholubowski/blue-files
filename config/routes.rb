@@ -46,7 +46,10 @@ BlueFiles::Application.routes.draw do
 
 
   get "welcome/index"
-
+  get "welcome/security"
+  get "welcome/simplicity"
+  get "welcome/pricing"
+  get "welcome/technology"
 
   resources :accounts
   resources :documents
