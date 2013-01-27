@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 $(function(){
 
-	$('#files-slider').slider({ animate: "fast",  min: 0, max: 1000, step: 50, value: 200, slide: function(e,ui){
+	$('#files-slider').slider({ animate: "fast",  min: 0, max: 1000, step: 50, value: 250, slide: function(e,ui){
 		var handle = ui.handle;
 		changeFilesPrice(ui.value); } 
 	});
@@ -71,6 +71,7 @@ changeFilesPrice = function(val){
 setFree = function(){
 	$('#price').html( "free trial" );
 	$('#per').html( "for 30 days" );
+	// TODO get slider animation working on click
 }
 
 changeUsersPrice = function(val){
