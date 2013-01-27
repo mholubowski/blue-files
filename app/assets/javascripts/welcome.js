@@ -19,7 +19,7 @@ $(function(){
 		changeFilesPrice(ui.value); } 
 	});
 
-	$('#users-slider').slider({ animate: "fast",  min: 0, max: 200, step: 10, value: 70, slide: function(e,ui){
+	$('#users-slider').slider({ animate: "fast",  min: 10, max: 200, step: 10, value: 70, slide: function(e,ui){
 		changeUsersPrice(ui.value); } 
 	});
 	
@@ -60,9 +60,7 @@ changeFilesPrice = function(val){
 
 	$('#numberOfFiles span').html(val);
 	users = $('#users-slider').slider("value")
-	if (users === 0){
-		users = 1;
-	}
+
 	base  = ( val > 250 ? 39.95 : 19.95 )
 	price = base / users
 	$('#price').html( "$"+ price.toFixed(2) );
@@ -77,9 +75,7 @@ setFree = function(){
 
 changeUsersPrice = function(val){
 	files = $('#files-slider').slider("value");
-	if (val === 0){
-		val = 1;
-	}
+
 	if (files <= 50){
 		setFree();
 		return;
