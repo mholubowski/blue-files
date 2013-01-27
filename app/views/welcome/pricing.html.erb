@@ -3,13 +3,13 @@
 <div class="well dark">
 
 	<div class="row">
-		<div class="span4 offset4">
+		<div class="span4 offset4" style="margin-left:310px;">
 			<div id="price-box">
 				<p id="price" class="price">$0.29</p>
 				<p class="per">per user / month</p>
 			</div>
 		</div>
-		<div class="span2 well dark">
+		<div class="span2 pull-right">
 				<h6>Pricing for:</h6>
 			<p id="numberOfFiles" class="numberOf"><i class="icon-file-alt"></i> <span>200</span> <small>files</small> </p>
 			<p id="numberOfUsers" class="numberOf"><i class="icon-user"></i> <span>70</span> <small>users</small> </p>
@@ -17,13 +17,15 @@
 	</div>
 
 	<div class="row slider">
-		<h4>Number of Files</h4>
-		<div id="files-slider" class="span11"> </div>
+		<h4><i class="icon-file-alt"></i> Number of Files</h4>
+		<p class="minMax" id="max-files"> 1</p>
+		<div id="files-slider" class="span9 offset1"> </div>
+		<p class="minMax" id="min-files"> 1000</p>
 	</div>		
 
 	<div class="row slider">
-		<h4>Number of Users</h4>
-		<div id="users-slider" class="span11"> </div>
+		<h4><i class="icon-users"></i> Number of Users</h4>
+		<div id="users-slider" class="span9 offset1"> </div>
 	</div>		
 
 </div>
@@ -42,7 +44,7 @@
 			<%= link_to "Start Trial", signup_path %>
 		</div>
 		
-		<div class="span4 threePlans" id="plan2">
+		<div class="span4 threePlans active" id="plan2">
 			<div><i class="icon-circle-blank"></i></div>
 			<h1>Pro</h1>
 			<div class="info">
@@ -53,7 +55,7 @@
 			<%= link_to "Signup", signup_path %>
 		</div>
 		
-		<div class="span4 threePlans active" id="plan3">
+		<div class="span4 threePlans" id="plan3">
 			<div><i class="icon-circle-blank"></i></div>
 			<h1>Extra</h1>
 			<div class="info">
