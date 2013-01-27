@@ -99,6 +99,9 @@ div#price-box{
 
 div.row.slider{
 	margin: 25px 0;
+	h4{
+		margin-bottom: 5px;
+	}
 }
 #files-value{
 	position:absolute;
@@ -111,6 +114,10 @@ p.numberOf{
 }
 
 div.threePlans{
+	&:hover{
+		cursor: hand;
+		cursor: pointer;
+	}
 	opacity: 0.6;
 	margin-left:5px;
 	margin-top: -19px;
@@ -162,8 +169,12 @@ div.threePlans{
 	}
 
 	// INACTIVE
-	&.active, &:hover{
+	&.active{
+		cursor: default;
 		opacity: 1.0;
+	}
+	&.active, &:hover{
+		
 		h1{
 			color: #FFF;
 			

@@ -23,17 +23,47 @@ $(function(){
 		changeUsersPrice(ui.value); } 
 	});
 	
+	$('.threePlans').on("click", function(){
+		$('.threePlans').removeClass('active');
+		$(this).addClass('active');
+
+		if (this.id === "plan1"){
+			$('#files-slider').slider("value", 50)
+			changeFilesPrice(50);
+		}
+		else if (this.id === "plan2"){
+			$('#files-slider').slider("value", 250)
+			changeFilesPrice(250);
+		}
+		else if (this.id === "plan3"){
+			$('#files-slider').slider("value", 900)
+			changeFilesPrice(1000);
+		}
+	});
+
 });
 
 changeFilesPrice = function(val){
+	$('.threePlans').removeClass('active');
+	if (val <= 50){
+		$('#plan1').addClass('active');
+	}
+	else if (val > 50 && val <= 250){
+		$('#plan2').addClass('active');
+	}
+	else {
+		$('#plan3').addClass('active');
+	}
+
 	$('#numberOfFiles span').html(val);
 	users = $('#users-slider').slider("value")
 	if (users === 0){
 		users = 1;
 	}
-	base  = ( val >= 500 ? 29.99 : 19.99 )
+	base  = ( val >= 500 ? 39.95 : 19.95 )
 	price = base / users
 	$('#price').html( "$"+ price.toFixed(2) );
+
 }
 
 changeUsersPrice = function(val){
@@ -42,13 +72,12 @@ changeUsersPrice = function(val){
 		val = 1;
 	}
 	$('#numberOfUsers span').html(val);
-	base  = ( files >= 500 ? 29.99 : 19.99 )
+	base  = ( files >= 500 ? 39.95 : 19.95 )
 	price = base / val
 	$('#price').html( "$"+ price.toFixed(2) );
 }
 
 setFilesLabelPosition = function(handle) {
-	console.log(handle.css('left'));
 	// var thumb = $($('#files-slider').children('.ui-slider-handle'));
 	var label = $('#files-value');
 	label.css('top', handle.offset().top + label.outerHeight(true));
