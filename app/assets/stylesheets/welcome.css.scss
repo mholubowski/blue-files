@@ -62,10 +62,10 @@ body{
 div.welcome-sprite{
 	width: 425px;
 	height: 225px;
-	 -webkit-box-shadow: inset 0px 0px 8px 0px #222;
+	-webkit-box-shadow: inset 0px 0px 8px 0px #222;
 
 	&:hover{
-	 -webkit-box-shadow: inset 0px 0px 8px 0px #DDD;
+		-webkit-box-shadow: inset 0px 0px 8px 0px #DDD;
 	}
 }
 
@@ -75,4 +75,37 @@ div.welcome-text{
 	a{
 		float:right;
 	}
+}
+
+// ----- PRICING -----
+
+div#price-box{
+	background-color: #333;
+	text-align:center;
+	padding: 30px 20px 20px 20px;
+	-webkit-box-shadow: inset 0px 0px 8px 0px #222;
+	p{
+		&.price{
+			font-size: 45px;
+			color: yellowgreen;
+			text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+		}
+		&.per{
+			font-size: 12px;
+			color: #777;
+		}
+	}
+}
+
+div.row.slider{
+	margin: 25px 0;
+}
+#files-value{
+	position:absolute;
+    width: 50px;
+}
+
+p.numberOf{
+	color: yellowgreen;
+	font-size: 1.4em;	
 }
