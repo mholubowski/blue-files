@@ -100,8 +100,9 @@ div#price-box{
 div.row.slider{
 	margin: 25px 0;
 	h4{
-		margin-bottom: 5px;
+		margin-bottom: -15px;
 	}
+
 }
 #files-value{
 	position:absolute;
@@ -111,7 +112,23 @@ div.row.slider{
 p.minMax{
 	color: gray;
 	font-weight: 200;
-	
+	position: relative;
+	&#min-files{
+		left: 82px;
+		top: 24px;
+	}
+	&#max-files{
+		left: 2px;
+		bottom: 3px;
+	}
+	&#min-users{
+		left: 82px;
+		top: 24px;
+	}
+	&#max-users{
+		left: 2px;
+		bottom: 3px;
+	}
 }
 p.numberOf{
 	color: yellowgreen;

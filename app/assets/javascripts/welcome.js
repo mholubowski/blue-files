@@ -47,6 +47,9 @@ changeFilesPrice = function(val){
 	$('.threePlans').removeClass('active');
 	if (val <= 50){
 		$('#plan1').addClass('active');
+		$('#numberOfFiles span').html(val);
+		setFree();
+		return;
 	}
 	else if (val > 50 && val <= 250){
 		$('#plan2').addClass('active');
@@ -60,10 +63,16 @@ changeFilesPrice = function(val){
 	if (users === 0){
 		users = 1;
 	}
-	base  = ( val >= 500 ? 39.95 : 19.95 )
+	base  = ( val > 250 ? 39.95 : 19.95 )
 	price = base / users
 	$('#price').html( "$"+ price.toFixed(2) );
+	$('#per').html( "per user / month" );
 
+}
+
+setFree = function(){
+	$('#price').html( "free trial" );
+	$('#per').html( "for 30 days" );
 }
 
 changeUsersPrice = function(val){
@@ -71,10 +80,15 @@ changeUsersPrice = function(val){
 	if (val === 0){
 		val = 1;
 	}
+	if (files <= 50){
+		setFree();
+		return;
+	}
 	$('#numberOfUsers span').html(val);
-	base  = ( files >= 500 ? 39.95 : 19.95 )
+	base  = ( files > 250 ? 39.95 : 19.95 )
 	price = base / val
 	$('#price').html( "$"+ price.toFixed(2) );
+	$('#per').html( "per user / month" );
 }
 
 setFilesLabelPosition = function(handle) {
