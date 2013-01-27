@@ -102,10 +102,89 @@ div.row.slider{
 }
 #files-value{
 	position:absolute;
-    width: 50px;
+	width: 50px;
 }
 
 p.numberOf{
 	color: yellowgreen;
 	font-size: 1.4em;	
+}
+
+div.threePlans{
+	opacity: 0.6;
+	margin-left:5px;
+	margin-top: -19px;
+	min-height: 270px;
+	text-align: center;
+
+	&:nth-child(2){
+		border-left:  1px solid rgb(18, 33, 41);
+		border-right: 1px solid rgb(18, 33, 41);
+	}
+	h1{
+		color: rgb(44, 69, 82);
+		text-align: center;
+		font-family: Yanone Kaffeesatz;
+		letter-spacing: 2px;
+		font-size: 40px;
+		margin-bottom: 35px;
+	}
+	div.info{
+		margin-bottom: 50px;
+		margin-left: 90px;;
+
+		p.numberOf{
+			text-align: left;
+			font-size: 2.2em;
+			padding: 5px;
+			margin-bottom: 0px;
+			color: gray;
+		}
+	}
+	a{
+		display: none;
+		min-width: 200px;
+		padding: 10px 64px;
+		font-size: 1.1em;
+		&:hover{
+			text-decoration: none;
+		}
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10+,Safari5.1+ */
+	}
+	i.icon-circle-blank{
+		color: #162b35;
+		position: relative;
+		bottom: 19px;
+	}
+	i{
+		margin-right: 3px;
+	}
+
+	// INACTIVE
+	&.active, &:hover{
+		opacity: 1.0;
+		h1{
+			color: #FFF;
+			
+		}
+		div.info{
+			
+
+			p.numberOf{
+				color: yellowgreen;	
+			
+			}
+		}
+		i.icon-circle-blank{
+			color: yellowgreen;
+			
+		}
+		i{
+			
+		}
+		a{
+			display: inline;
+		}
+	}
 }
