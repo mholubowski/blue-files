@@ -75,6 +75,6 @@ class Account < ActiveRecord::Base
       self.category         = "Department" if self.category.nil?
       self.sub_category     = "Course"     if self.sub_category.nil?
       self.sub_sub_category = "Professor"  if self.sub_sub_category.nil?
-      self.total_views      = 0            if self.total_views.nil?
+      self.total_views      = 1            if self.total_views.nil?
     end
   end

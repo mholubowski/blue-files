@@ -32,7 +32,7 @@ before_filter :correct_document, only: [:show, :edit, :update, :destroy]
     @document.update_attributes(views: view)
     # TODO how slow is this?
     total_views = current_account.total_views + 1
-    current_account.update_attributes(total_views: total_views)
+    current_account.update_attribute(:total_views, total_views)
 
 
     @comments = Document.find(params[:id]).document_comments.all
