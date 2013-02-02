@@ -1,3 +1,24 @@
 // Place all the styles related to the Admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#file-usage{
+	h2{
+		text-align: center;
+
+	}
+	.well{
+		padding: 0px;
+	}
+	.horizontal-bar{
+		height:30px;
+		width:30%;
+		background-color: yellowgreen;
+		border-radius: 0 3px 3px 0;
+		div{
+			font-size: 1.3em;
+			margin-top: 4px;
+			margin-right: 6px;
+		}
+	}
+}

@@ -1,3 +1,62 @@
 <h1>admin dashboard</h1>
 
-<h2><%= current_account.documents.count %></h2>
+<h2>files: <%= current_account.documents.count %></h2>
+<h2>max files: <%= max_files(current_account) %></h2>
+<h2>plan: <%= current_account.subscription.plan %></h2>
+<h2>Days left: <%= distance_of_time_in_words(Time.now, (current_account.subscription.created_at + 30.days)).to_i%></h2>
+
+<div id="file-usage" class="row well dark">
+	<h2>File Usage</h2>
+
+	<div class="span8 offset1">
+		<div class="well">
+		<div class="horizontal-bar">
+			<div id="current-files" class="pull-right"> <%= current_account.documents.count %> </div>
+		</div>
+		</div>
+	</div>
+	<div class="span1">
+		max files: <%= max_files(current_account) %>
+	</div>
+</div>
+
+	<div class="well">
+
+
+
+		<h3>Account Info</h3>
+		<hr class="skinny">
+		<div class="input-prepend">
+			<i class='icon-folder-open-alt'></i>
+			<%= current_account.username %>
+		</div>
+
+		<%#= f.label "Admin full name" %>
+		<div class="input-prepend">
+			<i class='icon-user' style="margin-right:4px;"></i>
+			<%= current_account.admin_name %>
+		</div>
+
+		<%#= f.label "Admin email address" %>
+		<div class="input-prepend">
+			<i class='icon-envelope' style="margin-right:1px;"></i>
+			<%= current_account.admin_email %>
+		</div>
+
+		<%#= f.label "Admin phone number" %>
+		<div class="input-prepend">
+			<i class='icon-phone' style="margin-right:4px;"></i>
+			<%= current_account.admin_phone %>
+		</div>
+
+	</div>
+
+
+
+<script type="text/javascript">
+	$(function(){
+		current = parseInt($('#current-files').html());
+		width = current*100 / 250
+		$('.horizontal-bar').animate({"width": width + "%"}, 1000);
+	})
+</script>	
