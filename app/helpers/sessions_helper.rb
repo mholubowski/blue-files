@@ -17,8 +17,10 @@ module SessionsHelper
 	end
 
 	def admin_user
-      flash[:error] = "You do not have permission to access that document"
-      redirect_to root_path
+	  unless cookies[:remember_token_admin] == current_account.remember_token 
+     	 flash[:error] = "You must be an admin"
+     	 redirect_to root_path
+     	end
     end
 
 	def signed_in?

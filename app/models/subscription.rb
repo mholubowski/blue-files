@@ -9,7 +9,6 @@ class Subscription < ActiveRecord::Base
     if valid?
       customer = Stripe::Customer.create(description: description,
       plan: plan, email: email, card: stripe_card_token)
-
       self.stripe_customer_token = customer.id
       save!
     end

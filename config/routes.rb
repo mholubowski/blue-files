@@ -1,5 +1,7 @@
 BlueFiles::Application.routes.draw do
 
+  match '/admin', to: 'admin#index'
+
   get "subscriptions/new"
 
   get "subscriptions/create"
