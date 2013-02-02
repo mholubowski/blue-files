@@ -1,0 +1,140 @@
+
+<div class="row"><div id="CC-form" class="span4 offset2">
+	<div id="sign-up-header">
+		<h2>Payment Info</h2>
+		<p>The first month is <strong>free</strong> and you can cancel any time</p>
+	</div>
+	<hr class="skinny">
+	<%#= render 'shared/form_error_messages', object: f.object %>
+	
+	<%#= f.label :username %>
+	<!-- *** CC FORM START *** -->
+
+	<%= form_for @subscription do |f| %>
+	<% if @subscription.errors.any? %>
+	<div class="error_messages">
+		<h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+		<ul>
+			<% @subscription.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+	<!-- TODO value should be dynamic -->
+	<%= f.hidden_field :plan, value: 0 %>
+	<%= f.hidden_field :email, value: current_account.admin_email %>
+	<%= f.hidden_field :description, value: "#{current_account.username} id:#{current_account.id}" %>
+	<%= f.hidden_field :stripe_card_token %>
+
+	<div class="field">
+		<%= label_tag :card_number, "Credit Card Number " %>
+		<div class="input-prepend">
+			<span class="add-on">
+				<i class='icon-credit-card'></i>
+			</span>
+			<%= text_field_tag :card_number, nil, name: nil %>
+		</div>
+	</div>
+
+
+	<div class="field">
+		<%= label_tag :card_code, "Security Code on Card (CVV)" %>
+		<div class="input-prepend">
+			<span class="add-on">
+				<i class='icon-lock'></i>
+			</span>
+			<%= text_field_tag :card_code, nil, name: nil %>
+		</div>
+	</div>
+
+	<div class="field">
+		<%= label_tag :card_month, "Card Expiration" %>
+		<%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month"}%>
+		<%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}%>
+	</div>
+
+	<div id="stripe_error">
+		<noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+	</div>
+
+	<div class="well inline">
+		<p><i class="icon-file-alt"></i> Plan Selected:</p>
+		<p id="plan-selected">Free</p>
+	</div>
+
+	<br>
+	<div class="actions"><%= f.submit raw("Complete"), class:"btn" %></div>
+	<% end %>
+	
+	<br>
+	<hr class="skinny">
+	<hr class="skinny">
+	<div class="well">
+
+
+
+		<h3>Account Info</h3>
+		<hr>
+		<div class="input-prepend">
+			<i class='icon-folder-open-alt'></i>
+			<%= current_account.username %>
+		</div>
+
+		<%#= f.label "Admin full name" %>
+		<div class="input-prepend">
+			<i class='icon-user' style="margin-right:4px;"></i>
+			<%= current_account.admin_name %>
+		</div>
+
+		<%#= f.label "Admin email address" %>
+		<div class="input-prepend">
+			<i class='icon-envelope' style="margin-right:1px;"></i>
+			<%= current_account.admin_email %>
+		</div>
+
+		<%#= f.label "Admin phone number" %>
+		<div class="input-prepend">
+			<i class='icon-phone' style="margin-right:4px;"></i>
+			<%= current_account.admin_phone %>
+		</div>
+
+	</div>
+</div>
+
+<div id="CC-side" class="span3 sign-up-side">
+	<div id="top">
+		Pricing Plans
+	</div>
+
+	<div id="plan1" class="plan active">
+		<div class="stripe gray">
+			<h2>Free</h2>
+		</div>
+		<p> <i class="icon-file-alt"></i> <strong>50</strong> Files</p>
+		<p><i class="icon-group"></i> Unlimited Users</p>
+		<hr class="skinny">
+		<p>Free 30 day trial</p>
+	</div>
+	<div id="plan2" class="plan">
+		<div class="stripe gray">
+			<h2>Pro</h2>
+		</div>
+		<p> <i class="icon-file-alt"></i> <strong>200</strong> Files</p>
+		<p><i class="icon-group"></i> Unlimited Users</p>
+		<hr class="skinny">
+		<p>$19.95 / month</p>
+	</div>
+	<div id="plan3" class="plan">
+		<div class="stripe gray">
+			<h2>Extra</h2>
+		</div>
+		<p> <i class="icon-file-alt"></i> <strong>500</strong> Files</p>
+		<p><i class="icon-group"></i> Unlimited Users</p>
+		<hr class="skinny">
+		<p>$29.95 / month</p>
+	</div>
+
+</div>
+
+</div>

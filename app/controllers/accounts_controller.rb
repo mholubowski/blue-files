@@ -38,7 +38,8 @@ before_filter :admin_user, only: [:destroy, :edit, :update, :index] #TODO index 
     @account = Account.find(params[:id])
     if @account.update_attributes(params[:account])
       sign_in @account
-      redirect_to root_path
+      flash[:success] = "Successfully updated Account!"
+      redirect_to 'edit'
     else
       render 'edit'
     end

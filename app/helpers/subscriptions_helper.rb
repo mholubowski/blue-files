@@ -22,4 +22,19 @@ module SubscriptionsHelper
 		end
 	end
 
+	def change_plan_to(plan_id)
+		unless plan_id == current_account.subscription.plan
+			# Handles stripe
+			c  = current_account.subscription.stripe_customer_token
+			cu = Stripe::Customer.retrieve(c)
+			cu.update_subscription(plan: plan_id, prorate: true)
+			# Handles DB
+			current_account.update_subscription(plan:plan_id)
+			flash.now[:success] = "Successfully changed Subscription!"
+		else
+			flash.now[:notice] = "You have chosen to change your plan to your current plan"
+		end
+
+	end
+
 end

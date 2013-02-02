@@ -6,6 +6,7 @@ BlueFiles::Application.routes.draw do
 
   get "subscriptions/create"
 
+
   get "document_comments/new"
 
   get "document_comments/create"

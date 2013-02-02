@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+  before_filter :correct_subscription, only: [:edit, :show, :update, :destroy]
   def new
   	@subscription = current_account.build_subscription if signed_in?
   end
@@ -12,5 +13,18 @@ class SubscriptionsController < ApplicationController
   		render :new
   	end
   end
+
+  def edit
+    @subscription = Subscription.find(params[:id])
+  end
+
+private
+
+    def correct_subscription
+      unless current_account.id == Subscription.find(params[:id]).account_id
+        flash[:error] = "You do not have permission to edit that"
+        redirect_to root_path
+      end
+    end
 
 end

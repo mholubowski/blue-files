@@ -223,5 +223,13 @@ Admin link in header nav should have a dropdown:
  	-Notifications
  		files flagged as wrong
 
+===============================
+DateTime.strptime("1318996912",'%s')
 
+Stripe::Customer.retrieve(c).delinquent
+
+Stripe::Customer.retrieve(c).active_card.last4
+
+customer.card = "new"
+customer.save
 
