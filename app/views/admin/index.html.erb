@@ -9,9 +9,9 @@
 				 <% @views = 0 %>
 				 <% current_account.documents.each do |doc| %>
 				 	<% @views += doc.views %>
+				 	<% end %>
 				 	<%= @views %>
 				 	<%= Time.now - start%>
-				 	<% end %>
 <!-- TODO Speed up total views -->
 
 </h3>
@@ -94,7 +94,7 @@
 <script type="text/javascript">
 	$(function(){
 		current = parseInt($('#current-files').html());
-		width = current*100 / 250;
+		width = current*100 / <%= max_files(current_account) %>;
 		$('.horizontal-bar').animate({"width": width + "%"}, 1000);
 	})
 </script>	

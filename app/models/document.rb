@@ -20,11 +20,11 @@ class Document < ActiveRecord::Base
                                #             }
 
 
-  validates :document_file, presence: {message: "Please attatch a PDF"}
-  validates :document_file,
-               format:{
-                 with: %r{\.(pdf|pdf)$}i, message: "Please convert the file to PDF"
-                }
+  # validates :document_file, presence: {message: "Please attatch a PDF"}
+  # validates :document_file,
+  #              format:{
+  #                with: %r{\.(pdf|pdf)$}i, message: "Please convert the file to PDF"
+  #               }
                 #TODO format and error messages
 
 
