@@ -11,6 +11,15 @@ module SubscriptionsHelper
 		end
 	end
 
-	
+	def price(account)
+		case account.subscription.plan	
+		when 0
+			"Free for 30 Days"
+		when 1
+			"19.95 / month"
+		when 2
+			"39.95 / month"
+		end
+	end
 
 end
