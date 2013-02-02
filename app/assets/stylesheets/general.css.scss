@@ -351,6 +351,8 @@ div#recently-viewed{
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
+	position: relative;
+	bottom: 20px;
 	&.alert-notice{
 		background-color: $notice;
 		color: #3F3F3F;

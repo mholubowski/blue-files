@@ -5,6 +5,7 @@
 <h2>plan: <%= current_account.subscription.plan %></h2>
 <h2>Days left: <%= distance_of_time_in_words(Time.now, (current_account.subscription.created_at + 30.days)).to_i%></h2>
 
+<h3>Total views: <%= current_account.total_views %></h3>
 <div id="file-usage" class="row well dark">
 	<h2>File Usage</h2>
 

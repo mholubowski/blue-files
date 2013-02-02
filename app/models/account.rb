@@ -2,7 +2,7 @@ class Account < ActiveRecord::Base
  attr_accessible :username, :password, :password_confirmation, 
  :accept_terms_and_conditions, :category, 
  :sub_category, :sub_sub_category, :account_admin_password,
- :schedule_type, :admin_name, :admin_email, :admin_phone
+ :schedule_type, :admin_name, :admin_email, :admin_phone, :total_views
  has_secure_password
  before_save :strip_phone
  before_save :create_remember_token
@@ -75,5 +75,6 @@ class Account < ActiveRecord::Base
       self.category         = "Department" if self.category.nil?
       self.sub_category     = "Course"     if self.sub_category.nil?
       self.sub_sub_category = "Professor"  if self.sub_sub_category.nil?
+      self.total_views      = 0            if self.total_views.nil?
     end
   end

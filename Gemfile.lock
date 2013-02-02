@@ -124,7 +124,6 @@ GEM
     remotipart (1.0.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rmagick (2.13.1)
     ruby-hmac (0.4.0)
     sass (3.2.5)
     sass-rails (3.2.5)
@@ -169,7 +168,6 @@ DEPENDENCIES
   pg (= 0.12.2)
   rails (= 3.2.8)
   remotipart (~> 1.0)
-  rmagick (~> 2.13.1)
   sass-rails (~> 3.2.3)
   sqlite3
   stripe

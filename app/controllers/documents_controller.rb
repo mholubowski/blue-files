@@ -28,9 +28,12 @@ before_filter :correct_document, only: [:show, :edit, :update, :destroy]
 
   def show
    	@document = Document.find(params[:id])
-    # @list.sort_by{|e| -e[:time_ago]}
     view = @document.views + 1
     @document.update_attributes(views: view)
+    # TODO how slow is this?
+    total_views = current_account.total_views + 1
+    current_account.update_attributes(total_views: total_views)
+
 
     @comments = Document.find(params[:id]).document_comments.all
     # for new comment
