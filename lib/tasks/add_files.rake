@@ -2,10 +2,10 @@ namespace :db do
 	
 	desc "Add Files"
 	task add_files: :environment do
-		files = 50
+		files = ENV['FILES']
 		account = 1
 
-		files.times do 
+		files.to_i.times do 
 			category     = ['Economics', 'Math', 'MCDB', 'Philosophy', 'Global Studies' ].sample
 				sub_category = ['100A', '1', '37B', '140C', '4A', '137BA', '222A', '101'    ].sample
 				sub_sub_category = ['Babcock', 'Burns', 'Ernest', 'L.S. Kim', 'Sonstellie'  ].sample

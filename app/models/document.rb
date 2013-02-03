@@ -1,15 +1,17 @@
 class Document < ActiveRecord::Base
   attr_accessible :category, :sub_category, :sub_sub_category,
-  				  :type_of_document, :number_of_pages, :title,
-  				  :document_file, :hidden, :original_comment, :views,
-            :comment_count, :quarter
+  :type_of_document, :number_of_pages, :title,
+  :document_file, :hidden, :original_comment, :views,
+  :comment_count, :quarter
 
   belongs_to  :account
   has_many    :document_comments, dependent: :destroy
   
   after_initialize :init
+  # after_create :check_plan_status
+  # after_destroy :check_plan_status
 
-  validates :account_id, 	     presence: true
+  validates :account_id,       presence: true
   validates :title,            presence: {message: "Please provide a title"}
   validates :category,         presence: {message: "Please choose a Department / Major"}
   validates :sub_category,     presence: {message: "Please provide a course number"}
@@ -20,11 +22,11 @@ class Document < ActiveRecord::Base
                                #             }
 
 
-  # validates :document_file, presence: {message: "Please attatch a PDF"}
-  # validates :document_file,
-  #              format:{
-  #                with: %r{\.(pdf|pdf)$}i, message: "Please convert the file to PDF"
-  #               }
+                               # validates :document_file, presence: {message: "Please attatch a PDF"}
+                               # validates :document_file,
+                               # format:{
+                               #   with: %r{\.(pdf|pdf)$}i, message: "Please convert the file to PDF"
+                               # }
                 #TODO format and error messages
 
 
@@ -40,4 +42,5 @@ class Document < ActiveRecord::Base
     self.views     = 0     if self.views.nil?
     self.comment_count = 0     if self.comment_count.nil?
   end
+
 end

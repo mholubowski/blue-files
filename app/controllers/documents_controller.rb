@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+include SubscriptionsHelper
 before_filter :signed_in_user
 before_filter :admin_user, only: [:destroy, :edit, :update]
 before_filter :correct_document, only: [:show, :edit, :update, :destroy]
@@ -56,6 +57,7 @@ before_filter :correct_document, only: [:show, :edit, :update, :destroy]
         end
         format.js
       end
+      check_plan_status
      else
       flash.now[:error] = "Please try again"
       render 'new'
@@ -70,11 +72,19 @@ before_filter :correct_document, only: [:show, :edit, :update, :destroy]
     @document = Document.find(params[:id])
     if @document.update_attributes(params[:document])
       flash.now[:success] = "Successfully Updated"
-      render 'edit'
+      render 'edit' 
     else
       flash.now[:error] = "Please try again"
       render 'edit'
     end
+  end
+
+  def destroy
+    document = Document.find(params[:id])
+    document.destroy
+    redirect_to documents_path
+    flash[:notice] = "File '#{document.sub_sub_category}' deleted"
+    check_plan_status
   end
 
   private

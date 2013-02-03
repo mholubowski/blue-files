@@ -20,6 +20,5 @@ class DocumentCommentsController < ApplicationController
 
   end
 
-  def destroy
-  end
+
 end
