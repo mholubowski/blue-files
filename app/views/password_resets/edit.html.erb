@@ -12,16 +12,17 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label "Account Password" %>
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %>
+    <%= f.label "Account Password Confirmation" %>
     <%= f.password_field :password_confirmation %>
   </div>
   <br>
+  <h3>Administrator</h3>
   <div class="field">
-    <%= f.label :account_admin_password %>
+    <%= f.label "Account Admin Password" %>
     <%= f.password_field :account_admin_password %>
   </div>
   <div class="actions"><%= f.submit "Update Password" %></div>
