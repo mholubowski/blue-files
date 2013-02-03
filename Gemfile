@@ -17,8 +17,10 @@ gem 'google-analytics-rails'
 group :development, :test do
 	gem 'sqlite3'
   gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request' #works with chrome extension rails_panel
   # TODO get letter_opener working in production
-  # gem 'letter_opener'
+  gem 'letter_opener'
 end
 # Gems used only for assets and not required
 # in production environments by default.
