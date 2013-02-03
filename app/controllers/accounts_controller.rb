@@ -43,8 +43,6 @@ before_filter :admin_user, only: [:destroy, :edit, :update, :index] #TODO index 
     else
       render 'edit'
     end
-  end
-
-  
+  end  
 
 end

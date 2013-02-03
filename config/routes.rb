@@ -1,5 +1,6 @@
 BlueFiles::Application.routes.draw do
 
+
   match '/admin', to: 'admin#index'
 
   get "subscriptions/new"
@@ -62,6 +63,7 @@ BlueFiles::Application.routes.draw do
   resources :accounts
   resources :documents
   resources :document_comments
+  resources :password_resets
   resources :requests
   resources :subscriptions
   resources :sessions, only: [:new, :create, :destroy]

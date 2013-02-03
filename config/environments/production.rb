@@ -72,4 +72,6 @@ BlueFiles::Application.configure do
   # config.middleware.use ExceptionNotifier,
   #   sender_address: 'notifier@bluefiles.co',
   #   exception_recipients: 'exceptions@bluefiles.co'
+
+  config.action_mailer.default_url_options = { host: "http://www.bluefiles.co" }
 end
