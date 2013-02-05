@@ -45,6 +45,7 @@
   <span class="page-count">Page: <span id="page_num"></span> / <span id="page_count"></span></span>
 </div>
 
+
 <div class="row" style="display:table;position: relative; overflow: hidden;">
 
  <div id="prev_column" class="span1" onclick="goPrevious()">
@@ -61,7 +62,7 @@
 
 <div class="span10">
                                             <!-- #TODO Maybe say "encrypting and loading" -->
-  <div id="pdf-loading"><i class="icon-spinner icon-spin"></i> Loading</div>
+  <div id="pdf-loading"><i class="icon-spinner icon-spin"></i> <span>Loading</span> <div id="progressbar"></div></div>
   <canvas id="the-canvas" style="border:1px solid black"></canvas>
 
 </div>
@@ -87,6 +88,19 @@
 <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
 
 <script type="text/javascript">
+    $('#progressbar').progressbar();
+    $(function() {
+      var pGress = setInterval(function() {
+        var pVal = $('#progressbar').progressbar('option', 'value');
+        var pCnt = !isNaN(pVal) ? (pVal + 1) : 1;
+        if (pCnt > 100) {
+          clearInterval(pGress);
+        } else {
+          $('#progressbar').progressbar({value: pCnt});
+        }
+      },80);
+    });
+  
     // TODO: MOVE THIS SHIT!!!
     //
     // NOTE: 
@@ -124,9 +138,12 @@
           viewport: viewport
         };
         console.log('page loading');
+        $('#pdf-loading span').text('Rendering')
+        $('#pdf-loading .ui-progressbar-value').css('background', 'yellowgreen')
         page.render(renderContext);
         console.log('loaded!');
-        $('#pdf-loading').hide('slow');
+        // hide once loaded
+        // $('#pdf-loading').hide('slow');
       });
 
       // Update page counters
