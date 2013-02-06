@@ -54,6 +54,7 @@ module SubscriptionsHelper
 	  if f > max_files(a)
         change_plan_to(a.subscription.plan + 1) unless a.subscription.plan == 2 #TODO logic for MAXMAX files
         puts "Account file limit has been successfully upgraded"
+        flash[:notice] = "Account file limit has been successfully upgraded"
       elsif f <= min_files(a) #TODO shouldn't downgrade past free trial period
         change_plan_to(a.subscription.plan - 1) unless a.subscription.plan == 0 #TODO logic for MAXMAX files
         puts "Account file limit has been successfully downgraded"  

@@ -17,14 +17,14 @@
 $(function(){
 	
 	$("#documentsTable").dataTable(
-		{ 
+	{ 
 		  // sPaginationType: false,
-		 "bScrollInfinite": true,
-    	 "sScrollY":   "500px",
+		  "bScrollInfinite": true,
+		  "sScrollY":   "500px",
 		  "bJQueryUI":  true,
 		  "bStateSave": true,
 		  "iDisplayLength":  50   }
-		);
+		  );
 
 	$('form[data-remote]').on('ajax:beforeSend, ajax:remotipartSubmit', function() {
 		var submit_btn;
@@ -53,6 +53,12 @@ $(function(){
 		}
 	});
 
+	$('#convert-link').click(function(ev){
+		window.open('http://www.techiecorner.com/311/how-to-convert-doc-to-pdf-in-mac-os-x/',
+			'Continue_to_Application','width=750,height=400');
+		ev.preventDefault();
+		return false;
+	})
 
 })
 

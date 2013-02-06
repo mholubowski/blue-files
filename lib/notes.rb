@@ -233,3 +233,6 @@ Stripe::Customer.retrieve(c).active_card.last4
 customer.card = "new"
 customer.save
 
+======
+
+build pandock on ubuntu server, drop it on heroku
