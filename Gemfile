@@ -12,6 +12,7 @@ gem "stripe"
 # gem 'exception_notification'
 gem 'google-analytics-rails'
 
+gem 'useragent'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do

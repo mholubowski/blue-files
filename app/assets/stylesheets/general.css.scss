@@ -254,10 +254,10 @@ div.comments-wrapper{
 		0px 8px 13px rgba(0,0,0,0.1),
 		0px 18px 23px rgba(0,0,0,0.1);
 
-		&:hover{
+		&:hover, &.hover{
 			color: saturate(lighten($lighter-blue, 40%), 50%);
 		}     
-		&:active{
+		&:active, &.active{
 			color: lighten($lighter-blue, 20%);
 		}
 	}

@@ -10,9 +10,22 @@ $(document).ready(function(){
 	
 })
 
+// ----- Index --------
+
+
 // ----- PRICING ------
 
 $(function(){
+// add/remove class on the welcome headers	
+// $('#upload').hover(
+//        function(){ $(this).find('h1').addClass('hover') },
+//        function(){ $(this).find('h1').removeClass('hover') }
+// )
+// $('#view').hover(
+//        function(){ $(this).find('h1').addClass('hover') },
+//        function(){ $(this).find('h1').removeClass('hover') }
+// )
+
 
 	$('#files-slider').slider({ animate: "fast",  min: 0, max: 1000, step: 50, value: 250, slide: function(e,ui){
 		var handle = ui.handle;
