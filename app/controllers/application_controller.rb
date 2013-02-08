@@ -10,4 +10,14 @@ before_filter :set_access_control_headers
 	  headers['Access-Control-Request-Method'] = '*'
 	end
 
+	  private
+    def mobile_device?
+      request.user_agent =~ /Mobile|webOS/
+    end
+    def iphone?
+    	request.user_agent =~ /iPhone/ && mobile_device?
+    end
+
+    helper_method :mobile_device?
+
 end

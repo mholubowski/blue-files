@@ -1,5 +1,12 @@
 <!-- ignore this comment
 -->
+<% if mobile_device? %>
+<div style="background-color: #ccc; border:1px solid #aaa; padding: 5px;">
+	<h1 style="color:green; text-align:center;">Mobile Device Detected</h1>
+	<h2 style="color:#333; text-align:center;">iPhone</h2>
+</div>
+<% end %>
+
 <% if signed_in? %>
 <h1><%= image_tag "logo2.png", class: "logo verysmall" %> Welcome to Blue Files </h1> 
 

@@ -12,7 +12,6 @@ gem "stripe"
 # gem 'exception_notification'
 gem 'google-analytics-rails'
 
-gem 'useragent'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
@@ -22,6 +21,7 @@ group :development, :test do
   gem 'meta_request' #works with chrome extension rails_panel
   # TODO get letter_opener working in production
   gem 'letter_opener'
+   gem 'launchy', '2.1.2'
 end
 # Gems used only for assets and not required
 # in production environments by default.
