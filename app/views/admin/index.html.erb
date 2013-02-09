@@ -24,7 +24,7 @@
 		<h1>Account info</h1>
 	</div>
 	<div class="span6">
-		<h1>Subscription info</h1>
+		<h1 id="subscription-header">Subscription info</h1>
 	</div>
 </div>
 
@@ -37,6 +37,7 @@
 		</div>
 
 		<%#= f.label "Admin full name" %>
+		<p class="account-admin">Account Administrator:</p>
 		<div class="input-prepend">
 			<i class='icon-user' style="margin-right:4px;"></i>
 			<%= current_account.admin_name %>
@@ -53,7 +54,7 @@
 			<i class='icon-phone' style="margin-right:4px;"></i>
 			<%= current_account.admin_phone %>
 		</div>
-		<%= link_to "Edit", edit_account_path(current_account) %>
+		<%= link_to "Edit", edit_account_path(current_account), class: "btn pull-right" %>
 	</div>
 
 	<div class="span6">

@@ -37,11 +37,17 @@
 	// making text more readable
 	td{
 		text-shadow: 0px 0px 1px black;
+		&:last-child{
+			background-color: #eee !important;
+			// background-color: lighten($lighter-blue, 17%);
+			// box-shadow: inset 1px 3px 3px #bbb;
+		}
 		a{
 			text-shadow: none;
 			&:hover{
-				color:white;
+				// color:white;
 				text-decoration: none;
+				font-size: 1.1em;
 			}
 		}
 	}
