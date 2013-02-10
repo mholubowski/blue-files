@@ -75,6 +75,10 @@ class Account < ActiveRecord::Base
       AccountMailer.password_reset(self).deliver
     end
 
+    def in_trial?
+      subscription.trial_expiration_date > Time.now
+    end
+
     private
     def strip_phone
       self.admin_phone = admin_phone.to_s.tr('^0-9', '')

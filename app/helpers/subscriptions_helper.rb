@@ -2,65 +2,74 @@ module SubscriptionsHelper
 
 	def max_files(account)
 		case account.subscription.plan
-		when 0
-			50
 		when 1
 			250
 		when 2
+			250
+		when 3
 			1000
 		end
 	end
 
 	def min_files(account)
 		case account.subscription.plan
-		when 0
-			0
 		when 1
-			50
+			250
 		when 2
 			250
+		when 3
+			1000
 		end
 	end
 
 	def price(account)
 		case account.subscription.plan	
-		when 0
-			"Free for 30 Days"
 		when 1
-			"19.95 / month"
+			"Free for 30 Days"
 		when 2
-			"39.95 / month"
+			"$19.95 / month"
+		when 3
+			"$39.95 / month"
 		end
 	end
 
+	def plan_to_words(id)
+		case id
+			when 1
+				"Free Trial"
+			when 2 
+				"Pro - 250 files"
+			when 3
+				"Extra - 1000 files"
+		end
+	end
+
+	def trial_days_remaining(account)
+		distance_of_time_in_words(Time.now, (account.subscription.trial_expiration_date)).to_i
+	end
 
 	def change_plan_to(plan_id)
 		unless plan_id == current_account.subscription.plan
 			# Handles stripe
-			c  = current_account.subscription.stripe_customer_token
-			cu = Stripe::Customer.retrieve(c)
-			cu.update_subscription(plan: plan_id, prorate: true)
+			token    = current_account.subscription.stripe_customer_token
+			customer = Stripe::Customer.retrieve(token)
+			customer.update_subscription(plan: plan_id, prorate: true)
 			# Handles DB
 			current_account.subscription.update_attribute(:plan, plan_id)
-			puts = "Successfully changed Subscription!"
-		else
-			puts = "You have chosen to change your plan to your current plan"
+			flash[:notice] = "Account subscriptions level has been changed"
 		end
 	end
 
 	def check_plan_status
-	  a = current_account
-	  f = a.documents.count
-	  if f > max_files(a)
-        change_plan_to(a.subscription.plan + 1) unless a.subscription.plan == 2 #TODO logic for MAXMAX files
-        puts "Account file limit has been successfully upgraded"
-        flash[:notice] = "Account file limit has been successfully upgraded"
-      elsif f <= min_files(a) #TODO shouldn't downgrade past free trial period
-        change_plan_to(a.subscription.plan - 1) unless a.subscription.plan == 0 #TODO logic for MAXMAX files
-        puts "Account file limit has been successfully downgraded"  
-	  else 
-  		puts "!!!!!!!!! All good #{f} < #{max_files(a)}"
-  	  end
+		if current_account.documents.count <= Subscription::FILE_LIMITS[:trial]
+			unless current_account.in_trial?
+				change_plan_to(2) 
+			end
+		else
+			unless current_account.in_trial?
+				change_plan_to(3) 
+			end
+		end
 	end
 
 end

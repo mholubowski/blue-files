@@ -22,7 +22,7 @@
 	</div>
 	<% end %>
 	<!-- TODO value should be dynamic -->
-	<%= f.hidden_field :plan, value: 0 %>
+	<%= f.hidden_field :plan, value: 1 %>
 	<%= f.hidden_field :email, value: current_account.admin_email %>
 	<%= f.hidden_field :description, value: "#{current_account.username} id:#{current_account.id}" %>
 	<%= f.hidden_field :stripe_card_token %>

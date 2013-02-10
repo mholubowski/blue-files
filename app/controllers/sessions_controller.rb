@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+include SubscriptionsHelper
   def new
   end
 
@@ -10,12 +11,14 @@ class SessionsController < ApplicationController
   	if account && account.authenticate(params[:session][:password]) && admin_entry.blank?
   		flash[:success] = "Successfully Signed In!"
   		sign_in(account)
-  		redirect_back_or root_url
+      check_plan_status
+      redirect_back_or root_url
 
     elsif account && account.authenticate(params[:session][:password]) && admin_entry == admin_pass
       flash[:success] = "Successfully signed in as Admin!"
       sign_in(account)
       sign_in_admin(account)
+      check_plan_status
       redirect_back_or root_url
       
   	else

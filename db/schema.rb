@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130203192636) do
+ActiveRecord::Schema.define(:version => 20130210050932) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20130203192636) do
     t.string   "stripe_customer_token"
     t.string   "email"
     t.string   "description"
+    t.datetime "trial_expiration_date"
   end
 
 end

@@ -13,7 +13,7 @@
 	}
 	.horizontal-bar{
 		height:30px;
-		width:30%;
+		width:3%;
 		background-color: yellowgreen;
 		border-radius: 0 3px 3px 0;
 		div{
@@ -78,5 +78,9 @@
 		margin-top: 1px;
 		padding: 3px 20px;
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	span.days-left{
+		border-left: 1px solid #bbb;
+		padding-left: 3px;
 	}
 }
