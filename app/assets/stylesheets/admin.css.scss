@@ -74,10 +74,12 @@
 		color: #444;
 	}
 	.btn{
-		margin-right: 101px;
 		margin-top: 1px;
 		padding: 3px 20px;
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		&.pull-right{
+			margin-right: 101px;
+		}
 	}
 	span.days-left{
 		border-left: 1px solid #bbb;

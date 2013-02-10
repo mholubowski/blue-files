@@ -1,5 +1,4 @@
-<% @document = current_account.documents.build %>
-<div id="<%= @document.object_id %>" class="hiddenDocForm theHider">
+<div id="<%= @document.object_id %>" class="theHider">
 	<div id="<%= @document.object_id %>">
 		<%= form_for @document, validate: true, remote: true do |f| %>
 
@@ -11,7 +10,7 @@
 
 		<%= f.file_field :document_file %>
 
-		<!-- <p><small>document.id <%= @document.object_id %></small></p> -->
+		<p><small>document.id <%= @document.object_id %></small></p>
 
 		<%= f.label :title %>
 		<div class="input-prepend">
@@ -53,21 +52,16 @@
 				<%= f.select :quarter, ['Fall 2012', 'Fall 2011', 'Fall 2010','Spring 2012', 'Spring 2011',
 					'Spring 2010' ] if current_account.schedule_type == "Semester" %>								
 
-				<!-- removed for HEROKU -->
-	 <!-- f.label "Comments" 
-	 f.text_field :original_comment  -->
-
 	 <br><br>
 	 <div style="display:;">
 	 	<%= f.submit "Upload Document", disable_with: "Uploading Document..", class: "btn btn-large " %>
 	 </div>
 	</div>
-	<div class="addThisForm well"><p>Add File</p> <i class="icon-file-alt"></i></div>
+	<!-- <div class="addThisForm well"><p>Add File</p> <i class="icon-file-alt"></i></div> -->
 	<% end %>
 	<hr class="skinny">
 </div>
 <%= javascript_tag "var list_of_majors = #{ @list_of_majors.to_json }; var list_of_courses = #{@list_of_courses.to_json}; " %>
-<!-- NOTE: Moving this into documents.js breaks things -->
-<script type="text/javascript">	//Bootstrap Dropdown typeahead
-$('.document_category').typeahead({ source: list_of_majors, items: 4 });
-$('.document_sub_category').typeahead({ source: list_of_courses, items: 4 });</script>
+<script type="text/javascript">
+</script>
+

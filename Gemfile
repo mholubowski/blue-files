@@ -6,7 +6,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'carrierwave'
 # gem "rmagick", "~> 2.13.1"
 gem 'client_side_validations'
-gem "remotipart", "~> 1.0"
+gem "remotipart"
 gem "fog", "~> 1.3.1"
 gem "stripe"
 # gem 'exception_notification'

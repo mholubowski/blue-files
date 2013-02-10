@@ -15,6 +15,15 @@
 // # 	  submit_btn.addClass('btn-warning')
 
 $(function(){
+	window.enableTypeahead = function(){
+		console.log('step1');
+		// $('.document_category').each(function(idx){
+		// 	$(this).typeahead({ source: list_of_majors, items: 4 });
+		// })
+		$('.document_category').last().typeahead({ source: list_of_majors, items: 4 });
+		$('.document_sub_category').typeahead({ source: list_of_courses, items: 4 });
+		console.log('typahead enabled!');
+  }
 	
 	$("#documentsTable").dataTable(
 	{ 
@@ -36,15 +45,16 @@ $(function(){
 
 	$(document).ready(function(){
 		// TODO Do this without the shitty js hack
-		$('.addThisForm').first().click();
+		// $('.addThisForm').first().click();
+		// enableTypeahead();
 	});
 	
-	$('.addThisForm').on('click', function(){
-		var addForm = $(this).parent();
-		addForm.animate({right:'-=900'}, 457,'swing');
-		addForm.removeClass('hiddenDocForm');
-		$(this).hide(100);
-	})
+	// $('.addThisForm').on('click', function(){
+	// 	var addForm = $(this).parent();
+	// 	addForm.animate({right:'-=900'}, 457,'swing');
+	// 	addForm.removeClass('hiddenDocForm');
+	// 	$(this).hide(100);
+	// })
 
 
 	$('#reloadButton').click(function() {

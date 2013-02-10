@@ -23,19 +23,28 @@
 <div class="row" id="newDocumentsRow">
 	<div class="span4 offset4 center">
 		<div id="addFormContainer">
-			<div class="added-file top-header">
-				<p>Uploaded Documents</p>
-			</div>
 
 			<!-- document create form -->
-			<% 10.times do  %>
+			<% 1.times do  %>
 			<%= render 'documents/new_document_form' %>
 			<% end %>
-			<%= render 'documents/last_form' %>
+			<div id="neww"></div>
+			<div style="text-align:center;">
+				<%= link_to raw("<i class='icon-plus-sign'></i> Add more"), new_document_form_path, remote: true, class: "btn btn-success" %>
+			</div>
+			<%#= render 'documents/last_form' %>
 
 			<hr style="color:black;">
 		</div>
 
 	</div>
+
+	<div class="span4">
+		
+			<div class="added-file top-header">
+				<p>Uploaded Documents</p>
+			</div>
+	</div>
+
 </div>
 

@@ -76,6 +76,7 @@ BlueFiles::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
+  match "/new_doc" => "documents#new_document_form", as: 'new_document_form'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
