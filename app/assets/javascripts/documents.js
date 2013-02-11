@@ -20,6 +20,8 @@ $(function(){
 
 $('#add-more').bind("ajax:complete", function(){
 	$('form').enableClientSideValidations();
+	$('.document_category').last().typeahead({ source: list_of_majors, items: 4 });
+	$('.document_sub_category').last().typeahead({ source: list_of_courses, items: 4 });
 })
 
 	
@@ -42,7 +44,7 @@ $('#add-more').bind("ajax:complete", function(){
 	});
 
 	$(document).ready(function(){
-		
+
 		$('.document_category').typeahead({ source: list_of_majors, items: 4 });
 		$('.document_sub_category').typeahead({ source: list_of_courses, items: 4 });
 
