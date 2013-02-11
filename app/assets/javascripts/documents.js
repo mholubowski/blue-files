@@ -22,16 +22,6 @@ $('#add-more').bind("ajax:complete", function(){
 	$('form').enableClientSideValidations();
 })
 
-
-	window.enableTypeahead = function(){
-		console.log('step1');
-		// $('.document_category').each(function(idx){
-		// 	$(this).typeahead({ source: list_of_majors, items: 4 });
-		// })
-		$('.document_category').last().typeahead({ source: list_of_majors, items: 4 });
-		$('.document_sub_category').typeahead({ source: list_of_courses, items: 4 });
-		console.log('typahead enabled!');
-  }
 	
 	$("#documentsTable").dataTable(
 	{ 
@@ -52,9 +42,9 @@ $('#add-more').bind("ajax:complete", function(){
 	});
 
 	$(document).ready(function(){
-		// TODO Do this without the shitty js hack
-		// $('.addThisForm').first().click();
-		// enableTypeahead();
+		
+		$('.document_category').typeahead({ source: list_of_majors, items: 4 });
+		$('.document_sub_category').typeahead({ source: list_of_courses, items: 4 });
 
 
 });
