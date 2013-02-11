@@ -14,7 +14,15 @@
 // # 	  submit_btn.attr('disabled', 'disabled').attr('value', submit_btn.data('disable-with'))
 // # 	  submit_btn.addClass('btn-warning')
 
+	
 $(function(){
+
+
+$('#add-more').bind("ajax:complete", function(){
+	$('form').enableClientSideValidations();
+})
+
+
 	window.enableTypeahead = function(){
 		console.log('step1');
 		// $('.document_category').each(function(idx){
@@ -47,7 +55,9 @@ $(function(){
 		// TODO Do this without the shitty js hack
 		// $('.addThisForm').first().click();
 		// enableTypeahead();
-	});
+
+
+});
 	
 	// $('.addThisForm').on('click', function(){
 	// 	var addForm = $(this).parent();
