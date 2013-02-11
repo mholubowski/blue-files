@@ -22,8 +22,15 @@ $('#add-more').bind("ajax:complete", function(){
 	$('form').enableClientSideValidations();
 	$('.document_category').last().typeahead({ source: list_of_majors, items: 4 });
 	$('.document_sub_category').last().typeahead({ source: list_of_courses, items: 4 });
+	// todo not working:
+	$('form[data-remote]').last().on('ajax:beforeSend, ajax:remotipartSubmit', function() {
+		var submit_btn;
+		submit_btn = $('input[type=submit]', this);
+		submit_btn.after('<div class="saving" style="display: block;"></div>');
+		submit_btn.attr('disabled', 'disabled').attr('value', submit_btn.data('disable-with'));
+		return submit_btn.addClass('btn-warning');
+	});
 })
-
 	
 	$("#documentsTable").dataTable(
 	{ 
