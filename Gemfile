@@ -11,7 +11,7 @@ gem "fog", "~> 1.3.1"
 gem "stripe"
 # gem 'exception_notification'
 gem 'google-analytics-rails'
-
+gem 'blitline'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
